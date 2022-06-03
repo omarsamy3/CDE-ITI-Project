@@ -219,3 +219,13 @@ E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITIC
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Details.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Edit.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Index.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Create.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Delete.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Edit.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Create.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Delete.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Details.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Edit.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Index.cshtml.g.cs
