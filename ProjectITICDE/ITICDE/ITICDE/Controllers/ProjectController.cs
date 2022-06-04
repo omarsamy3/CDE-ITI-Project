@@ -10,24 +10,23 @@ using ITICDE.Models;
 
 namespace ITICDE.Controllers
 {
-    public class TaskController : Controller
+    public class ProjectController : Controller
     {
         private readonly CDEDBContext _context;
 
-        public TaskController(CDEDBContext context)
+        public ProjectController(CDEDBContext context)
         {
             _context = context;
         }
 
-        // GET: Task
+        // GET: Project
         public async Task<IActionResult> Index()
         {
-            var cDEDBContext = _context.Tasks.Include(t => t.CreatorUser).Include(t => t.Project);
+            var cDEDBContext = _context.Projects.Include(p => p.CreatorUser);
             return View(await cDEDBContext.ToListAsync());
         }
 
-        #region Details
-        // GET: Task/Details/5
+        // GET: Project/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,47 +34,42 @@ namespace ITICDE.Controllers
                 return NotFound();
             }
 
-            var task = await _context.Tasks
-                .Include(t => t.CreatorUser)
-                .Include(t => t.Project)
+            var project = await _context.Projects
+                .Include(p => p.CreatorUser)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (task == null)
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(task);
+            return View(project);
         }
-        #endregion
 
-
-        // GET: Task/Create
+        // GET: Project/Create
         public IActionResult Create()
         {
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description");
             return View();
         }
 
-        // POST: Task/Create
+        // POST: Project/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Progress,Priority,Description,CreationDate,DeadLine,CreatorUserId,ProjectId")] ITICDE.Models.Task task)
+        public async Task<IActionResult> Create([Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] Project project)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(task);
+                _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", task.CreatorUserId);
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description", task.ProjectId);
-            return View(task);
+            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", project.CreatorUserId);
+            return View(project);
         }
 
-        // GET: Task/Edit/5
+        // GET: Project/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -83,24 +77,23 @@ namespace ITICDE.Controllers
                 return NotFound();
             }
 
-            var task = await _context.Tasks.FindAsync(id);
-            if (task == null)
+            var project = await _context.Projects.FindAsync(id);
+            if (project == null)
             {
                 return NotFound();
             }
-            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", task.CreatorUserId);
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description", task.ProjectId);
-            return View(task);
+            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", project.CreatorUserId);
+            return View(project);
         }
 
-        // POST: Task/Edit/5
+        // POST: Project/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Progress,Priority,Description,CreationDate,DeadLine,CreatorUserId,ProjectId")] ITICDE.Models.Task task)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] Project project)
         {
-            if (id != task.Id)
+            if (id != project.Id)
             {
                 return NotFound();
             }
@@ -109,12 +102,12 @@ namespace ITICDE.Controllers
             {
                 try
                 {
-                    _context.Update(task);
+                    _context.Update(project);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TaskExists(task.Id))
+                    if (!ProjectExists(project.Id))
                     {
                         return NotFound();
                     }
@@ -125,12 +118,11 @@ namespace ITICDE.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", task.CreatorUserId);
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description", task.ProjectId);
-            return View(task);
+            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", project.CreatorUserId);
+            return View(project);
         }
 
-        // GET: Task/Delete/5
+        // GET: Project/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -138,32 +130,31 @@ namespace ITICDE.Controllers
                 return NotFound();
             }
 
-            var task = await _context.Tasks
-                .Include(t => t.CreatorUser)
-                .Include(t => t.Project)
+            var project = await _context.Projects
+                .Include(p => p.CreatorUser)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (task == null)
+            if (project == null)
             {
                 return NotFound();
             }
 
-            return View(task);
+            return View(project);
         }
 
-        // POST: Task/Delete/5
+        // POST: Project/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var task = await _context.Tasks.FindAsync(id);
-            _context.Tasks.Remove(task);
+            var project = await _context.Projects.FindAsync(id);
+            _context.Projects.Remove(project);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TaskExists(int id)
+        private bool ProjectExists(int id)
         {
-            return _context.Tasks.Any(e => e.Id == id);
+            return _context.Projects.Any(e => e.Id == id);
         }
     }
 }

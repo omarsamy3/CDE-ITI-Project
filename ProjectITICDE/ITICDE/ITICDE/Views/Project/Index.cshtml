@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ITICDE.Models.Task>
+﻿@model IEnumerable<ITICDE.Models.Project>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,28 +13,25 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Units)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Progress)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Priority)
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreationDate) 
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DeadLine)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.CreatorUser)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Project)
             </th>
             <th></th>
         </tr>
@@ -43,28 +40,25 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Units)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Progress)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Priority)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
+                @Html.DisplayFor(modelItem => item.StartDate)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DeadLine)
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.CreatorUser.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Project.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

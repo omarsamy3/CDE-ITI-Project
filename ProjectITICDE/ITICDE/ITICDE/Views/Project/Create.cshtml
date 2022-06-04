@@ -1,5 +1,5 @@
 ﻿@using ITICDE.Enums
-@model ITICDE.Models.Task
+@model ITICDE.Models.Project
 
 @{
     ViewData["Title"] = "Create";
@@ -7,16 +7,21 @@
 
 <h1>Create</h1>
 
-<h4>Task</h4>
+<h4>Project</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger"></span>
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Units" class="control-label"></label>
+                <select asp-for="Units" class="form-control" asp-items="Html.GetEnumSelectList<Units>()"></select>
+                <span asp-validation-for="Units" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Progress" class="control-label"></label>
@@ -24,14 +29,9 @@
                 <span asp-validation-for="Progress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Priority" class="control-label"></label>
-                <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()"></select>
-                <span asp-validation-for="Priority" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CreationDate" class="control-label"></label>
@@ -39,17 +39,13 @@
                 <span asp-validation-for="CreationDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DeadLine" class="control-label"></label>
-                <input asp-for="DeadLine" class="form-control" />
-                <span asp-validation-for="DeadLine" class="text-danger"></span>
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CreatorUserId" class="control-label"></label>
                 <select asp-for="CreatorUserId" class ="form-control" asp-items="ViewBag.CreatorUserId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectId" class="control-label"></label>
-                <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

@@ -11,14 +11,19 @@ namespace ITICDE.Models
         {
             CreatedProjects=new List<Project>();
             WorkonProjects = new List<Project>();
+            
             CreatedTeams = new List<Team>();
             JoinedTeams = new List<Team>();
+            
             CreatedFolders = new List<Folder>();
             SharedFolders = new List<Folder>();
+            
             UploadedFiles = new List<File>();
             SharedFiles = new List<File>();
+            
             CreatedViews = new List<View>();
             SharedViews = new List<View>();
+            
             CreatedTasks = new List<Task>();
             SharedTasks = new List<Task>();
         }
