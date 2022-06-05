@@ -1,4 +1,5 @@
 ﻿using ITICDE.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace ITICDE.Data
@@ -22,8 +23,6 @@ namespace ITICDE.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Folder>().HasMany(f => f.InnerFolders).WithOne();
-
-
 
         }
 

@@ -2,6 +2,7 @@ using ITICDE.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +28,13 @@ namespace ITICDE
         {
             services.AddDbContext<CDEDBContext>(options
                => options.UseSqlServer(Configuration.GetConnectionString("CDEContext")));
+
+
+            //services.AddDefaultIdentity<IdentityUser>(/*options => options.SignIn.RequireConfirmedAccount = true*/)
+            //   .AddEntityFrameworkStores<CDEDBContext>();
+
             services.AddControllersWithViews();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,6 +54,8 @@ namespace ITICDE
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();   //>>>>>>>>>>>>>>..  Added
 
             app.UseAuthorization();
 
