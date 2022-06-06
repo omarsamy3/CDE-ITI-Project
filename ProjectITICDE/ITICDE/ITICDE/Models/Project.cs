@@ -29,7 +29,7 @@ namespace ITICDE.Models
         public Progress Progress { get; set; } = Progress.Starting;
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
         [Required]
         public string Description { get; set; }

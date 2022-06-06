@@ -50,7 +50,7 @@ namespace ITICDE.Controllers
         public IActionResult Create()
         {
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description");
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
             return View();
         }
 
@@ -68,7 +68,7 @@ namespace ITICDE.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", team.CreatorUserId);
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description", team.ProjectId);
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", team.ProjectId);
             return View(team);
         }
 
@@ -86,7 +86,7 @@ namespace ITICDE.Controllers
                 return NotFound();
             }
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", team.CreatorUserId);
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description", team.ProjectId);
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", team.ProjectId);
             return View(team);
         }
 
@@ -123,7 +123,7 @@ namespace ITICDE.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", team.CreatorUserId);
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Description", team.ProjectId);
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", team.ProjectId);
             return View(team);
         }
 

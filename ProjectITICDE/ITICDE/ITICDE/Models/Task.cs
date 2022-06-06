@@ -21,9 +21,9 @@ namespace ITICDE.Models
         public Priority Priority { get; set; } = Priority.Normal;
         public string Description { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime DeadLine { get; set; }
         #endregion
 
