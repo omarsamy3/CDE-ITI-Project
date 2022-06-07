@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ITI\\Project\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj": {}
+    "D:\\ITI\\Project\\CDEITIProject\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj": {}
   },
   "projects": {
-    "D:\\ITI\\Project\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj": {
+    "D:\\ITI\\Project\\CDEITIProject\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ITI\\Project\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
+        "projectUniqueName": "D:\\ITI\\Project\\CDEITIProject\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
         "projectName": "ITICDE",
-        "projectPath": "D:\\ITI\\Project\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
+        "projectPath": "D:\\ITI\\Project\\CDEITIProject\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
         "packagesPath": "C:\\Users\\mario\\.nuget\\packages\\",
-        "outputPath": "D:\\ITI\\Project\\ProjectITICDE\\ITICDE\\ITICDE\\obj\\",
+        "outputPath": "D:\\ITI\\Project\\CDEITIProject\\ProjectITICDE\\ITICDE\\ITICDE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

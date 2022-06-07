@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "PwSpHaZRFhsv9/6/84uEhLAMAWzEp1ItX/t/8LtlGr/+7v61y3OBPfaNo7v2+pT3/7q1z3QmZhjPfns5VCXSZg==",
+  "dgSpecHash": "IBz/bZrmw6ouQOSVvzuUI0oXytDMmvu8qmQ03LvS6iA9Yb5raLeIe3C4HrBRGBz8Xl/wsj6D2C4gNLwrmNU+bg==",
   "success": true,
-  "projectFilePath": "D:\\ITI\\Project\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
+  "projectFilePath": "D:\\ITI\\Project\\CDEITIProject\\ProjectITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\mario\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\mario\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
