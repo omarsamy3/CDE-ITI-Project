@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ITICDE.Models
 {
@@ -22,6 +23,7 @@ namespace ITICDE.Models
         [DataType(DataType.Date)]
         public DateTime UploadDate { get; set; } = DateTime.Now;
 
+        [Column(TypeName = "nvarchar(32)")]
         public FileType Type { get; set; }
         
 

@@ -1,11 +1,12 @@
 ﻿using ITICDE.Enums;
+using Microsoft.AspNetCore.Identity;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ITICDE.Models
 {
-    public class User
+    public class User : IdentityUser
     {
         public User()
         {
@@ -22,35 +23,27 @@ namespace ITICDE.Models
             CreatedTasks = new List<Task>();
             SharedTasks = new List<Task>();
         }
-        #region Properties
-        [Key]
-        public int Id { get; set; }
+		#region Properties
 
-        [Required]
+		[Required]
         public string Name { get; set; }
 
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        [Compare("Email", ErrorMessage = "Email doesn't match")]
-        public string ConfirmEmail { get; set; }
+        public byte[] ProfilePicture { get; set; }
 
 
         [Required]
-        [DataType(DataType.Password)]
-        public string Password { get; set; }
-
-        public Role Role { get; set; }
-
-        [Required]
+        [Column(TypeName = "nvarchar(32)")]
         public OrganizationType OrganizationType { get; set; }
 
         [Required]
+        [Column(TypeName = "nvarchar(32)")]
         public Discipline Discipline { get; set; }
 
+        [Required]
+        [Column(TypeName = "nvarchar(32)")]
+        public Position Position { get; set; }
+
+        
         #endregion
 
 

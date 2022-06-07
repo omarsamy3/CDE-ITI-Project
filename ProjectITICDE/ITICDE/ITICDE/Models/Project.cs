@@ -24,6 +24,7 @@ namespace ITICDE.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        [Column(TypeName = "nvarchar(32)")]
         public Units Units { get; set; } = Units.Metric;
 
         public Progress Progress { get; set; } = Progress.Starting;
