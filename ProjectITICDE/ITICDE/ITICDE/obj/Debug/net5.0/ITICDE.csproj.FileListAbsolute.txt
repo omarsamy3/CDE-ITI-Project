@@ -234,3 +234,4 @@ E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITIC
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Details.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Edit.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\UsersDetails.cshtml.g.cs

@@ -37,6 +37,7 @@ namespace ITICDE.Controllers
             var team = await _context.Teams
                 .Include(t => t.CreatorUser)
                 .Include(t => t.Project)
+                .Include(t => t.Users)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (team == null)
             {
@@ -161,6 +162,13 @@ namespace ITICDE.Controllers
         private bool TeamExists(int id)
         {
             return _context.Teams.Any(e => e.Id == id);
+        }
+
+        public async Task<IActionResult> UsersDetails(int id)
+        {
+            var team = await _context.Teams.Include(c => c.Users).Where(c => c.Id == id).FirstOrDefaultAsync();
+            List<User> users = team.Users;
+            return View(users);
         }
     }
 }
