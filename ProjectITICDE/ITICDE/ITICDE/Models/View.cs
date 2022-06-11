@@ -20,8 +20,6 @@ namespace ITICDE.Models
         [DataType(DataType.Date)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
-
-
         #endregion
 
         #region NavigationProperties
