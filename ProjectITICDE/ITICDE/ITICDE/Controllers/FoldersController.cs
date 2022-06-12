@@ -49,7 +49,7 @@ namespace ITICDE.Controllers
         }
 
         // GET: Folders/Create
-        public IActionResult Create()
+        public IActionResult Create(int projectId)
         {
             return View();
         }
@@ -59,11 +59,13 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CreationDate, ProjectId")] Folder folder)
+        public async Task<IActionResult> Create([Bind("Id,Name,CreationDate, ProjectId")] Folder folder, int projectId)
         {
             if (ModelState.IsValid)
             {
+                //var project = await _context.Projects.FindAsync(projectId); //This project is to have folders in it.
                 _context.Add(folder);
+               // project.Folders.Add(folder); //Adding this folder to the this project exclusively
                 await _context.SaveChangesAsync();
                 folder.HasParent = false;
                 return RedirectToAction(nameof(Index));

@@ -69,6 +69,17 @@ namespace ITICDE.Controllers
             return View(project);
         }
 
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        public IActionResult CreateFolder(int projectId)
+        {
+            return RedirectToAction("Create", "Folders", projectId);
+        }
+
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
         // GET: Project/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
