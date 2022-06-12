@@ -22,7 +22,7 @@ namespace ITICDE.Models
         [DataType(DataType.Date)]
         public DateTime UploadDate { get; set; } = DateTime.Now;
 
-        public FileType Type { get; set; }
+        public string Type { get; set; }
         
 
 

@@ -85,8 +85,8 @@ namespace ITICDE.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UploadDate")
                         .HasColumnType("datetime2");
@@ -117,6 +117,9 @@ namespace ITICDE.Migrations
 
                     b.Property<int?>("FolderId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("HasParent")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

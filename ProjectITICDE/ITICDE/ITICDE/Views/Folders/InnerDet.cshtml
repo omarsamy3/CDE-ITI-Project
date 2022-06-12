@@ -1,0 +1,53 @@
+﻿@model ITICDE.Models.Folder
+@{
+    ViewData["Title"] = "InnerDet";
+}
+
+<h1>@Model.Name</h1>
+<br />
+
+<div>
+    <a href="/Folders/CreateInnerFolder?Id=@Model.Id" class="btn btn-primary">Create inner Folder</a>
+
+    <br /> <br />
+    @foreach (var item in Model.InnerFolders)
+    {
+        <h3> <a asp-action="InnerDet" asp-route-id="@item.Id" style="background-color:whitesmoke"  >@item.Name</a> </h3>
+    
+    }
+</div>
+
+
+<div>
+    <h2>Upload Multiple Files</h2>
+    <form method="post" asp-controller="Folders" 
+    asp-action="MultipleFiles" enctype="multipart/form-data" asp-route-Id="@Model.Id">
+    <input type="file" name="files" multiple/>
+    <button class="btn btn-primary" type="submit" >Submit</button>
+    <hr />
+</form>
+</div>
+
+@if(Model.Files.Count()!=0)
+{
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <table class = "table-responsive table-bordered">
+        <tr>
+            <th width="400px" style="text-align :center">File Name </th>
+            <th width="400px" style="text-align :center">File Type </th>
+            
+
+        </tr>
+        @foreach (var item in Model.Files)
+            {
+                <tr>
+                    <td style="text-align :center">@item.Name</td>
+                    <td style="text-align :center">@item.Type</td>
+                    <td style="text-align :center" ><a href="/Folders/ViewFiles?Id=@item.Id" class="btn btn-info">View</a></td>
+                    <td ><a href="/Folders/DownloadFile?fileName=@item.Name" class="btn btn-primary">Download</a></td>
+                    <td ><a href="/Folders/DeleteFile?Id=@item.Id" class="btn btn-outline-danger">Delete</a></td>
+                </tr>
+            }
+    </table>
+</div>
+}

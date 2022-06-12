@@ -22,6 +22,7 @@ namespace ITICDE.Models
         [DataType(DataType.Date)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
+        public bool HasParent { get; set; }
 
 
         #endregion

@@ -1,0 +1,9 @@
+﻿@model ITICDE.Models.File
+@{
+    ViewData["Title"] = "SingleFile";
+}
+<h3>@Model.Name</h3>
+
+<embed id="embPDF" src="/Files/@Model.Name" style="width:100%; height:1200px; "/>
+
+
