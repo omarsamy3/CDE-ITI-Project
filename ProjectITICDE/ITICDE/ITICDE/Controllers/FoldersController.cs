@@ -71,7 +71,7 @@ namespace ITICDE.Controllers
                 project.Folders.Add(folder); //Adding this folder to the this project exclusively
                 await _context.SaveChangesAsync();
                 folder.HasParent = false;
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { ProjectId });
             }
             return View(folder);
         }
@@ -264,10 +264,10 @@ namespace ITICDE.Controllers
             var file = _context.Files.FirstOrDefault(f => f.Id == Id);
             return View(file);
         }
-        public IActionResult PDFViewer(string Fname)
-        {
-            string path = _env.WebRootPath + "\\Files\\" + Fname;
-            return File(System.IO.File.ReadAllBytes(path), "application/pdf");
-        }
+        //public IActionResult PDFViewer(string Fname)
+        //{
+        //    string path = _env.WebRootPath + "\\Files\\" + Fname;
+        //    return File(System.IO.File.ReadAllBytes(path), "application/pdf");
+        //}
     }
 }
