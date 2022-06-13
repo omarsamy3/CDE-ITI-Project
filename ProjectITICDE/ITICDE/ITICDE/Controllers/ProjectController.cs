@@ -71,9 +71,9 @@ namespace ITICDE.Controllers
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        public IActionResult CreateFolder(int projectId)
+        public IActionResult CreateFolder(int ProjectId)
         {
-            return RedirectToAction("Create", "Folders", projectId);
+            return RedirectToAction("Create", "Folders", new { ProjectId });
         }
 
 

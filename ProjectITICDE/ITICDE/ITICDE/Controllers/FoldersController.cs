@@ -25,8 +25,9 @@ namespace ITICDE.Controllers
         }
 
         // GET: Folders
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int ProjectId)
         {
+            ViewBag.ProjId = ProjectId;
             return View(await _context.Folders.ToListAsync());
         }
 
@@ -49,8 +50,9 @@ namespace ITICDE.Controllers
         }
 
         // GET: Folders/Create
-        public IActionResult Create(int projectId)
+        public IActionResult Create(int ProjectId)
         {
+            ViewBag.proId = ProjectId;
             return View();
         }
 
@@ -59,13 +61,14 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CreationDate, ProjectId")] Folder folder, int projectId)
+        public async Task<IActionResult> Create([Bind("Id,Name,CreationDate, ProjectId")] Folder folder, int ProjectId)
         {
             if (ModelState.IsValid)
             {
-                //var project = await _context.Projects.FindAsync(projectId); //This project is to have folders in it.
+                var project = await _context.Projects.FindAsync(ProjectId); //This project is to have folders in it.
+                folder.UserId = 1;
                 _context.Add(folder);
-               // project.Folders.Add(folder); //Adding this folder to the this project exclusively
+                project.Folders.Add(folder); //Adding this folder to the this project exclusively
                 await _context.SaveChangesAsync();
                 folder.HasParent = false;
                 return RedirectToAction(nameof(Index));
@@ -172,12 +175,15 @@ namespace ITICDE.Controllers
 
         public IActionResult CreateInnerFolder(int? id)
         {
+            
             return View();
         }
         [HttpPost]
         public async Task<IActionResult> CreateInnerFolder(int id, [Bind("Name,CreationDate")] Folder folder)
         {
             var parent = _context.Folders.FirstOrDefault(m => m.Id == id);
+            folder.UserId = 1;
+            folder.ProjectId = parent.ProjectId;
             parent.InnerFolders.Add(folder);
             folder.HasParent = true;
             await _context.SaveChangesAsync();
@@ -195,25 +201,29 @@ namespace ITICDE.Controllers
         {
             var dir = _env.WebRootPath;
             var full = dir + "/Files";
+            var folder = await _context.Folders.Include(i => i.InnerFolders)
+                                   .FirstOrDefaultAsync(m => m.Id == id);
             foreach (var file in files)
             {
-                using (var fileStream = new FileStream(Path.Combine(full, file.FileName), FileMode.Create, FileAccess.Write))
+                var fileName = file.FileName.Split('.').First() + "_" + id + Path.GetExtension(file.FileName);
+                using (var fileStream = new FileStream(Path.Combine(full, fileName), FileMode.Create, FileAccess.Write))
                 {
                     file.CopyTo(fileStream);
                 }
-
-            }
-            var folder = await _context.Folders.Include(i => i.InnerFolders)
-                                    .FirstOrDefaultAsync(m => m.Id == id);
-
-            foreach (var f in files)
-            {
-
-                Models.File newF = new Models.File { Name = f.FileName, Type = Path.GetExtension(Path.Combine(full, f.FileName)), Path = Path.GetFullPath(Path.Combine(full, f.FileName)) };
+                Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = folder.ProjectId, UserId = 1 };
                 _context.Add(newF);
                 folder.Files.Add(newF);
                 _context.SaveChanges();
             }
+           
+            //foreach (var f in files)
+            //{
+
+            //    Models.File newF = new Models.File { Name = f.FileName, Type = Path.GetExtension(Path.Combine(full, f.FileName)), Path = Path.GetFullPath(Path.Combine(full, f.FileName)), ProjectId = folder.ProjectId , UserId = 1};
+            //    _context.Add(newF);
+            //    folder.Files.Add(newF);
+            //    _context.SaveChanges();
+            //}
             return RedirectToAction("InnerDet", new { id });
         }
         public FileResult DownloadFile(string fileName)

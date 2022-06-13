@@ -2,13 +2,13 @@
 
 @{
     ViewData["Title"] = "Index";
-
+    var ProjId = (int)ViewBag.ProjId;
 }
 
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" asp-route-ProjectId="@ProjId">Create New</a>
 </p>
 
 
@@ -33,7 +33,7 @@
 @foreach (var item in Model) 
     {
 
-            if (item.HasParent == false)
+            if (item.HasParent == false && ProjId == item.ProjectId)
             {
                 <tr>
                     <td>

@@ -7,7 +7,7 @@
 <br />
 
 <div>
-    <a href="/Folders/CreateInnerFolder?Id=@Model.Id" class="btn btn-primary">Create inner Folder</a>
+    <a asp-action="CreateInnerFolder" asp-route-id="@Model.Id" class="btn btn-primary">Create inner Folder</a>
 
     <br /> <br />
     @foreach (var item in Model.InnerFolders)
@@ -41,7 +41,7 @@
         @foreach (var item in Model.Files)
             {
                 <tr>
-                    <td style="text-align :center">@item.Name</td>
+                    <td style="text-align :center">@item.Name.Split('_').First()</td>
                     <td style="text-align :center">@item.Type</td>
                     <td style="text-align :center" ><a href="/Folders/ViewFiles?Id=@item.Id" class="btn btn-info">View</a></td>
                     <td ><a href="/Folders/DownloadFile?fileName=@item.Name" class="btn btn-primary">Download</a></td>
