@@ -19,7 +19,7 @@ namespace ITICDE.Models
         [Required]
         public string Name { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
         public bool HasParent { get; set; }

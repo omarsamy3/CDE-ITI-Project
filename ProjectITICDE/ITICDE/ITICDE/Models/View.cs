@@ -17,7 +17,7 @@ namespace ITICDE.Models
         [Required]
         public ViewType Type { get; set; }
 
-        [DataType(DataType.Date)]
+        [DataType(DataType.DateTime)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
         #endregion

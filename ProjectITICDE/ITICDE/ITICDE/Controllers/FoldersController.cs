@@ -61,7 +61,7 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CreationDate, ProjectId")] Folder folder, int ProjectId)
+        public async Task<IActionResult> Create([Bind("Id,Name, ProjectId")] Folder folder, int ProjectId)
         {
             if (ModelState.IsValid)
             {
