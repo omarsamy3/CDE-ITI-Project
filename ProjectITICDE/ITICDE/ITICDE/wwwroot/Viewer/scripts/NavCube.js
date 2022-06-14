@@ -9,4 +9,4 @@ new NavCubePlugin(viewer, {
   cameraFlyDuration: 0.5, // How long (in seconds) camera takes to fly to each new axis/diagonal
 });
 
-//window.viewer = viewer;
+

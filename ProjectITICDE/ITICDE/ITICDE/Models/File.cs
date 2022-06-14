@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ITICDE.Models
 {
@@ -22,6 +23,7 @@ namespace ITICDE.Models
         [DataType(DataType.Date)]
         public DateTime UploadDate { get; set; } = DateTime.Now;
 
+        [Column(TypeName = "nvarchar(32)")]
         public string Type { get; set; }
         
 
@@ -32,7 +34,7 @@ namespace ITICDE.Models
         #region NavigationProperties
 
 
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public User CreatorUser { get; set; }
         public List<User> Users { get; set; }
 

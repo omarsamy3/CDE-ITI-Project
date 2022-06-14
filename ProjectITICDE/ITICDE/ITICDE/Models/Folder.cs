@@ -19,19 +19,18 @@ namespace ITICDE.Models
         [Required]
         public string Name { get; set; }
 
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
+		public bool HasParent { get; set; }
 
-        public bool HasParent { get; set; }
 
+		#endregion
 
-        #endregion
-
-        #region NavigationProperties
-        public List<Folder> InnerFolders { get; set; }
+		#region NavigationProperties
+		public List<Folder> InnerFolders { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public User CreatorUser { get; set; }
         public List<User> Users { get; set; }
         [Required]

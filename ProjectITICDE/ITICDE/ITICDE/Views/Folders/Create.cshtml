@@ -1,8 +1,10 @@
-﻿@model ITICDE.Models.Folder
+﻿@using System.Security.Claims
+@model ITICDE.Models.Folder
 
 @{
     ViewData["Title"] = "Create";
     var ProjId = (int)ViewBag.proId;
+    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
 <h1>Create</h1>
@@ -24,7 +26,7 @@
                 <span asp-validation-for="CreationDate" class="text-danger"></span>
             </div>*@
             <div class="form-group">
-                <input  type="submit" asp-route-ProjectId="@ProjId" value="Create" class="btn btn-primary" />
+                <input  type="submit" asp-route-ProjectId="@ProjId" asp-route-UserId="@user" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

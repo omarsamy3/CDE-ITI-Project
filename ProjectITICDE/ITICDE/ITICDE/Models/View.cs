@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ITICDE.Models
 {
@@ -15,16 +16,19 @@ namespace ITICDE.Models
 
         public string Description { get; set; }
         [Required]
+        [Column(TypeName = "nvarchar(32)")]
         public ViewType Type { get; set; }
 
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
+
+
 
         #endregion
 
         #region NavigationProperties
         [Required]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public User CreatorUser { get; set; }
         public List<User> Users { get; set; }
 

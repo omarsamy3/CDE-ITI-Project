@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ITICDE.Data;
 using ITICDE.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.CodeAnalysis;
 
 namespace ITICDE.Controllers
 {
+[Authorize]
     public class ProjectController : Controller
     {
         private readonly CDEDBContext _context;
@@ -48,7 +52,7 @@ namespace ITICDE.Controllers
         // GET: Project/Create
         public IActionResult Create()
         {
-            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
+            //ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
             return View();
         }
 
@@ -57,10 +61,11 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] Project project)
+        public async Task<IActionResult> Create([Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] ITICDE.Models.Project project)
         {
             if (ModelState.IsValid)
             {
+                project.CreatorUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 _context.Add(project);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -102,7 +107,7 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] Project project)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] ITICDE.Models.Project project)
         {
             if (id != project.Id)
             {
@@ -143,12 +148,13 @@ namespace ITICDE.Controllers
 
             var project = await _context.Projects
                 .Include(p => p.CreatorUser)
+                .Include(f => f.Folders)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (project == null)
             {
                 return NotFound();
             }
-
+           // ViewBag.proId = id;
             return View(project);
         }
 
@@ -159,6 +165,18 @@ namespace ITICDE.Controllers
         {
             var project = await _context.Projects.FindAsync(id);
             _context.Projects.Remove(project);
+
+            //To remove the folders in the project you want to delete
+            //foreach (var folder in project.Folders)
+            //{
+            //    _context.Folders.Remove(folder);
+            //} 
+            
+            //To remove the files in the project you want to delete
+            //foreach (var file in project.Files)
+            //{
+            //    _context.Files.Remove(file);
+            //}
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

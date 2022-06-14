@@ -10,6 +10,9 @@ using ITICDE.Models;
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using Microsoft.CodeAnalysis;
 
 namespace ITICDE.Controllers
 {
@@ -17,11 +20,12 @@ namespace ITICDE.Controllers
     {
         private readonly CDEDBContext _context;
         private IWebHostEnvironment _env;
-
-        public FoldersController(CDEDBContext context, IWebHostEnvironment env)
+        private readonly UserManager<User> _userManager;
+        public FoldersController(CDEDBContext context, IWebHostEnvironment env, UserManager<User> userManager)
         {
             _context = context;
             _env = env;
+            _userManager = userManager;
         }
 
         // GET: Folders
@@ -61,12 +65,11 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name, ProjectId")] Folder folder, int ProjectId)
+        public async Task<IActionResult> Create([Bind("Id,Name,CreationDate, ProjectId,UserId")] Folder folder, int ProjectId,string UserId)
         {
             if (ModelState.IsValid)
             {
                 var project = await _context.Projects.FindAsync(ProjectId); //This project is to have folders in it.
-                folder.UserId = 1;
                 _context.Add(folder);
                 project.Folders.Add(folder); //Adding this folder to the this project exclusively
                 await _context.SaveChangesAsync();
@@ -179,15 +182,18 @@ namespace ITICDE.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CreateInnerFolder(int id, [Bind("Name,CreationDate")] Folder folder)
+        public async Task<IActionResult> CreateInnerFolder(int id, [Bind("Name,CreationDate,ProjectId,UserId")] Folder folder,string UserId)
         {
-            var parent = _context.Folders.FirstOrDefault(m => m.Id == id);
-            folder.UserId = 1;
-            folder.ProjectId = parent.ProjectId;
-            parent.InnerFolders.Add(folder);
-            folder.HasParent = true;
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(InnerDet), new { id });
+            if (ModelState.IsValid)
+            {
+                var parent = _context.Folders.FirstOrDefault(m => m.Id == id);
+                folder.ProjectId = parent.ProjectId;
+                parent.InnerFolders.Add(folder);
+                folder.HasParent = true;
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(InnerDet), new { id });
+            }
+            return View(folder);
         }
         private bool FolderExists(int id)
         {
@@ -202,7 +208,7 @@ namespace ITICDE.Controllers
             var dir = _env.WebRootPath;
             var full = dir + "/Files";
             var folder = await _context.Folders.Include(i => i.InnerFolders)
-                                   .FirstOrDefaultAsync(m => m.Id == id);
+                                    .FirstOrDefaultAsync(m => m.Id == id);
             foreach (var file in files)
             {
                 var fileName = file.FileName.Split('.').First() + "_" + id + Path.GetExtension(file.FileName);
@@ -210,20 +216,11 @@ namespace ITICDE.Controllers
                 {
                     file.CopyTo(fileStream);
                 }
-                Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = folder.ProjectId, UserId = 1 };
+                Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = folder.ProjectId, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) };
                 _context.Add(newF);
                 folder.Files.Add(newF);
                 _context.SaveChanges();
             }
-           
-            //foreach (var f in files)
-            //{
-
-            //    Models.File newF = new Models.File { Name = f.FileName, Type = Path.GetExtension(Path.Combine(full, f.FileName)), Path = Path.GetFullPath(Path.Combine(full, f.FileName)), ProjectId = folder.ProjectId , UserId = 1};
-            //    _context.Add(newF);
-            //    folder.Files.Add(newF);
-            //    _context.SaveChanges();
-            //}
             return RedirectToAction("InnerDet", new { id });
         }
         public FileResult DownloadFile(string fileName)
@@ -255,9 +252,11 @@ namespace ITICDE.Controllers
         public async Task<IActionResult> DeleteFileConfirmed(int id)
         {
             var file = await _context.Files.FindAsync(id);
+            int Id = file.FolderId;
             _context.Files.Remove(file);
+
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("InnerDet",new{Id});
         }
         public IActionResult ViewFiles(int Id)
         {

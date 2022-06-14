@@ -26,8 +26,29 @@ using ITICDE.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using ITICDE.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using ITICDE.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d8ddb6bffa5a9b264bf8f89038bf03c234083fd3", @"/Views/Home/Privacy.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a0e79c1c365f83f179a037dd7d262446ddbb1b96", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c0a3d60b1fa52efe8a86da497419dbd9f60792b0", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Home_Privacy : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable

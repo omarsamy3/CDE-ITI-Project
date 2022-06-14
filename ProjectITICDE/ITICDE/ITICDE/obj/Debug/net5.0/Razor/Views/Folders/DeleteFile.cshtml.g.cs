@@ -26,8 +26,29 @@ using ITICDE.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using ITICDE.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using ITICDE.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"eca3ce499a1a4b18ba12d0a6b6e1fb600efbc6d7", @"/Views/Folders/DeleteFile.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a0e79c1c365f83f179a037dd7d262446ddbb1b96", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c0a3d60b1fa52efe8a86da497419dbd9f60792b0", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_Folders_DeleteFile : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ITICDE.Models.File>
     #nullable disable
@@ -104,9 +125,9 @@ using ITICDE.Models;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n    \r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eca3ce499a1a4b18ba12d0a6b6e1fb600efbc6d76416", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eca3ce499a1a4b18ba12d0a6b6e1fb600efbc6d77068", async() => {
                 WriteLiteral("\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "eca3ce499a1a4b18ba12d0a6b6e1fb600efbc6d76682", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "eca3ce499a1a4b18ba12d0a6b6e1fb600efbc6d77334", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -129,7 +150,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 Write(__tagHelperExecutionContext.Output);
                 __tagHelperExecutionContext = __tagHelperScopeManager.End();
                 WriteLiteral("\r\n        <input type=\"submit\" value=\"Delete\" class=\"btn btn-danger\" /> |\r\n        ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eca3ce499a1a4b18ba12d0a6b6e1fb600efbc6d78503", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eca3ce499a1a4b18ba12d0a6b6e1fb600efbc6d79155", async() => {
                     WriteLiteral("Back to List");
                 }
                 );

@@ -10,7 +10,7 @@ import { Viewer } from "../dist/xeokit-sdk.es.js";
 const viewer = new Viewer({
   canvasId: "myCanvas",
   transparent: true,
-  backgroundColor: [1, 1, 1],
+  backgroundColor: [0, 0, 0],
 });
 
 window.SetCamera = function () {
@@ -81,7 +81,19 @@ const buttonElement = document.getElementById("Query");
 
 buttonElement.onclick = function () {
   buttonElement.classList.toggle("active");
-  lastEntity.highlighted = false;
+  if(buttonElement.classList.contains("active")){
+    
+  }
+ 
+ else{
+  //document.getElementById("details").remove();
+  detailselem.remove();
+  detailselem.innerHTML="";
+}
+  
+  if(lastEntity!=null)
+  {lastEntity.highlighted = false;}
+  
 };
 window.lastEntity = null;
 
@@ -104,16 +116,24 @@ viewer.cameraControl.on("hover", function (pickResult) {
     }
   }
 });
+const detailselem = document.createElement("div");
+detailselem.id="details";
+detailselem.classList.add("details");
 
 viewer.cameraControl.on("picked", function (pickResult) {
+  if (buttonElement.classList.contains("active")) {
   let id = pickResult.entity.id;
   let obj = viewer.metaScene.metaObjects[id];
-  // console.log({
+  // {
   //   id: obj.id,
   //   Name: obj.name,
   //   Type: obj.type,
-  // });
+  // };
+  document.getElementById("myToolbar").after(detailselem);
+  detailselem.innerHTML  = "id: " + obj.id +"<br>"+"Name"+ obj.name+"<br>"+"Type"+ obj.type
+   //console.log(JSON.static(obj)) ;
   console.log(obj);
+}
 });
 
 window.viewer = viewer;

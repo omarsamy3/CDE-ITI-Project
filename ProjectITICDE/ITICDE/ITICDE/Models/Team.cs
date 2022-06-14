@@ -20,7 +20,7 @@ namespace ITICDE.Models
 
         #region NavigationProperties
 
-        public int CreatorUserId { get; set; }
+        public string CreatorUserId { get; set; }
         public User CreatorUser { get; set; }
         public List<User> Users { get; set; }
 

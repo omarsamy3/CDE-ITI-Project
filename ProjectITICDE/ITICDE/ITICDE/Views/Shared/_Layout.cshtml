@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -16,37 +19,33 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <partial name="_LoginPartialCustom" />
+                        <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-						
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-						
-                         <li class="nav-item">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                        <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="Index">Project</a>
-                        </li>						
-						
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">User</a>
                         </li>
-						
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Team" asp-action="Index">Team</a>
-                        </li>
-						
+                      @*  <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="View" asp-action="Index">View</a>
+                        </li>*@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Task" asp-action="Index">Task</a>
                         </li>
-                        
-                       @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="View" asp-action="Index">View</a>
-                        </li>*@
-						
-                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Team" asp-action="Index">Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Index">User</a>
+                        </li>
+                        }
                     </ul>
                 </div>
             </div>

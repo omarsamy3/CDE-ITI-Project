@@ -24,8 +24,8 @@ namespace ITICDE.Migrations
                     b.Property<int>("SharedFilesId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SharedFilesId", "UsersId");
 
@@ -54,8 +54,8 @@ namespace ITICDE.Migrations
                     b.Property<int>("SharedFoldersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SharedFoldersId", "UsersId");
 
@@ -86,13 +86,13 @@ namespace ITICDE.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(32)");
 
                     b.Property<DateTime>("UploadDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -128,8 +128,9 @@ namespace ITICDE.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -152,8 +153,8 @@ namespace ITICDE.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreatorUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -169,8 +170,9 @@ namespace ITICDE.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Units")
-                        .HasColumnType("int");
+                    b.Property<string>("Units")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
 
                     b.HasKey("Id");
 
@@ -189,8 +191,9 @@ namespace ITICDE.Migrations
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CreatorUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CreatorUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("DeadLine")
                         .HasColumnType("datetime2");
@@ -198,11 +201,13 @@ namespace ITICDE.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Priority")
-                        .HasColumnType("int");
+                    b.Property<string>("Priority")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
 
-                    b.Property<int>("Progress")
-                        .HasColumnType("int");
+                    b.Property<string>("Progress")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
 
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
@@ -227,8 +232,8 @@ namespace ITICDE.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CreatorUserId")
-                        .HasColumnType("int");
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -244,43 +249,6 @@ namespace ITICDE.Migrations
                     b.HasIndex("ProjectId");
 
                     b.ToTable("Teams");
-                });
-
-            modelBuilder.Entity("ITICDE.Models.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ConfirmEmail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Discipline")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OrganizationType")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("Role")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("ITICDE.Models.View", b =>
@@ -303,11 +271,13 @@ namespace ITICDE.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -318,10 +288,213 @@ namespace ITICDE.Migrations
                     b.ToTable("Views");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("RoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("UserId");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("Users");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("IdentityUser");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("UserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("UserTokens");
+                });
+
             modelBuilder.Entity("ProjectUser", b =>
                 {
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("WorkonProjectsId")
                         .HasColumnType("int");
@@ -338,8 +511,8 @@ namespace ITICDE.Migrations
                     b.Property<int>("SharedTasksId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SharedTasksId", "UsersId");
 
@@ -353,8 +526,8 @@ namespace ITICDE.Migrations
                     b.Property<int>("JoinedTeamsId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("JoinedTeamsId", "UsersId");
 
@@ -368,14 +541,42 @@ namespace ITICDE.Migrations
                     b.Property<int>("SharedViewsId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UsersId")
-                        .HasColumnType("int");
+                    b.Property<string>("UsersId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("SharedViewsId", "UsersId");
 
                     b.HasIndex("UsersId");
 
                     b.ToTable("UserView");
+                });
+
+            modelBuilder.Entity("ITICDE.Models.User", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Discipline")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OrganizationType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(32)");
+
+                    b.Property<byte[]>("ProfilePicture")
+                        .HasColumnType("varbinary(max)");
+
+                    b.ToTable("Users");
+
+                    b.HasDiscriminator().HasValue("User");
                 });
 
             modelBuilder.Entity("FileUser", b =>
@@ -439,9 +640,7 @@ namespace ITICDE.Migrations
 
                     b.HasOne("ITICDE.Models.User", "CreatorUser")
                         .WithMany("UploadedFiles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("CreatorUser");
 
@@ -477,9 +676,7 @@ namespace ITICDE.Migrations
                 {
                     b.HasOne("ITICDE.Models.User", "CreatorUser")
                         .WithMany("CreatedProjects")
-                        .HasForeignKey("CreatorUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CreatorUserId");
 
                     b.Navigation("CreatorUser");
                 });
@@ -507,9 +704,7 @@ namespace ITICDE.Migrations
                 {
                     b.HasOne("ITICDE.Models.User", "CreatorUser")
                         .WithMany("CreatedTeams")
-                        .HasForeignKey("CreatorUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CreatorUserId");
 
                     b.HasOne("ITICDE.Models.Project", "Project")
                         .WithMany("Teams")
@@ -539,6 +734,57 @@ namespace ITICDE.Migrations
                     b.Navigation("CreatorUser");
 
                     b.Navigation("Project");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("ProjectUser", b =>

@@ -1,6 +1,8 @@
-﻿@model ITICDE.Models.Folder
+﻿@using System.Security.Claims
+@model ITICDE.Models.Folder
 @{
     ViewData["Title"] = "InnerDet";
+    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
 <h1>@Model.Name</h1>
@@ -39,11 +41,19 @@
 
         </tr>
         @foreach (var item in Model.Files)
-            {
-                <tr>
-                    <td style="text-align :center">@item.Name.Split('_').First()</td>
+            {<tr>
+                @{if (item.Type == ".pdf"||item.Type ==".jpg"||item.Type ==".gif"||item.Type ==".png"||item.Type ==".mp4"||item.Type ==".vlc"||item.Type==".ifc")
+                    {
+                            <td style="text-align :center"><a asp-action="ViewFiles" asp-route-Id = "@item.Id" >@item.Name.Split('_').First()</a></td>
+                        }
+                        else
+                        {
+                            <td style="text-align :center">@item.Name.Split('_').First()</td>
+                        }
+                    }
+                
+                    
                     <td style="text-align :center">@item.Type</td>
-                    <td style="text-align :center" ><a href="/Folders/ViewFiles?Id=@item.Id" class="btn btn-info">View</a></td>
                     <td ><a href="/Folders/DownloadFile?fileName=@item.Name" class="btn btn-primary">Download</a></td>
                     <td ><a href="/Folders/DeleteFile?Id=@item.Id" class="btn btn-outline-danger">Delete</a></td>
                 </tr>

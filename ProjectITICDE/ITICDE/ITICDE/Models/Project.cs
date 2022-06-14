@@ -1,8 +1,10 @@
 ﻿using ITICDE.Enums;
+using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Security.Claims;
 
 namespace ITICDE.Models
 {
@@ -24,12 +26,13 @@ namespace ITICDE.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        [Column(TypeName = "nvarchar(32)")]
         public Units Units { get; set; } = Units.Metric;
 
         public Progress Progress { get; set; } = Progress.Starting;
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime CreationDate { get; set; } = DateTime.Now;
         [Required]
         public string Description { get; set; }
@@ -39,8 +42,8 @@ namespace ITICDE.Models
 
         #region NavigationProperties
 
-        public int CreatorUserId { get; set; }
-     
+        public string CreatorUserId { get; set; }
+
         public User CreatorUser { get; set; }
 
         public List<User> Users { get; set; }

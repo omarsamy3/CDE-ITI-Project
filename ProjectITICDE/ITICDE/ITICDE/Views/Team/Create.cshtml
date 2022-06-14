@@ -1,7 +1,9 @@
-﻿@model ITICDE.Models.Team
+﻿@using System.Security.Claims
+@model ITICDE.Models.Team
 
 @{
     ViewData["Title"] = "Create";
+    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
 <h1>Create</h1>
@@ -17,16 +19,16 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+@*            <div class="form-group">
                 <label asp-for="CreatorUserId" class="control-label"></label>
                 <select asp-for="CreatorUserId" class ="form-control" asp-items="ViewBag.CreatorUserId"></select>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="ProjectId" class="control-label"></label>
                 <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" asp-route-CreatorUserId="@user" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

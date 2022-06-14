@@ -50,7 +50,7 @@ namespace ITICDE.Controllers
         // GET: Team/Create
         public IActionResult Create()
         {
-            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
+            //ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
             return View();
         }

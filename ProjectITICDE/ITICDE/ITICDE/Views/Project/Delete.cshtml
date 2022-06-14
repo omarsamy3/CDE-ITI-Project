@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Delete";
+   // var ProjId = ViewBag.proId;
 }
 
 <h1>Delete</h1>
@@ -50,14 +51,14 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatorUser)
         </dt>
-        <dd class = "col-sm-10">
+        @*<dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CreatorUser.ConfirmEmail)
-        </dd class>
+        </dd class>*@
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input type="submit" @*asp-route="@ProjId"*@ value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>
 </div>

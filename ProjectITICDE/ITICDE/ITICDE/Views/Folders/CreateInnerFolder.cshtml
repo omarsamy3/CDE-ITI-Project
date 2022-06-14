@@ -1,6 +1,8 @@
-﻿
+﻿@using System.Security.Claims
+
 @{
     ViewData["Title"] = "CreateInnerFolder";
+    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
 
@@ -18,18 +20,18 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
+         @*   <div class="form-group">
                 <label asp-for="CreationDate" class="control-label"></label>
                 <input asp-for="CreationDate" class="form-control" />
                 <span asp-validation-for="CreationDate" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 
                 <input asp-for="Id" hidden class="form-control" />
                 
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" asp-route-UserId="@user" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>

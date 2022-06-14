@@ -26,8 +26,29 @@ using ITICDE.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using ITICDE.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using ITICDE.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9e7cd55e3baaf0786a35deec2603d9fd4c5d2161", @"/Views/View/ShowView.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a0e79c1c365f83f179a037dd7d262446ddbb1b96", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c0a3d60b1fa52efe8a86da497419dbd9f60792b0", @"/Views/_ViewImports.cshtml")]
     #nullable restore
     public class Views_View_ShowView : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     #nullable disable
@@ -58,7 +79,7 @@ using ITICDE.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<!DOCTYPE html>\r\n<html >\r\n  ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e7cd55e3baaf0786a35deec2603d9fd4c5d21613377", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e7cd55e3baaf0786a35deec2603d9fd4c5d21614029", async() => {
                 WriteLiteral(@"
     <meta charset=""utf-8"" />
     <meta http-equiv=""X-UA-Compatible"" content=""IE=edge,chrome=1"" />
@@ -86,7 +107,7 @@ using ITICDE.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n\r\n  ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e7cd55e3baaf0786a35deec2603d9fd4c5d21614957", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e7cd55e3baaf0786a35deec2603d9fd4c5d21615609", async() => {
                 WriteLiteral(@"
     <button class=""openbtn"" onclick=""openNav()"">&gt;</button>
 

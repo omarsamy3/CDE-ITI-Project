@@ -1,21 +1,26 @@
-import { ContextMenu, TreeViewPlugin } from "../dist/xeokit-sdk.es.js";
+import {
+  ContextMenu,
+  TreeViewPlugin
+} from "../dist/xeokit-sdk.es.js";
 
 //----------------------------------------------------------------------------------------------------------------------
 // Create a tree view
 //----------------------------------------------------------------------------------------------------------------------
 var treeView = new TreeViewPlugin(viewer, {
   containerElement: document.getElementById("treeViewContainer"),
-  autoExpandDepth: 1,
   hierarchy: "containment",
+  
+  pruneEmptyNodes: true,
 });
 window.ChangeTree = function (hierarchy) {
   treeView.hierarchy = hierarchy;
+  if (hierarchy=="storeys")
+{treeView.pruneEmptyNodes=false;}
 };
 
 const treeViewContextMenu = new ContextMenu({
   items: [
-    [
-      {
+    [{
         title: "View Fit",
         doAction: function (context) {
           const scene = context.viewer.scene;
@@ -30,8 +35,7 @@ const treeViewContextMenu = new ContextMenu({
           );
           scene.setObjectsVisible(objectIds, true);
           scene.setObjectsHighlighted(objectIds, true);
-          context.viewer.cameraFlight.flyTo(
-            {
+          context.viewer.cameraFlight.flyTo({
               projection: "perspective",
               aabb: scene.getAABB(objectIds),
               duration: 0.5,
@@ -56,8 +60,7 @@ const treeViewContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
+    [{
         title: "Hide",
         doAction: function (context) {
           context.treeViewPlugin.withNodeTree(
@@ -108,8 +111,7 @@ const treeViewContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
+    [{
         title: "Show",
         doAction: function (context) {
           context.treeViewPlugin.withNodeTree(
@@ -162,8 +164,7 @@ const treeViewContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
+    [{
         title: "X-Ray",
         doAction: function (context) {
           context.treeViewPlugin.withNodeTree(
@@ -232,8 +233,7 @@ const treeViewContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
+    [{
         title: "Select",
         doAction: function (context) {
           context.treeViewPlugin.withNodeTree(
@@ -312,8 +312,7 @@ treeView.on("nodeTitleClicked", (e) => {
   scene.setObjectsXRayed(scene.objectIds, true);
   scene.setObjectsVisible(scene.objectIds, true);
   scene.setObjectsXRayed(objectIds, false);
-  viewer.cameraFlight.flyTo(
-    {
+  viewer.cameraFlight.flyTo({
       aabb: scene.getAABB(objectIds),
       duration: 0.5,
     },
@@ -335,8 +334,7 @@ const canvasContextMenu = new ContextMenu({
     viewer: viewer,
   },
   items: [
-    [
-      {
+    [{
         title: "Hide All",
         getEnabled: function (context) {
           return context.viewer.scene.numVisibleObjects > 0;
@@ -362,30 +360,26 @@ const canvasContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
-        title: "View Fit All",
-        doAction: function (context) {
-          context.viewer.cameraFlight.flyTo({
-            aabb: context.viewer.scene.getAABB(),
-          });
-        },
+    [{
+      title: "View Fit All",
+      doAction: function (context) {
+        context.viewer.cameraFlight.flyTo({
+          aabb: context.viewer.scene.getAABB(),
+        });
       },
-    ],
+    }, ],
   ],
 });
 
 const objectContextMenu = new ContextMenu({
   items: [
-    [
-      {
+    [{
         title: "View Fit",
         doAction: function (context) {
           const viewer = context.viewer;
           const scene = viewer.scene;
           const entity = context.entity;
-          viewer.cameraFlight.flyTo(
-            {
+          viewer.cameraFlight.flyTo({
               aabb: entity.aabb,
               duration: 0.5,
             },
@@ -416,8 +410,7 @@ const objectContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
+    [{
         title: "Hide",
         getEnabled: function (context) {
           return context.entity.visible;
@@ -472,8 +465,7 @@ const objectContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
+    [{
         title: "X-Ray",
         getEnabled: function (context) {
           return !context.entity.xrayed;
@@ -526,8 +518,7 @@ const objectContextMenu = new ContextMenu({
         },
       },
     ],
-    [
-      {
+    [{
         title: "Select",
         getEnabled: function (context) {
           return !context.entity.selected;
@@ -587,3 +578,31 @@ viewer.cameraControl.on("rightClick", function (e) {
 
   e.event.preventDefault();
 });
+
+const TreebuttonElement = document.getElementById("TreeToggle");
+
+
+TreebuttonElement.onclick = function () {
+  TreebuttonElement.classList.toggle("active");
+  if (TreebuttonElement.classList.contains("active")) {
+    openNav();
+  } else closeNav();
+};
+
+
+//------------------------------//
+//sidebar open and close//
+//------------------------------//
+function openNav() {
+  document.getElementById("mySidebar").style.width = "350px";
+  document.getElementById("main").style.marginLeft = "350px";
+  
+  document.getElementById("myToolbar").style.left = "350px";
+
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+  document.getElementById("myToolbar").style.left = "10px";
+}

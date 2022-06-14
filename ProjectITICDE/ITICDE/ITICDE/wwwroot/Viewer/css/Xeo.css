@@ -192,19 +192,64 @@ body {
   background: #eeeeee;
   font-weight: normal;
 }
+
+.explorer_toggle_label {
+
+  height: auto;
+  
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex: 1 1 auto;
+  color: #03103F;
+  background-color: white;
+  text-align: center;
+  vertical-align: middle;
+ 
+  border: 2px solid #1d2453;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  -webkit-appearance: button;
+  overflow: visible;
+  margin: 0 2px 0 0;
+  box-sizing: border-box;
+  align-items: flex-start;
+  pointer-events: all;
+  z-index: 100000;
+  transition: all 300ms ease-in-out;
+}
+
+
 /*--------------------------------------------------------*/
 
 /*--------------------------------------------------------*/
 
 #myToolbar {
-  min-width: 400px;
+ position: absolute;
+  width: 600px;
   top: 0;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   padding: 0;
   z-index: 100000;
   pointer-events: none;
-  position: static;
-  left: 95px;
-  transition: all 300ms ease-in-out;
+ background-color: transparent;
+  left: 10px;
+   transition: all 500ms ; 
+
 }
+
+
+.details{
+  position: absolute;
+  top: 50px;
+  right: 50px;
+width:auto;
+border-radius: 10px;
+padding:20px;
+  background-color: white; 
+  line-height: 1.6;
+  z-index: 10;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
