@@ -2,8 +2,8 @@
 
 @{
     ViewData["Title"] = "File Viewer";
-    var ModelName = (string)@Model.Name.Split('.').First();
-    var FileExtention = (string)@Model.Name.Split('.').Last();
+    //var ModelName = (string)@Model.Name.Split('.').First();
+    //var FileExtention = (string)@Model.Name.Split('.').Last();
 }
 <h3>@Model.Name</h3>
 
@@ -133,30 +133,11 @@
             const model1 = webIFCLoader.load({
                 // Returns an Entity that represents the model
                 id: "ifcfile",
-                src: @Html.Raw("\"/Files/" + @Model.Name + "\""),
-                //src: @Html.Raw("\""+"/Files/" + @Model.Name + "\""),
-                                                
+                src: @Html.Raw("\"/Files/" + @Model.Name + "\""),                               
                 loadMetadata: true,
                 edges: false,
                 });
-                //const model2 = webIFCLoader.load({
-                //  // Returns an Entity that represents the model
-                //  id: "Duplex",
-                //  src: "../../ifc-models/Duplex.ifc",
-                //  loadMetadata: true,
-                //  excludeTypes: ["IfcSpace"],
-                //  edges: false,
-                                               
-                //});
-                //const model3 = webIFCLoader.load({
-                //  // Returns an Entity that represents the model
-                //  id: "StrutureModel",
-                //  src: "../../ifc-models/StructureModel.ifc",
-                //  loadMetadata: true,
-                //  excludeTypes: ["IfcSpace"],
-                //  edges: false,
-                                                
-                //});
+                
                 window.loaderifc = webIFCLoader;
             </script>
 
