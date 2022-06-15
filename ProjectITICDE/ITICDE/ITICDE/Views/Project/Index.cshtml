@@ -1,13 +1,17 @@
-﻿@model IEnumerable<ITICDE.Models.Project>
+﻿@*@{ Layout = "_ProjectsLayout.cshtml";}*@
+
+@model IEnumerable<ITICDE.Models.Project>
 
 @{
     ViewData["Title"] = "Index";
+   
 }
 
 <h1>Projects</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+<p style= "display:flex;justify-content:flex-end;">
+ <a asp-action="Create" class="btn btn-primary btn-sm"> <i class="fas fa-folder"> </i> Create New</a> 
+	
 </p>
 <table class="table">
     <thead>
@@ -34,10 +38,12 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+       @foreach (var item in Model) {
         <tr>
             <td>
-				<a asp-controller="Folders" asp-action="Index" asp-route-ProjectId="@item.Id">@item.Name</a>
+				<a asp-controller="Folders" asp-action="Index" asp-route-ProjectId="@item.Id">
+					<i class="fas fa-folder"></i>
+                    @item.Name</a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Units)
@@ -52,11 +58,20 @@
                 @Html.DisplayFor(modelItem => item.CreatorUser.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"> <i class="fas fa-folder"> </i> Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
             </td>
         </tr>
 }
+            
     </tbody>
+	       
 </table>
+@*    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/dist/js/demo.js"></script>*@

@@ -149,6 +149,7 @@ namespace ITICDE.Controllers
             var project = await _context.Projects
                 .Include(p => p.CreatorUser)
                 .Include(f => f.Folders)
+                .Include(f => f.Files)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (project == null)
             {
