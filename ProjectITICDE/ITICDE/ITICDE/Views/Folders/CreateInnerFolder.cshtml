@@ -32,13 +32,11 @@
             </div>
             <div class="form-group">
                 <input type="submit" asp-route-UserId="@user" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+				
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

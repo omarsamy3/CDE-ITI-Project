@@ -7,14 +7,18 @@
 
 <h1>Folders</h1>
 
-<p>
-    <a asp-action="Create" asp-route-ProjectId="@ProjId">Create New</a>
+<p style="display:flex;justify-content:flex-end;">
+ <a asp-action="Create" asp-route-ProjectId="@ProjId" class="btn btn-primary" style="margin:25px;"><i class="fas fa-folder" > </i> Create New</a> 
+	
+    @*<a asp-action="Create" asp-route-ProjectId="@ProjId">Create New</a>*@
 </p>
 
 
-<table class="table">
+<table class="table" style="text-align:center">
     <thead>
+		
         <tr>
+			<th></th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
@@ -32,6 +36,7 @@
             if (item.HasParent == false && ProjId == item.ProjectId)
             {
                 <tr>
+					<td><i class="fas fa-folder"></i></td>
                     <td>
                         
                         <a asp-action="InnerDet" asp-route-Id = "@item.Id" >@item.Name</a>
@@ -41,9 +46,9 @@
                     </td>
                     <td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                      <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
+                      <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                      <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
                     </td>
                 </tr>
             }

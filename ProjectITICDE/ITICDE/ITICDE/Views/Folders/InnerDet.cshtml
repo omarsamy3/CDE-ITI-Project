@@ -5,7 +5,7 @@
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
 
-<h1>@Model.Name</h1>
+<h1>Inner Folders</h1>
 <br />
 
 <div>
@@ -14,8 +14,9 @@
     <br /> <br />
     @foreach (var item in Model.InnerFolders)
     {
-        <h3> <a asp-action="InnerDet" asp-route-id="@item.Id" style="background-color:whitesmoke"  >@item.Name</a> </h3>
-    
+      
+		@*<h3 ><i asp-action="InnerDet" asp-route-id="@item.Id" style="background-color:whitesmoke" class="fas fa-folder">@item.Name</i></h3>*@
+        <span style="margin:10px;font-size:30px;"> <a asp-action="InnerDet" asp-route-id="@item.Id"  class="fas fa-folder" >@item.Name</a> </span>
     }
 </div>
 
@@ -44,11 +45,11 @@
             {<tr>
                 @{if (item.Type == ".pdf"||item.Type ==".jpg"||item.Type ==".gif"||item.Type ==".png"||item.Type ==".mp4"||item.Type ==".vlc"||item.Type==".ifc")
                     {
-                            <td style="text-align :center"><a asp-action="ViewFiles" asp-route-Id = "@item.Id" >@item.Name.Split('_').First()</a></td>
+                                                <td style="text-align :center"><a asp-action="ViewFiles" asp-route-Id = "@item.Id" >@item.Name.Split('_').First()</a></td>
                         }
                         else
                         {
-                            <td style="text-align :center">@item.Name.Split('_').First()</td>
+                                                <td style="text-align :center">@item.Name.Split('_').First()</td>
                         }
                     }
                 

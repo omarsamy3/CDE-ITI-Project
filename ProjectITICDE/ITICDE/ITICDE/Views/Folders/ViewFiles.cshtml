@@ -1,4 +1,5 @@
-﻿@model ITICDE.Models.File
+﻿@{Layout="_ViewerLayour";}
+@model ITICDE.Models.File
 @{
     ViewData["Title"] = "SingleFile";
     var ModelName = (string)@Model.Name.Split('.').First();
