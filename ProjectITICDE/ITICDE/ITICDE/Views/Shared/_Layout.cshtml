@@ -1,4 +1,6 @@
 ﻿@using System.Security.Claims
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
 @{
 	var user = User.FindFirstValue(ClaimTypes.Name);
 }
@@ -176,7 +178,7 @@
           <img src="../../dist/img/Omar.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">@user</a>
+          <a href="#" class="d-block">@User.Identity.Name</a>
         </div>
       </div>
 

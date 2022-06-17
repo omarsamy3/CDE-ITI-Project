@@ -1,8 +1,169 @@
-﻿@*@{Layout = "_"}*@
-@{
-    ViewData["Title"] = "Home Page";
+﻿@{
+    Layout = "_Empty";
 }
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome Page</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+
+<body class="hold-transition layout-top-nav">
+    <div class="wrapper">
+
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+            <div class="container">
+                <a href="#" class="navbar-brand">
+                    @*<span class="brand-text font-weight-light">*@
+                        <h3>ITICDE</h3>
+                    @*</span>*@
+                </a>
+
+                <button class="navbar-toggler order-1" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+                    <!-- Left navbar links -->
+                    <ul class="navbar-nav">
+
+
+                    </ul>
+
+
+                </div>
+
+                <!-- Right navbar links -->
+                <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+                    <li class="nav-item">
+                        <a href="../../Account/Login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../../Account/Register" class="nav-link">Register</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content" style="height: 500px;">
+                <div class="container">
+
+                    <div class="row  " style="height: 500px;" >
+                        <!-- <div class="col-sm text-center"> -->
+                            <div
+                            class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white col-12  vcenter-item "
+                            style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');"
+                          >
+                            <h1 class="m-2  vcenter-item"> Welcome <br> <small>To ITICDE</small></h1>
+                            <!-- <img src="../../dist/img/photo4.jpg" class="img-fluid" alt="..."> -->
+                        </div>
+
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+
+            <!-- Main content -->
+            <div class="content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card ">
+                                <img src="..\..\dist\img\photo1.png" class="card-img-top rounded-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class=" text-center">File Explorer</h5>
+                                  
+                                    <p class="card-text">
+                                        Sharing all the project files among all its parties and in one place to be easy to deal with them, and keep up with the project progress.
+                                    </p>
+
+                                   
+                                </div>
+                            </div>
+
+                            <!-- /.card -->
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <img src="..\..\dist\img\photo2.png" class="card-img-top rounded-top" alt="...">
+
+                                <div class="card-body ">
+                                    <h5 class=" text-center ">Files Viewer</h5>
+
+                                    <p class="card-text">
+                                        Display all files like PDF, Img, Videos, and also the IFC files to show the project models and navigate their progress.
+                                    </p>
+
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card -->
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <img src="..\..\dist\img\photo1.png" class="card-img-top rounded-top" alt="...">
+                                <div class="card-body">
+                                    <h5  class=" text-center">Assign Tasks</h5>
+
+                                    <p class="card-text">
+                                        Assign tasks for the project parties and also you can make teams with some required tasks and keep up with their progress.
+                                    </p>
+
+                                </div>
+                            </div>
+
+                            <!-- /.card -->
+                        </div>
+                       
+
+                        <!-- /.col-md-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+
+        <!-- /.control-sidebar -->
+
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+</body>
+
+</html>

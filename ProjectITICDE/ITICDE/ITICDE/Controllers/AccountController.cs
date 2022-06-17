@@ -46,7 +46,7 @@ namespace ITICDE.Controllers
 			await _signInManager.SignInAsync(mappedUser, isPersistent: false);
 			if (result.Succeeded)
 			{
-				return RedirectToAction(nameof(HomeController.Index), "Home");
+				return RedirectToAction(nameof(HomeController.Index), "Project");
 			}
 			else
 			{

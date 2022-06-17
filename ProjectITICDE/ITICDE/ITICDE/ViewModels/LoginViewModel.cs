@@ -6,7 +6,7 @@ namespace ITICDE.ViewModels
     {
         [Required]
         
-        [Display(Name = "Email or Username")]
+        [Display(Name = "Email")] //Delete to accept username instead of email
         public string Email { get; set; }
 
         [Required]
