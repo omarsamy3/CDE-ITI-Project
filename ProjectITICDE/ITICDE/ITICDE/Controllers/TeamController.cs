@@ -22,8 +22,21 @@ namespace ITICDE.Controllers
         // GET: Team
         public async Task<IActionResult> Index()
         {
+            //ViewBag.TeamProjId = ProjectId;
             var cDEDBContext = _context.Teams.Include(t => t.CreatorUser).Include(t => t.Project);
             return View(await cDEDBContext.ToListAsync());
+        }
+        
+        
+        public IActionResult TeamUsers(int? TeamId)
+        {
+            var team = _context.Teams.Find(TeamId);
+            ViewBag.Users = team.Users;
+            ViewBag.TeamId = TeamId;
+            _context.SaveChanges();
+            //var cDEDBContext = _context.Teams.Include(t => t.CreatorUser).Include(t => t.Project).Include(u => u.Users);
+            //return View(await cDEDBContext.ToListAsync());
+            return View();
         }
 
         // GET: Team/Details/5
@@ -64,6 +77,8 @@ namespace ITICDE.Controllers
         {
             if (ModelState.IsValid)
             {
+               // var project = _context.Projects.Find(ProjTeamId);
+               // team.ProjectId = ProTeamId;
                 _context.Add(team);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

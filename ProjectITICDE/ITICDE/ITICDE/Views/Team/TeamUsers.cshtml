@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ITICDE.Models.User>
+
+
+@{
+    ViewData["Title"] = "Index";
+    //var user = User.FindFirstValue(ClaimTypes.Name);
+    List<User> TeamUsers = ViewBag.Users;
+	var teamId = ViewBag.TeamId;
+}
+@*class="btn btn-primary" style="margin:5px;"*@
+<h1>Team Users</h1>
+<p style="display:flex; justify-content:flex-end">
+    <a asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@teamId"  >Add Team Users</a>
+    @*<a class="btn btn-primary" asp-controller="User" asp-action="Index" style="margin:5px;">All Project Members</a>*@
+</p>
+<table class="table" style="text-align:center;">
+    <thead>
+        <tr>
+			<th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+            
+               @Html.DisplayNameFor(model => model.Email)
+            </th>
+            
+            <th>
+         
+             @Html.DisplayNameFor(model => model.OrganizationType)
+            </th>
+            <th>
+            
+               @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+         
+                @Html.DisplayNameFor(model => model.Discipline)
+            </th>
+			@*<th>
+
+                @Html.DisplayNameFor(model => model.SharedTasks)
+            </th>
+            <th>
+            
+                @Html.DisplayNameFor(model => model.JoinedTeams)
+           </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in TeamUsers) {
+        <tr>
+			<td><i class="fas fa-user"></i></td>
+            <td>
+                 @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email))
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizationType))
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => item.Position))
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => item.Discipline))
+            </td>
+            @*<td>
+               @Html.DisplayFor(modelItem => item.SharedTasks))
+            </td>
+            <td>
+               @Html.DisplayFor(modelItem => item.JoinedTeams))
+            </td>*@
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
+                      <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                      <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -16,14 +16,18 @@ namespace ITICDE.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
+
+        [DataType(DataType.DateTime)]
+        public DateTime LastAccess { get; set; } = DateTime.Now;
         #endregion
 
         #region NavigationProperties
 
         public string CreatorUserId { get; set; }
+        
+        [Display(Name = "Employer")]
         public User CreatorUser { get; set; }
         public List<User> Users { get; set; }
-
 
         [Required]
         public int ProjectId { get; set; }

@@ -24,9 +24,28 @@ namespace ITICDE.Controllers
         {
             return View(await _context.Users.ToListAsync());
         }
+        
+        // GET: Team User
+        public async Task<IActionResult> AddTeamUser(int? TeamId)
+        {
+            var team = _context.Teams.Find(TeamId);
+            ViewBag.RequiredTeam = team;
+            return View(await _context.Users.ToListAsync());
+        }
 
-        // GET: User/Details/5
-        public async Task<IActionResult> Details(string id)
+        //POST: Team User
+        public IActionResult AddToTeam(int? TeamId, string UserId)
+        {
+            var team = _context.Teams.FirstOrDefault(t => t.Id == TeamId);
+            var user = _context.Users.FirstOrDefault(u => u.Id == UserId);
+            team.Users.Add(user);
+            _context.SaveChanges();
+            //return RedirectToAction("TeamUsers", new { TeamId = TeamId });
+            return RedirectToAction("TeamUsers", "Team", new {TeamId = TeamId});
+        }
+
+            // GET: User/Details/5
+            public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -66,7 +85,7 @@ namespace ITICDE.Controllers
         }
 
         // GET: User/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
@@ -86,7 +105,7 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,ConfirmEmail,Password,Role,OrganizationType,Discipline")] User user)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,ConfirmEmail,Password,Position,OrganizationType,Discipline")] User user)
         {
             if (id != user.Id)
             {
@@ -137,7 +156,7 @@ namespace ITICDE.Controllers
         // POST: User/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
             var user = await _context.Users.FindAsync(id);
             _context.Users.Remove(user);

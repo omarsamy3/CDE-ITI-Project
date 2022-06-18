@@ -235,6 +235,9 @@ namespace ITICDE.Migrations
                     b.Property<string>("CreatorUserId")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<DateTime>("LastAccess")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");

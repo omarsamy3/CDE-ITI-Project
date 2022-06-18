@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ITICDE.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    var team = ViewBag.RequiredTeam;
+}
+
+<h1>Add Team Users</h1>
+
+@*<p style= "display:flex;justify-content:flex-end;">
+ <a asp-action="Create" class="btn btn-primary" style="margin:25px;">  <i class="fas fa-folder" > </i> Create New</a> *@
+<table class="table">
+    <thead>
+        <tr>
+			<th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.ConfirmEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganizationType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discipline)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+				<td><i class="fas fa-user"></i></td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ConfirmEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizationType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discipline)
+            </td>
+            <td>
+                <a asp-action="AddToTeam" asp-route-TeamId="@team.Id" asp-route-UserId="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Add</a>  
+                <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
