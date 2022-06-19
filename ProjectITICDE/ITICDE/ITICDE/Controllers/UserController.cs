@@ -36,12 +36,15 @@ namespace ITICDE.Controllers
         //POST: Team User
         public IActionResult AddToTeam(int? TeamId, string UserId)
         {
+            
             var team = _context.Teams.FirstOrDefault(t => t.Id == TeamId);
             var user = _context.Users.FirstOrDefault(u => u.Id == UserId);
             team.Users.Add(user);
             _context.SaveChanges();
+            ViewBag.RequiredTeam = team;
             //return RedirectToAction("TeamUsers", new { TeamId = TeamId });
-            return RedirectToAction("TeamUsers", "Team", new {TeamId = TeamId});
+            //return RedirectToAction("TeamUsers", "Team", new {TeamId = TeamId});
+            return RedirectToAction("UsersDetails", "Team", new {id = TeamId});
         }
 
             // GET: User/Details/5

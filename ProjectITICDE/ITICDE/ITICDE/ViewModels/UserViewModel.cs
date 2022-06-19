@@ -21,6 +21,7 @@ namespace ITICDE.ViewModels
         
         [Required]
         [DataType(DataType.EmailAddress)]
+       // [Remote("IsSerialAvailable", "User", ErrorMessage = "Email # already exists.")]
         public string Email { get; set; }
 
         

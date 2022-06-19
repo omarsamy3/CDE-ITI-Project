@@ -182,6 +182,7 @@ namespace ITICDE.Controllers
         {
             var team = await _context.Teams.Include(c => c.Users).Where(c => c.Id == id).FirstOrDefaultAsync();
             List<User> users = team.Users;
+            ViewBag.TeamId = id;
             return View(users);
         }
 

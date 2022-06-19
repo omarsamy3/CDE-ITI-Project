@@ -2,10 +2,14 @@
 
 @{
     ViewData["Title"] = "UsersDetails";
+	var TeamId = ViewBag.TeamId;
 }
 
 
 <h1>Team Details</h1>
+<p style="display:flex; justify-content:flex-end">
+    <a class="btn btn-primary" asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@TeamId" style="margin:5px;">Add User</a>
+</p>
 
 <div class="table-responsive">
     <table class="table">

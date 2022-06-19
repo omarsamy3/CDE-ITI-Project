@@ -63,7 +63,9 @@
                 @Html.DisplayFor(modelItem => item.Discipline)
             </td>
             <td>
-                <a asp-action="AddToTeam" asp-route-TeamId="@team.Id" asp-route-UserId="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Add</a>  
+                <a asp-action="AddToTeam" asp-route-TeamId="@team.Id"
+                asp-route-UserId="@item.Id" class="btn btn-info btn-sm"> 
+                <i class="fas fa-pencil-alt"></i> Add</a>  
             </td>
         </tr>
 }
