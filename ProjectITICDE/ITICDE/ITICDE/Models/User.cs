@@ -1,5 +1,6 @@
 ﻿using ITICDE.Enums;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -23,9 +24,12 @@ namespace ITICDE.Models
             CreatedTasks = new List<Task>();
             SharedTasks = new List<Task>();
         }
-		#region Properties
+        #region Properties
 
-		[Required]
+        [Required]
+        [Display(Name = "User name")]
+        [Remote("doesUserNameExist", "Account", HttpMethod = "POST",
+        ErrorMessage = "User name already exists. Please enter a different user name.")]
         public string Name { get; set; }
 
         public byte[] ProfilePicture { get; set; }

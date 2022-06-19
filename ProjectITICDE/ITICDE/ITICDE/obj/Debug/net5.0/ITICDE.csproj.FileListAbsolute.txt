@@ -973,3 +973,10 @@ E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITIC
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\TeamUsers.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\AddTeamUser.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\DeleteTeamUser.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\System.Web.Mvc.dll
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\System.Web.Razor.dll
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\System.Web.Helpers.dll
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\System.Web.WebPages.Deployment.dll
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\System.Web.WebPages.dll
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll

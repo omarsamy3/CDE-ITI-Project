@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ITICDE.Data;
 using ITICDE.Models;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+//using System.Web.Mvc;
 
 namespace ITICDE.Controllers
 {
@@ -26,8 +28,8 @@ namespace ITICDE.Controllers
             var cDEDBContext = _context.Teams.Include(t => t.CreatorUser).Include(t => t.Project);
             return View(await cDEDBContext.ToListAsync());
         }
-        
-        
+
+        //[HandleError(View = "Error", ExceptionType = typeof(DbUpdateException))]
         public async Task<IActionResult> TeamUsers(int? TeamId)
         {
             var team = await _context.Teams.Include(u => u.Users).Where(u => u.Id == TeamId).FirstOrDefaultAsync();

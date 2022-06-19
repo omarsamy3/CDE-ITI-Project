@@ -30,8 +30,9 @@
       <p class="login-box-msg">Register a new membership</p>
 
       <form asp-controller="Account" asp-action="Register" method="post" role="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div> <!-- validation summary -->
         <div class="input-group mb-3">
-          <input asp-for="Name" class="form-control" placeholder="Full name">
+          <input required asp-for="Name" class="form-control" placeholder="Full name">
           <div class="input-group-append">
             <div class="input-group-text">
               <span asp-validation-for="Name" class="fas fa-user"></span>
@@ -39,7 +40,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input asp-for="Email" class="form-control" placeholder="Email">
+          <input required asp-for="Email" class="form-control" placeholder="Email">
           <div class="input-group-append">
             <div class="input-group-text">
               <span asp-validation-for="Email" class="fas fa-envelope"></span>
@@ -47,7 +48,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input asp-for="Password" class="form-control" placeholder="Password">
+          <input required asp-for="Password" class="form-control" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span asp-validation-for="Password" class="fas fa-lock"></span>
@@ -68,7 +69,7 @@
           </select>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span asp-validation-for="OrganizationType" class="fas fa-lock"></span>
+              <span asp-validation-for="OrganizationType" class="fas fa-user"></span>
             </div>
           </div>
         </div>
@@ -78,7 +79,7 @@
           </select>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span asp-validation-for="Discipline" class="fas fa-lock"></span>
+              <span asp-validation-for="Discipline" class="fas fa-user"></span>
             </div>
           </div>
         </div>
@@ -88,7 +89,7 @@
           </select>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span asp-validation-for="Position" class="fas fa-lock"></span>
+              <span asp-validation-for="Position" class="fas fa-user"></span>
             </div>
           </div>
         </div>
@@ -103,7 +104,7 @@
         </div>
       </form>
 
-      <a href="Login.cshtml" class="text-center">I already have a membership</a>
+      <a asp-action="Login" class="text-center">I already have a membership</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
