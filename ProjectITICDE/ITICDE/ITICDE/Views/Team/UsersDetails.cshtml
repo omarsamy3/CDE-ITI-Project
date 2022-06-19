@@ -4,7 +4,8 @@
     ViewData["Title"] = "UsersDetails";
 }
 
-<h1>Team Data</h1>
+
+<h1>Team Details</h1>
 
 <div class="table-responsive">
     <table class="table">
@@ -48,9 +49,16 @@
                         @Html.DisplayFor(modelItem => item.Discipline)
                     </td>
                     <td>
+                        <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+                    </td>
                 </tr>
             }
+            
         </tbody>
+        
     </table>
+    <div class="form-group">
+				<a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+            </div>
 </div>
 

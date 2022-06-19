@@ -168,5 +168,34 @@ namespace ITICDE.Controllers
         {
             return _context.Users.Any(e => e.Id == id);
         }
+
+        //Delete Team User
+        public async Task<IActionResult> DeleteTeamUser(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var user = await _context.Users.FirstOrDefaultAsync(m => m.Id == id);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            return View(user);
+        }
+
+        // POST: Team/Delete/5
+        [HttpPost, ActionName("DeleteTeamUser")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteUserConfirmed(string id)
+        {
+            var user = await _context.Users.FindAsync(id);
+            _context.Users.Remove(user);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

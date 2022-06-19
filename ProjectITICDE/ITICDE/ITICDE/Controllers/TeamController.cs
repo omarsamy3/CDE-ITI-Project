@@ -28,15 +28,12 @@ namespace ITICDE.Controllers
         }
         
         
-        public IActionResult TeamUsers(int? TeamId)
+        public async Task<IActionResult> TeamUsers(int? TeamId)
         {
-            var team = _context.Teams.Find(TeamId);
-            ViewBag.Users = team.Users;
+            var team = await _context.Teams.Include(u => u.Users).Where(u => u.Id == TeamId).FirstOrDefaultAsync();
+            List<User> users = team.Users;
             ViewBag.TeamId = TeamId;
-            _context.SaveChanges();
-            //var cDEDBContext = _context.Teams.Include(t => t.CreatorUser).Include(t => t.Project).Include(u => u.Users);
-            //return View(await cDEDBContext.ToListAsync());
-            return View();
+            return View(users);
         }
 
         // GET: Team/Details/5
@@ -185,5 +182,7 @@ namespace ITICDE.Controllers
             List<User> users = team.Users;
             return View(users);
         }
+
+        
     }
 }
