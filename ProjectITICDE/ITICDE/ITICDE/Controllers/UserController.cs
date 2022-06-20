@@ -24,7 +24,7 @@ namespace ITICDE.Controllers
         {
             return View(await _context.Users.ToListAsync());
         }
-        
+
         // GET: Team User
         public async Task<IActionResult> AddTeamUser(int? TeamId)
         {
@@ -36,7 +36,7 @@ namespace ITICDE.Controllers
         //POST: Team User
         public IActionResult AddToTeam(int? TeamId, string UserId)
         {
-            
+
             var team = _context.Teams.FirstOrDefault(t => t.Id == TeamId);
             var user = _context.Users.FirstOrDefault(u => u.Id == UserId);
             team.Users.Add(user);
@@ -44,11 +44,11 @@ namespace ITICDE.Controllers
             ViewBag.RequiredTeam = team;
             //return RedirectToAction("TeamUsers", new { TeamId = TeamId });
             //return RedirectToAction("TeamUsers", "Team", new {TeamId = TeamId});
-            return RedirectToAction("UsersDetails", "Team", new {id = TeamId});
+            return RedirectToAction("UsersDetails", "Team", new { id = TeamId });
         }
 
-            // GET: User/Details/5
-            public async Task<IActionResult> Details(string id)
+        // GET: User/Details/5
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
@@ -173,19 +173,20 @@ namespace ITICDE.Controllers
         }
 
         //Delete Team User
-        public async Task<IActionResult> DeleteTeamUser(string id)
+        public async Task<IActionResult> DeleteTeamUser(string UserId, int TeamId)
         {
-            if (id == null)
+            if (UserId == null || TeamId == 0)
             {
                 return NotFound();
             }
-
-            var user = await _context.Users.FirstOrDefaultAsync(m => m.Id == id);
-
-            if (user == null)
+            var team = _context.Teams.Include(c => c.Users).FirstOrDefault(t => t.Id == TeamId);
+            var user = await _context.Users.FirstOrDefaultAsync(m => m.Id == UserId);
+            ViewBag.RequiredTeam = team;
+            if (user == null || team == null)
             {
                 return NotFound();
             }
+            
 
             return View(user);
         }
@@ -193,12 +194,14 @@ namespace ITICDE.Controllers
         // POST: Team/Delete/5
         [HttpPost, ActionName("DeleteTeamUser")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteUserConfirmed(string id)
+        public async Task<IActionResult> DeleteUserConfirmed(string id, int TeamId)
         {
+            var team = _context.Teams.Include(c => c.Users).FirstOrDefault(t => t.Id == TeamId);
             var user = await _context.Users.FindAsync(id);
-            _context.Users.Remove(user);
+            //_context.Users.Remove(user);
+            team.Users.Remove(user);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("UsersDetails", "Team", new { id = TeamId });
         }
     }
 }

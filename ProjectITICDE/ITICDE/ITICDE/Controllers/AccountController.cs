@@ -71,7 +71,7 @@ namespace ITICDE.Controllers
 			public async Task<IActionResult> Login(LoginViewModel model, string returnurl = null)
 			{
 				ViewData["ReturnUrl"] = returnurl;
-				returnurl = returnurl ?? Url.Content("~/");
+				returnurl = returnurl ?? Url.Content("~/Project/Index");
 				if (ModelState.IsValid)
 				{
 				var username = new EmailAddressAttribute().IsValid(model.Email) ? new MailAddress(model.Email).User : model.Email;

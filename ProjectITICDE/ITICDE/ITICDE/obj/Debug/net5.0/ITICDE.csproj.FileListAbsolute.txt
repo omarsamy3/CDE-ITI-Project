@@ -970,7 +970,6 @@ E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITIC
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Settings.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ViewerLayour.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Empty.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\TeamUsers.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\AddTeamUser.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\DeleteTeamUser.cshtml.g.cs
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ProjectITICDE\ITICDE\ITICDE\bin\Debug\net5.0\System.Web.Mvc.dll

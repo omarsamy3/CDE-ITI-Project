@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "DeleteTeamUser";
+    var team = ViewBag.RequiredTeam;
 }
 
 <h1>Delete Team User</h1>
@@ -31,8 +32,8 @@
     </dl>
     
     <form asp-action="DeleteTeamUser">
-        <input type="hidden" asp-for="Id" />
-        <a asp-controller="Team" asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
-        <input type="submit" value="Delete" class="btn btn-danger" />
+        <input type="hidden"  asp-for="Id" />
+        <a asp-controller="Team" asp-action="UsersDetails" asp-route-id="@team.Id" class="btn btn-outline-secondary">Back to List</a>
+        <input type="submit" asp-route-TeamId="@team.Id" value="Delete" class="btn btn-danger" />
     </form>
 </div>
