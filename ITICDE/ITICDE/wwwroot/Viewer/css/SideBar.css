@@ -1,0 +1,154 @@
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: black;
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* padding-top: 60px; */
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+
+  top: 0;
+  right: 25px;
+
+  margin-left: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  display: inline;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left 0.5s;
+  background-color: transparent;
+  padding: 2px;
+}
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: #343A40;
+  border-bottom: 1px solid #4F5962;
+  height: 44px;
+  
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow:2px;
+  
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  
+  text-align: center;
+  padding: 15px 16px;
+  text-decoration: none;
+  font-size: 14px;
+ display:felx;
+width: 150px;
+}
+
+.topnav a:hover {
+  background-color: #e2d6d6;
+  color: black;
+}
+
+/* .topnav a + .activeside {
+  background-color: #e2d6d6;
+  color: black;
+} */
+
+.activeside {
+
+  color: black;
+  
+  background-color: #e2d6d6;
+}
+
+/*this is for the explorer files fold*/
+.folderfold
+{
+    background-color: #dfd;
+    border-radius: 20%;
+ 
+    color: #111;
+    display: inline-block;
+    height: 1.5em;
+    left: -1.5em;
+
+    text-align: center;
+    text-decoration: none;
+    width: 1.5em;
+   
+    margin: 0px 10px;
+ 
+   
+}
+#sidelist{
+  margin: 0;
+position: absolute;
+left: -1.75rem;
+
+
+}
+#sidelist span{
+  pointer-events: none;
+
+
+}
+#sidelist ul {
+  list-style: none;
+
+  pointer-events: none;
+}
+
+#sidelist ul li {
+  position: relative;
+  width: 500px;
+  pointer-events: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  vertical-align: middle;
+}
+
+.ExplChckbox{
+ margin: 0px 10px;
+
+pointer-events: visible;
+cursor: pointer;
+}

@@ -1,0 +1,264 @@
+html,body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+#main
+{
+  display:flex;
+}
+#myCanvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: lightblue;
+  background-image: linear-gradient(lightblue, white);
+
+  
+}
+
+/* ----------------------------------------------------------------------------------------------------------*/
+/*SlicersPlugin */
+/* ----------------------------------------------------------------------------------------------------------*/
+
+#mySectionPlanesOverviewCanvas {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  bottom: 150px;
+  right: 10px;
+  z-index: 200000;
+}
+
+/* ----------------------------------------------------------------------------------------------------------*/
+/* NavCubePlugin */
+/* ----------------------------------------------------------------------------------------------------------*/
+
+#myNavCubeCanvas {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  bottom: 10px;
+  right: 10px;
+  z-index: 200000;
+}
+
+/* ----------------------------------------------------------------------------------------------------------*/
+/* TreeViewPlugin */
+/* ----------------------------------------------------------------------------------------------------------*/
+
+#treeViewContainer {
+  pointer-events: all;
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  background-color: rgba(52, 58, 64, 1); 
+  color: white;
+  top: 45px;
+  z-index: 200000;
+  float: left;
+  left: 0;
+  padding-left: 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+
+
+  width: 350px;
+}
+
+#treeViewContainer ul {
+  list-style: none;
+  padding-left: 1.75em;
+  pointer-events: none;
+}
+
+#treeViewContainer ul li {
+  position: relative;
+  width: 500px;
+  pointer-events: none;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  vertical-align: middle;
+}
+
+#treeViewContainer ul li a {
+  background-color: #eee;
+  border-radius: 20%;
+  color: #343A40;
+  display: inline-block;
+  padding:4px;
+  left: -2em;
+  position: absolute;
+  text-align: center;
+  vertical-align:middle;
+  text-decoration: none;
+  width: 1em;
+  height: 1em;
+  pointer-events: all;
+  
+}
+
+#treeViewContainer ul li a.plus {
+  background-color: #ded;
+  pointer-events: all;
+}
+
+#treeViewContainer ul li a.minus {
+  background-color: #eee;
+  pointer-events: all;
+  content: "•";
+}
+
+#treeViewContainer ul li a:active {
+  top: 1px;
+  pointer-events: all;
+}
+
+#treeViewContainer ul li span:hover {
+  color: white;
+  cursor: pointer;
+ 
+  padding-left: 2px;
+  pointer-events: all;
+}
+
+#treeViewContainer ul li span {
+  display: inline-block;
+  /* width: calc(100% - 50px); */
+  padding-left: 2px;
+  pointer-events: all;
+  height: 23px;
+}
+
+#treeViewContainer .highlighted-node {
+  /* Appearance of node highlighted with TreeViewPlugin#showNode() */
+  border: black solid 1px;
+  background: yellow;
+  color: black;
+  padding-left: 1px;
+  padding-right: 5px;
+  pointer-events: all;
+}
+
+/* ----------------------------------------------------------------------------------------------------------*/
+/* ContextMenu */
+/* ----------------------------------------------------------------------------------------------------------*/
+
+.xeokit-context-menu {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  display: none;
+  z-index: 300000;
+  background: rgba(255, 255, 255, 0.46);
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 0;
+  width: 200px;
+}
+
+.xeokit-context-menu ul {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+.xeokit-context-menu ul li {
+  list-style-type: none;
+  padding-left: 10px;
+  padding-right: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  color: black;
+  border-bottom: 1px solid gray;
+  background: rgba(255, 255, 255, 0.46);
+  cursor: pointer;
+  width: calc(100% - 30px);
+}
+
+.xeokit-context-menu ul li:hover {
+  background: black;
+  color: white;
+  font-weight: normal;
+}
+
+.xeokit-context-menu ul li span {
+  display: inline-block;
+}
+
+.xeokit-context-menu .disabled {
+  display: inline-block;
+  color: gray;
+  cursor: default;
+  font-weight: normal;
+}
+
+.xeokit-context-menu .disabled:hover {
+  color: gray;
+  cursor: default;
+  background: #eeeeee;
+  font-weight: normal;
+}
+
+.explorer_toggle_label {
+
+  height: auto;
+  
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  flex: 1 1 auto;
+  color: #03103F;
+  background-color: white;
+  text-align: center;
+  vertical-align: middle;
+ 
+  border: 2px solid #1d2453;
+  padding: .375rem .75rem;
+  border-radius: .25rem;
+  -webkit-appearance: button;
+  overflow: visible;
+  margin: 0 2px 0 0;
+  box-sizing: border-box;
+  align-items: flex-start;
+  pointer-events: all;
+  z-index: 100000;
+  transition: all 300ms ease-in-out;
+}
+
+
+/*--------------------------------------------------------*/
+
+/*--------------------------------------------------------*/
+
+#myToolbar {
+ position: absolute;
+ display: flex;
+  
+  top: 20px;
+  align-items: center;
+  justify-content: start;
+  padding: 0;
+  z-index: 100000;
+  pointer-events: none;
+ background-color: transparent;
+  left: 35%;
+   transition: all 500ms ; 
+
+}
+
+
+.details{
+  position: absolute;
+  top: 100px;
+  right: 50px;
+width:auto;
+border-radius: 10px;
+padding:20px;
+  background-color: white; 
+  line-height: 1.6;
+  z-index: 10;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+

@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ITICDE.Models.Team>
+@using System.Security.Claims
+@*@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager*@
+
+@{
+    ViewData["Title"] = "Index";
+    	var user = User.FindFirstValue(ClaimTypes.Name);
+}
+
+<h1>Teams</h1>
+<p style="display:flex; justify-content:flex-end">
+    <a class="btn btn-primary" asp-action="Create" style="margin:5px;">New Team</a>
+    <a class="btn btn-primary" asp-controller="User" asp-action="Index" style="margin:5px;">All Project Members</a>
+</p>
+<table class="table" style="text-align:center;">
+    <thead>
+        <tr>
+			<th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatorUser)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+			<td><i class="fas fa-users"></i></td>
+            <td>
+               <a  asp-action="UsersDetails" asp-route-id="@item.Id">
+					
+                    @item.Name</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatorUser.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Project.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastAccess)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastAccess)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
+                      <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                      <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
