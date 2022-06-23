@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\iti data\\Final Project Data\\Code\\After Adding Template\\Trial 6 17--6-2022\\ITICDE\\ITICDE\\ITICDE\\ITICDE.csproj": {}
+    "E:\\A1Programming\\1My.CEI Program\\Project\\CDEITIProject\\ITICDE\\ITICDE\\ITICDE.csproj": {}
   },
   "projects": {
-    "D:\\iti data\\Final Project Data\\Code\\After Adding Template\\Trial 6 17--6-2022\\ITICDE\\ITICDE\\ITICDE\\ITICDE.csproj": {
+    "E:\\A1Programming\\1My.CEI Program\\Project\\CDEITIProject\\ITICDE\\ITICDE\\ITICDE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\iti data\\Final Project Data\\Code\\After Adding Template\\Trial 6 17--6-2022\\ITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
+        "projectUniqueName": "E:\\A1Programming\\1My.CEI Program\\Project\\CDEITIProject\\ITICDE\\ITICDE\\ITICDE.csproj",
         "projectName": "ITICDE",
-        "projectPath": "D:\\iti data\\Final Project Data\\Code\\After Adding Template\\Trial 6 17--6-2022\\ITICDE\\ITICDE\\ITICDE\\ITICDE.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\iti data\\Final Project Data\\Code\\After Adding Template\\Trial 6 17--6-2022\\ITICDE\\ITICDE\\ITICDE\\obj\\",
+        "projectPath": "E:\\A1Programming\\1My.CEI Program\\Project\\CDEITIProject\\ITICDE\\ITICDE\\ITICDE.csproj",
+        "packagesPath": "C:\\Users\\Win 10 ltsc\\.nuget\\packages\\",
+        "outputPath": "E:\\A1Programming\\1My.CEI Program\\Project\\CDEITIProject\\ITICDE\\ITICDE\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\Win 10 ltsc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

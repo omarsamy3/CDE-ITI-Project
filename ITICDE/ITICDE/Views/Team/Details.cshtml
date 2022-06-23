@@ -19,19 +19,30 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatorUser)
         </dt>
-   @*     <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatorUser.ConfirmEmail)
-        </dd>*@
+       <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatorUser.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeamLeader)
+        </dt>
+       <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeamLeader.Name)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Project)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Project.Description)
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd> 
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Users)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Users.Count)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> 
-    <a asp-action="UsersDetails" asp-route-id="@Model.Id">Show Team members</a> 
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+    @*<a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"><i class="fas fa-pencil-alt"></i> Edit</a> *@
 </div>

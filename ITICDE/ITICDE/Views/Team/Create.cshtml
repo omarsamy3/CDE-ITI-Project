@@ -1,9 +1,13 @@
-﻿@using System.Security.Claims
+﻿@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+@using System.Security.Claims
 @model ITICDE.Models.Team
 
 @{
     ViewData["Title"] = "Create";
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var TeamAdmin = ViewBag.TeamLeader;
+    var ProjectId = ViewBag.ProjectId;
 }
 
 <h1>Create</h1>
@@ -19,28 +23,27 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-@*            <div class="form-group">
-                <label asp-for="CreatorUserId" class="control-label"></label>
-                <select asp-for="CreatorUserId" class ="form-control" asp-items="ViewBag.CreatorUserId"></select>
+         @*   <div class="form-group">
+                <label asp-for="ProjectId" class="control-label"></label>
+                <input asp-for="ProjectId" class="form-control" />
+                <span asp-validation-for="ProjectId" class="text-danger"></span>
             </div>*@
-            <div class="form-group">
+
+           @* <div class="form-group">
                 <label asp-for="ProjectId" class="control-label"></label>
                 <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="TeamLeaderId" class="control-label"></label>
                 <select asp-for="TeamLeaderId" class ="form-control" asp-items="ViewBag.TeamLeaderId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" asp-route-CreatorUserId="@user" value="Create" class="btn btn-primary" />
+				<a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+                <input type="submit" asp-route-ProjectId="@ProjectId" asp-route-TeamLeader="@TeamAdmin" asp-route-CreatorUserId="@user" value="Create" class="btn btn-primary" />
             </div>
             
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

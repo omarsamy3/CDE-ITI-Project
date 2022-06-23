@@ -1,17 +1,16 @@
 ﻿@model IEnumerable<ITICDE.Models.Team>
 @using System.Security.Claims
-@*@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager*@
-
 @{
     ViewData["Title"] = "Index";
-    	var user = User.FindFirstValue(ClaimTypes.Name);
+    var AdminId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var TeamLeader = ViewBag.TeamLeader;
+    var ProjectId = ViewBag.TeamProjId;
 }
 
-<h1>Teams</h1>
+<h1>Project Teams</h1>
 <p style="display:flex; justify-content:flex-end">
-    <a class="btn btn-primary" asp-action="Create" style="margin:5px;">New Team</a>
-    <a class="btn btn-primary" asp-controller="User" asp-action="Index" style="margin:5px;">All Project Members</a>
+    <a class="btn btn-primary" asp-action="Create"  asp-route-ProjectId="@ProjectId" style="margin:5px;">New Team</a>
+    <a class="btn btn-primary" asp-controller="User" asp-action="ProjectUsers" asp-route-ProjectId="@ProjectId" style="margin:5px;">All Project Members</a>
 </p>
 <table class="table" style="text-align:center;">
     <thead>
@@ -26,13 +25,19 @@
             
             <th>
                 @Html.DisplayNameFor(model => model.Project)
+            </th> 
+            <th>
+                Team Leader
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
+        
 @foreach (var item in Model) {
-        <tr>
+    @if(item.ProjectId == @ProjectId)
+            {
+                <tr>
 			<td><i class="fas fa-users"></i></td>
             <td>
                <a  asp-action="UsersDetails" asp-route-id="@item.Id">
@@ -46,17 +51,21 @@
                 @Html.DisplayFor(modelItem => item.Project.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.LastAccess)
+					@Html.DisplayFor(modelItem => item.TeamLeader.Name)					
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.LastAccess)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
                       <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+               @if(item.TeamLeaderId == AdminId)
+			{
+				<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
                       <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+            }
+                      
             </td>
         </tr>
+            }
+            
 }
     </tbody>
 </table>

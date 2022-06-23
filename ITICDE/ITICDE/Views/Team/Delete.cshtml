@@ -20,20 +20,32 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatorUser)
         </dt>
-  @*      <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatorUser.ConfirmEmail)
-        </dd class>*@
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatorUser.Name)
+        </dd >
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TeamLeader)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TeamLeader.Name)
+        </dd >
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Project)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Project.Description)
-        </dd class>
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Users)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Users.Count)
+        </dd>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+        <input type="submit" value="Delete" class="btn btn-danger" />
     </form>
 </div>

@@ -9,6 +9,7 @@ using ITICDE.Data;
 using ITICDE.Models;
 using Microsoft.AspNetCore.Authorization;
 
+
 namespace ITICDE.Controllers
 {
     [Authorize]
@@ -26,9 +27,15 @@ namespace ITICDE.Controllers
         {
             return View(await _context.Users.ToListAsync());
         }
+
+        public async Task<IActionResult> ProjectUsers(int? ProjectId)
+        {
+            ViewBag.ProjectId = ProjectId;
+            return View(await _context.Users.ToListAsync());
+        }
         public async Task<IActionResult> AddTeamUser(int? TeamId)
         {
-            var team = _context.Teams.Find(TeamId);
+            var team = _context.Teams.Include(t => t.Users).FirstOrDefault(i => i.Id == TeamId);
             ViewBag.RequiredTeam = team;
             return View(await _context.Users.ToListAsync());
         }
@@ -37,15 +44,15 @@ namespace ITICDE.Controllers
         public IActionResult AddToTeam(int? TeamId, string UserId)
         {
 
-            var team = _context.Teams.FirstOrDefault(t => t.Id == TeamId);
+            var team = _context.Teams.Include(t=>t.Users).FirstOrDefault(t => t.Id == TeamId);
             var user = _context.Users.FirstOrDefault(u => u.Id == UserId);
             team.Users.Add(user);
             _context.SaveChanges();
             ViewBag.RequiredTeam = team;
-            //return RedirectToAction("TeamUsers", new { TeamId = TeamId });
-            //return RedirectToAction("TeamUsers", "Team", new {TeamId = TeamId});
             return RedirectToAction("UsersDetails", "Team", new { id = TeamId });
         }
+
+
         // GET: User/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -64,6 +71,7 @@ namespace ITICDE.Controllers
             return View(user);
         }
 
+
         // GET: User/Create
         public IActionResult Create()
         {
@@ -71,8 +79,6 @@ namespace ITICDE.Controllers
         }
 
         // POST: User/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Email,ConfirmEmail,Password,Role,OrganizationType,Discipline")] User user)
@@ -85,6 +91,8 @@ namespace ITICDE.Controllers
             }
             return View(user);
         }
+
+
 
         // GET: User/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -102,9 +110,9 @@ namespace ITICDE.Controllers
             return View(user);
         }
 
+
+
         // POST: User/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Id,Name,Email,ConfirmEmail,Password,Role,OrganizationType,Discipline")] User user)

@@ -4,29 +4,31 @@
 @{
     ViewData["Title"] = "UsersDetails";
     var TeamId = ViewBag.TeamId;
-    var TeamLeader=(string)ViewBag.TeamLeader;
-    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var TeamLeaderId=(string)ViewBag.TeamLeader;
+    var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var TeamName = ViewBag.TeamName;
 }
 
-
-<h1>Team Details</h1>
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
+<h1>@TeamName</h1>
+<a style="margin-top:30px" asp-action="Index" asp-controller="Team" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
 <p style="display:flex; justify-content:flex-end">
-    <a class="btn btn-primary" asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@TeamId" style="margin:5px;">Add User</a>
+    <a class="btn btn-primary" asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@TeamId" style="margin-right:5px;">Add User</a>
 </p>
 
 <div class="table-responsive">
     <table class="table" style="text-align:center">
         <thead>
             <tr>
+				<th></th>
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Email)
                 </th>
-@*                <th>
-                    @Html.DisplayNameFor(model => model.Role)
-                </th>*@
                 <th>
                     @Html.DisplayNameFor(model => model.OrganizationType)
                 </th>
@@ -36,15 +38,21 @@
                 <th>
                     Role
                 </th>
+				<th>
+					@Html.DisplayNameFor(model => model.LastAccessTime)
+                </th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                if (item.Id == TeamLeader)
+				
+                if (item.Id == TeamLeaderId)
                 {
                     <tr>
+					<td><i class="fas fa-user"></i></td>
+						 
                         <td>
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
@@ -57,59 +65,70 @@
                         <td>
                             @Html.DisplayFor(modelItem => item.Discipline)
                         </td>
-                        @if (item.Id == TeamLeader)
-                        {
-                            <td>Team Leader</td>
-                        }
+                        
                         <td>
-                            @if(user == TeamLeader)
+                            Team Leader
+                        </td>
+                        
+                        <td>
+								@Html.DisplayFor(modelItem => item.LastAccessTime)
+                        </td>
+                        <td>
+							
+                            @if(userId == TeamLeaderId)
                             {
-                            <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-UserId="@item.Id"
-                        asp-route-TeamId="@TeamId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+                                <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-UserId="@item.Id"
+                                asp-route-TeamId="@TeamId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
                             }
                         </td>
                     </tr>
 
                 }
             
-        }
-        @foreach (var item in Model)
+            }
+            @foreach (var item in Model)
             {
-                if(item.Id != TeamLeader)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Name)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Email)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.OrganizationType)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Discipline)
-                        </td>
-                        @if (item.Id != TeamLeader)
-                        {
-                            <td>Team Member</td>
-                        }
-                    <td>
-                        @if(user == TeamLeader)
-                            {
-                            <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-UserId="@item.Id"
-                        asp-route-TeamId="@TeamId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
-                            }
-                        
-                    </td>
-                </tr>
-                }
+                    if(item.Id != TeamLeaderId)
+                    {
+                        <tr>
+						    <td><i class="fas fa-user"></i></td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.OrganizationType)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Discipline)
+                            </td>
+
+                            <td>
+                                Team Member
+                            </td>
+                            
+                            <td>
+							    @Html.DisplayFor(modelItem => item.LastAccessTime)
+                            </td>
+
+                            <td>
+                                @if(userId == TeamLeaderId)
+                                {
+                                    <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-UserId="@item.Id"
+                                    asp-route-TeamId="@TeamId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+                                }
+                            </td>
+                        </tr>
+                    }
             }
         </tbody>
         
     </table>
-    <div class="form-group">
-				<a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
-            </div>
 </div>
 

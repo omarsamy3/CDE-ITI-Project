@@ -1,6 +1,7 @@
 ﻿using ITICDE.Enums;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,6 +16,7 @@ namespace ITICDE.Models
             WorkonProjects = new List<Project>();
             CreatedTeams = new List<Team>();
             JoinedTeams = new List<Team>();
+            LeadedTeams = new List<Team>();
             CreatedFolders = new List<Folder>();
             SharedFolders = new List<Folder>();
             UploadedFiles = new List<File>();
@@ -23,7 +25,7 @@ namespace ITICDE.Models
             SharedViews = new List<View>();
             CreatedTasks = new List<Task>();
             SharedTasks = new List<Task>();
-        }
+    }
 		#region Properties
 
 		[Required]
@@ -35,19 +37,28 @@ namespace ITICDE.Models
         public byte[] ProfilePicture { get; set; }
 
 
+        [Display(Name = "Last Access")]
+        [DataType(DataType.DateTime)]
+        public DateTime LastAccessTime { get; set; } = DateTime.UtcNow;
+
+
         [Required]
         [Column(TypeName = "nvarchar(32)")]
+        [Display(Name = "Organization Type")]
         public OrganizationType OrganizationType { get; set; }
+
 
         [Required]
         [Column(TypeName = "nvarchar(32)")]
         public Discipline Discipline { get; set; }
 
+
         [Required]
         [Column(TypeName = "nvarchar(32)")]
         public Position Position { get; set; }
-
         
+        
+
         #endregion
 
 
@@ -60,6 +71,8 @@ namespace ITICDE.Models
 
         [InverseProperty("CreatorUser")]
         public List<Team> CreatedTeams { get; set; }
+        [InverseProperty("TeamLeader")]
+        public List<Team> LeadedTeams { get; set; }
         [InverseProperty("Users")]
         public List<Team> JoinedTeams { get; set; }
 

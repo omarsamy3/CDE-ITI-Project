@@ -5,9 +5,12 @@
 }
 
 <h1>Project Members</h1>
-
-<p style= "display:flex;justify-content:flex-end;">
- <a asp-action="Create" class="btn btn-primary" style="margin:25px;">  <i class="fas fa-folder" > </i> Create New</a> 
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
+<a style="margin-top:30px" asp-action="Index" asp-controller="Team" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
+@*<p style= "display:flex;justify-content:flex-end;">
+ <a asp-action="Create" class="btn btn-primary" style="margin:25px;">  <i class="fas fa-folder" > </i> Create New</a> *@
 <table class="table">
     <thead>
         <tr>
@@ -32,6 +35,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Discipline)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastAccessTime)
+            </th>
+            
             <th></th>
         </tr>
     </thead>
@@ -60,10 +67,13 @@
                 @Html.DisplayFor(modelItem => item.Discipline)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.LastAccessTime)
+            </td>
+           @* <td>
                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
                       <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
                       <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
-            </td>
+            </td>*@
         </tr>
 }
     </tbody>

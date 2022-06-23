@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ITICDE.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    var ProjectId = ViewBag.ProjectId;
+}
+
+<h1>Project Members</h1>
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
+<a style="margin-top:30px" asp-action="Index" asp-controller="Team" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OrganizationType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Discipline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastAccessTime)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Position)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.OrganizationType)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Discipline)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.LastAccessTime)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

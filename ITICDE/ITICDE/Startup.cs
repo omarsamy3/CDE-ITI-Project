@@ -55,6 +55,10 @@ namespace ITICDE
                 options.AllowSynchronousIO = true;
             });
             services.AddControllersWithViews();
+
+            services.AddMvc().AddSessionStateTempDataProvider();
+            services.AddSession();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -83,6 +87,9 @@ namespace ITICDE
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSession();
+            //app.UseMvcWithDefaultRoute();
 
             app.UseEndpoints(endpoints =>
             {

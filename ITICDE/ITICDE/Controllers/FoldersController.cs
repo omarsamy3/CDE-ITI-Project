@@ -34,6 +34,7 @@ namespace ITICDE.Controllers
         // GET: Folders
         public async Task<IActionResult> Index(int ProjectId)
         {
+            HttpContext.Session.SetInt32("ProjectId", ProjectId);
             ViewBag.ProjId = ProjectId;
             var project=_context.Projects.Include(f=>f.Folders).FirstOrDefault(p=>p.Id == ProjectId);
             ViewBag.project = project;

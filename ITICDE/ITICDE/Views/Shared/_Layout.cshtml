@@ -1,9 +1,12 @@
 ﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 @{
-	var user = User.FindFirstValue(ClaimTypes.Name);
-	//var ProId = (int)ViewBag.ProjId;
+    var user = User.FindFirstValue(ClaimTypes.Name);
+    //var ProjectId = ViewBag.ProjId;
+    //var ProjectName = (ITICDE.Models.Project)ViewBag.project;
+    //var ProjectId = HttpContext.Session.GetInt32("ProjectId");
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -175,7 +178,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../../dist/img/Omar.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../../dist/img/person.png" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">@User.Identity.Name</a>
@@ -918,7 +921,7 @@
     <div class="float-right d-none d-sm-block">
       <b>CDE</b> Team
     </div>
-    <strong>Copyright &copy; 2014-2022 <a href="https://www.iti.gov.eg/">ITI/CEI</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 1993-2014 <a href="https://www.iti.gov.eg/">ITI/CEI</a>.</strong> All rights reserved.
   </footer>
 
   <!-- Control Sidebar -->

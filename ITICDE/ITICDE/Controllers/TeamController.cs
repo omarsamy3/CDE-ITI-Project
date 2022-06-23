@@ -9,7 +9,7 @@ using ITICDE.Data;
 using ITICDE.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.AspNetCore.Authorization;
-//using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
 
 namespace ITICDE.Controllers
 {
@@ -26,12 +26,12 @@ namespace ITICDE.Controllers
         // GET: Team
         public async Task<IActionResult> Index()
         {
-            //ViewBag.TeamProjId = ProjectId;
-            var cDEDBContext = _context.Teams.Include(t => t.CreatorUser).Include(t => t.Project);
+            var ProjectId = HttpContext.Session.GetInt32("ProjectId");
+            ViewBag.TeamProjId = ProjectId;
+            var cDEDBContext = _context.Teams.Include(t => t.CreatorUser).Include(t => t.Project).Include(u => u.Users);
             return View(await cDEDBContext.ToListAsync());
         }
 
-        //[HandleError(View = "Error", ExceptionType = typeof(DbUpdateException))]
         public async Task<IActionResult> TeamUsers(int? TeamId)
         {
             var team = await _context.Teams.Include(u => u.Users).Where(u => u.Id == TeamId).FirstOrDefaultAsync();
@@ -62,10 +62,11 @@ namespace ITICDE.Controllers
         }
 
         // GET: Team/Create
-        public IActionResult Create()
+        public IActionResult Create(int? ProjectId)
         {
-            //ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
+            ViewBag.ProjectId = ProjectId;
+            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
+           // ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
             ViewData["TeamLeaderId"] = new SelectList(_context.Users, "Id", "Name");
             return View();
         }
@@ -75,15 +76,16 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,CreatorUserId,ProjectId,TeamLeaderId")] Team team)
+        public async Task<IActionResult> Create([Bind("Id,Name,CreatorUserId,ProjectId,TeamLeaderId")] Team team, int ProjectId)
         {
             if (ModelState.IsValid)
             {
-                // var project = _context.Projects.Find(ProjTeamId);
-                // team.ProjectId = ProTeamId;
+                
                 var TeamAdmin = _context.Users.FirstOrDefault(a => a.Id == team.TeamLeaderId);
                 team.Users.Add(TeamAdmin);
-                _context.Add(team);
+                team.ProjectId = ProjectId;
+                _context.Teams.Add(team);
+                ViewBag.TeamLeader = TeamAdmin;
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -157,7 +159,8 @@ namespace ITICDE.Controllers
 
             var team = await _context.Teams
                 .Include(t => t.CreatorUser)
-                .Include(t => t.Project).Include(u=>u.Users)
+                .Include(t => t.Project)
+                .Include(u=>u.Users)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (team == null)
             {
@@ -173,11 +176,15 @@ namespace ITICDE.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             var team =  _context.Teams.Include(t => t.Users).FirstOrDefault(t => t.Id == id);
-            foreach (var user in team.Users)
-			{
-                team.Users.Remove(user);
-                user.JoinedTeams.Remove(team);
-			}
+            if (team.Users.Count > 0)
+            {
+                foreach (var user in team.Users.ToList())
+                {
+                    team.Users.Remove(user);
+                    user.JoinedTeams.Remove(team);
+                }
+            }
+            
             
             _context.Teams.Remove(team);
             await _context.SaveChangesAsync();
@@ -195,6 +202,8 @@ namespace ITICDE.Controllers
             List<User> users = team.Users;
             ViewBag.TeamId = id;
             ViewBag.TeamLeader = team.TeamLeaderId;
+            ViewBag.TeamName = team.Name;
+            
             return View(users);
         }
 

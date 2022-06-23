@@ -15,16 +15,21 @@ namespace ITICDE.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [Display(Name ="Team Name")]
         public string Name { get; set; }
-        public DateTime LastAccess { get; set; } = DateTime.Now;
+        //[DataType(DataType.DateTime)]
+        //public DateTime LastAccess { get; set; } = DateTime.Now;
 
-		public string TeamLeaderId { get; set; }
 		#endregion
-
 		#region NavigationProperties
 
 		public string CreatorUserId { get; set; }
+        [Display(Name = "Creator User")]
         public User CreatorUser { get; set; }
+
+        [Display(Name ="Team Leader")]
+		public string TeamLeaderId { get; set; }
+        public User TeamLeader { get; set; }
         public List<User> Users { get; set; }
 
 
