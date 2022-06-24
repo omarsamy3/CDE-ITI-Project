@@ -1372,3 +1372,5 @@ E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\n
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.genruntimeconfig.cache
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ref\ITICDE.dll
 E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\ProjectUsers.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\AddUser.cshtml.g.cs
+E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\ViewUser.cshtml.g.cs

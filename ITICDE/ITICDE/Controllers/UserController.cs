@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using ITICDE.Data;
 using ITICDE.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.CodeAnalysis;
 
 
 namespace ITICDE.Controllers
@@ -28,10 +29,16 @@ namespace ITICDE.Controllers
             return View(await _context.Users.ToListAsync());
         }
 
-        public async Task<IActionResult> ProjectUsers(int? ProjectId)
-        {
-            ViewBag.ProjectId = ProjectId;
-            return View(await _context.Users.ToListAsync());
+        public IActionResult ProjectUsers(int ProjectId)
+{
+            ITICDE.Models.Project project = _context.Projects.Include(u => u.Users).FirstOrDefault(w => w.Id == ProjectId);
+            //var projectuser = project.Users.ToList();
+            var projectuser = _context.Users.Include(i => i.WorkonProjects).ToList();
+            ViewBag.project = project;
+            return View(projectuser);
+
+            //ViewBag.ProjectId = ProjectId;
+            //return View(await _context.Users.ToListAsync());
         }
         public async Task<IActionResult> AddTeamUser(int? TeamId)
         {

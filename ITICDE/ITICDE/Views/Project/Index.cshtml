@@ -1,17 +1,61 @@
-﻿@{ Layout = "_ProjectsLayout";}
+﻿@using System.Security.Claims
+@{ Layout = "_ProjectsLayout";}
 
 @model IEnumerable<ITICDE.Models.Project>
 
 @{
     ViewData["Title"] = "Index";   
 }
+@{var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+  var userLog = (ITICDE.Models.User)ViewBag.userLog;}
+
+<head>
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/dist/css/adminlte.min.css">
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
+
 
 <h1 style="margin:25px 0px 0 25px">Projects</h1>
 <p style= "display:flex;justify-content:flex-end;">
- <a asp-action="Create" class="btn btn-primary" style="margin:25px;">  <i class="fas fa-folder" > </i> Create New</a> 
-	
+ <a asp-action="Create" class="btn btn-primary" style="margin:25px;">  <i class="fas fa-folder" > </i> Create New</a>    
 </p>
-<table class="table" style="text-align:center">
+
+@foreach (var item in Model)
+{
+    if(item.Users.Contains(userLog)||item.CreatorUserId==userId){
+    <a asp-controller="Folders" asp-action="Index" asp-route-ProjectId="@item.Id" >
+    <div class="card " style="width:300px; display:inline-block; margin:20px " >
+        <div style="height:300px;"> <img src="/dist/img/Project-placeholder.png" class="card-img-top rounded-top" alt="..."> </div>
+        <div class="card-body">
+            <b style="color:blueviolet; font-size:21px" > @Html.DisplayFor(c=>item.Name) </b> 
+            <br>
+            <p class="card-text" style="color:black">           
+            @Html.DisplayFor(modelItem => item.Description)
+            </p>
+                 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                
+                @{
+                    if (userId == item.CreatorUserId)
+                    {
+                        <hr />
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a> 
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+                    
+                    <a asp-action="AddUser" asp-route-projectId="@item.Id" class="btn btn-secondary btn-sm"> <i class="fa-solid fa-user-plus"></i> Add User</a>
+                    }
+                }
+        </div>
+    </div>
+    </a>
+}}
+
+@*<table class="table" style="text-align:center">
     <thead>
         <tr>
 			<th></th>
@@ -62,16 +106,16 @@
                 <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
             </td>
-        </tr>
-}
-      
-    </tbody>
-	       
-</table>
-  @*  <script src="../../plugins/jquery/jquery.min.js"></script>
+        </tr> } 
+    </tbody>   
+</table>*@
+
+    <!-- jQuery -->
+    <script src="/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="~/dist/js/adminlte.min.js"></script>
+    <script src="/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="~/dist/js/demo.js"></script>*@
+    <script src="/dist/js/demo.js"></script>
+

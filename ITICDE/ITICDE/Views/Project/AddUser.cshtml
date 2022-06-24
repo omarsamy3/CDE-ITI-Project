@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ITICDE.Models.User>
+@{
+    var num = Model.Count();
+}
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
+@{
+    ViewData["Title"] = "AddUser";
+}
+<h1>Add User</h1>
+@{var ThisProject = (ITICDE.Models.Project)ViewBag.project;}
+@if (ThisProject.Users.Count!=num)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Position)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.OrganizationType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Discipline)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          
+            @foreach (var item in Model)
+            {
+                if (!item.WorkonProjects.Contains(ThisProject))
+                {
+                    <tr>	
+                        <td><i class="fas fa-user"></i></td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Position)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.OrganizationType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Discipline)
+                        </td>
+                      
+                        <td>                            
+                            <a asp-controller="Project" asp-action="AddedUser" asp-route-ProjectUser="@item.Id" 
+                            asp-route-projectId="@ThisProject.Id" class="btn btn-info btn-sm"> 
+                                <i class="fa-solid fa-user-plus"></i> &nbsp; Add</a>  
+                        </td>
+                    </tr>
+                }
+            }
+            
+        </tbody>
+    </table>
+}
+<a asp-action="ViewUser" asp-route-projectId="@ThisProject.Id" class="btn btn-outline-dark"> 
+    <i class="fa-solid fa-users"></i> &nbsp; Show users </a>
+
+

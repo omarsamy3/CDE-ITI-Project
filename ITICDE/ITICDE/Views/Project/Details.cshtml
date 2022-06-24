@@ -1,11 +1,14 @@
-﻿@model ITICDE.Models.Project
+﻿@using System.Security.Claims
+@model ITICDE.Models.Project
 
 @{
     ViewData["Title"] = "Details";
 }
 
 <h1>Project Details</h1>
-
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
 <div>
     <hr />
     <dl class="row">
@@ -54,6 +57,15 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"> <i class="fas fa-pencil-alt"></i> Edit</a> 
-    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+    <a asp-action="ViewUser" asp-route-projectId="@Model.Id" class="btn btn-outline-dark"> 
+    <i class="fa-solid fa-users"></i> &nbsp; Show users </a>
+    @{
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        @if(Model.CreatorUserId==userId)
+        {
+            <a style="margin-right:12px;margin-left:12px;" asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"> <i class="fas fa-pencil-alt"></i> Edit</a> 
+        }
+    }
+ 
+    <a asp-action="Index" class="btn btn-outline-secondary"> <i class="fa-solid fa-circle-right"></i> &nbsp;Back to List</a>
 </div>

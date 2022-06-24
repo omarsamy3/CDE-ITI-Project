@@ -10,6 +10,7 @@ using ITICDE.Models;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.CodeAnalysis;
+using Project = ITICDE.Models.Project;
 
 namespace ITICDE.Controllers
 {
@@ -24,10 +25,12 @@ namespace ITICDE.Controllers
         }
 
         // GET: Project
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string addedUser)
         {
-            var cDEDBContext = _context.Projects.Include(p => p.CreatorUser);
-            return View(await cDEDBContext.ToListAsync());
+            var userLog = _context.Users.Include(u=>u.WorkonProjects).FirstOrDefault(s=>s.Id == addedUser);
+            var projectLst = _context.Projects.Include(p => p.CreatorUser).Include(u=>u.Users);
+            ViewBag.userLog = userLog;
+            return View(await projectLst.ToListAsync());
         }
 
         // GET: Project/Details/5
@@ -52,13 +55,9 @@ namespace ITICDE.Controllers
         // GET: Project/Create
         public IActionResult Create()
         {
-            //ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
             return View();
         }
 
-        // POST: Project/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] ITICDE.Models.Project project)
@@ -102,9 +101,6 @@ namespace ITICDE.Controllers
             return View(project);
         }
 
-        // POST: Project/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Units,Progress,StartDate,CreationDate,Description,CreatorUserId")] ITICDE.Models.Project project)
@@ -165,22 +161,53 @@ namespace ITICDE.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var project = await _context.Projects.FindAsync(id);
-            _context.Projects.Remove(project);
-
-            //To remove the folders in the project you want to delete
-            //foreach (var folder in project.Folders)
-            //{
-            //    _context.Folders.Remove(folder);
-            //} 
-            
-            //To remove the files in the project you want to delete
-            //foreach (var file in project.Files)
-            //{
-            //    _context.Files.Remove(file);
-            //}
+            _context.Projects.Remove(project);            
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult AddUser(int? projectId)
+        {
+            if (projectId == null)
+            {
+                return NotFound();
+            }
+            Project project = _context.Projects.Include(u=>u.Users).FirstOrDefault(w=>w.Id== projectId);
+            var projectUser = _context.Users.Include(u=>u.WorkonProjects).ToList();
+            ViewBag.project= project;
+                       
+            return View(projectUser);
+        }
+
+
+        public IActionResult AddedUser (string ProjectUser ,int projectId)
+        {
+            User user = _context.Users.FirstOrDefault(p=>p.Id== ProjectUser);
+            Project project = _context.Projects.Find(projectId);
+            user.WorkonProjects.Add(project);
+            project.Users.Add(user);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(AddUser),new {projectId});
+        }
+        
+        public IActionResult ViewUser (int projectId)
+        {
+            Project project = _context.Projects.Include(u => u.Users).FirstOrDefault(w => w.Id == projectId);
+            //var projectuser = project.Users.ToList();
+            var projectuser = _context.Users.Include(i => i.WorkonProjects).ToList();
+            ViewBag.project = project;           
+            return View(projectuser);
+        }
+        public IActionResult DeleteUser(string ProjectUser, int projectId)
+        {
+            User user = _context.Users.FirstOrDefault(p => p.Id == ProjectUser);
+            Project project = _context.Projects.Find(projectId);
+            user.WorkonProjects.Remove(project);
+            project.Users.Remove(user);
+            _context.SaveChanges();
+            return RedirectToAction(nameof(ViewUser), new { projectId });
+        }
+
 
         private bool ProjectExists(int id)
         {
