@@ -1,0 +1,445 @@
+﻿@model View
+
+@{
+    Layout = "";
+    ViewData["Title"] = "View";
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    @* <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />*@
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+
+
+    <link rel="stylesheet"
+          href="../../Viewer/lib/fontawesome-free-5.11.2-web/css/all.min.css"
+          type="text/css" />
+    <link rel="stylesheet" href="../../Viewer/css/xeokit-bim-viewer.css" type="text/css" />
+    <link href="../../Viewer/css/Xeo.css" rel="stylesheet" />
+    <link href="../../Viewer/css/SideBar.css" rel="stylesheet" />
+
+    <title>ITICDE-Viewer</title>
+
+</head>
+
+<body>
+
+    <div id="main">
+        <div id="mySidebar" class="sidebar">
+            <div class="topnav">
+
+                <a onclick="AddExplorerList()" href="javascript:void(0);" id="explorerside" class="">Explorer</a>
+                <a onclick="ChangeTree('containment')" href="javascript:void(0);" class="activeside" id="projectsside">Projects</a>
+
+
+            </div>
+
+            <div id="treeViewContainer"></div>
+        </div>
+        <div id="myToolbar">
+            <div class="xeokit-toolbar">
+                <div class="xeokit-btn-group"
+                <!--TreeViewer-->
+                <button for="explorer_toggle"
+                        class="explorer_toggle_label xeokit-btn fas fa-2x fa-sitemap"
+                        title="Toggle explorer panel"
+                        id="TreeToggle"></button>
+                <!-- Reset button -->
+
+                    <button type="button"
+                            class="xeokit-reset xeokit-btn fa fa-home fa-2x"
+                            title="Reset view"
+                            onclick="ResetViewer()"></button>
+
+                    <!-- Perspective/Ortho Mode button -->
+
+                    <button type="button"
+                            class="xeokit-threeD xeokit-btn fa fa-cube fa-2x"
+                            id="toggle3d"
+                            title="Toggle 2D/3D"
+                            onclick="SetCamera()"></button>
+                </div>
+                <!-- Tools button group -->
+                <div class="xeokit-btn-group" role="group">
+                    <!-- section tool button -->
+
+                    <button type="button"
+                            id="sectionbtn"
+                            class="xeokit-section xeokit-btn fa fa-cut fa-2x"
+                            title="Slice objects">
+                    </button>
+                    <button type="button"
+                            class="xeokit-query fa fa-info-circle fa-2x xeokit-btn"
+                            title="Query objects"
+                            id="Query">
+                    </button>
+                </div>
+                <div class="xeokit-btn-group" role="group">
+                    <!-- Save button -->
+                    <form asp-action="ShowView" id="saveview">
+                        <input type="text" value="" name="loadedfilesids" hidden id="viewfileids" />
+                        <input type="text" value=@ViewBag.viewid name="viewid" hidden id="viewfileids" />
+
+                        <button type="submit"
+                                id="saveview"
+                                class="xeokit-section xeokit-btn fa fa-save fa-2x"
+                                title="Save"
+                        asp-route-viewid="@Model.Id">
+                        </button>
+                    </form>
+                  @*  <button type="button"
+                            class="xeokit-query fa fa-tasks fa-2x xeokit-btn"
+                            title="Create Task"
+                            id="CreateTask">
+                    </button>*@
+                    <a asp-controller="Task" asp-action="CreateFromView" asp-route-ProjectId="@Model.ProjectId" asp-route-viewid="@Model.Id"  class="xeokit-query fa fa-tasks fa-2x xeokit-btn" style="text-decoration:none"></a>
+                    
+                        @*       <button 
+                                asp-action="Index"
+                                class="xeokit-section xeokit-btn fa fa-arrow-left fa-2x"
+                                title="Back"
+                        asp-route-ProjectId="@Model.Id">
+                        </button>*@
+                        <a asp-action="Index" asp-route-ProjectId="@Model.ProjectId" class="xeokit-section xeokit-btn fa fa-arrow-left fa-2x" style="text-decoration:none"></a>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div></div>
+
+        <canvas id="myCanvas"></canvas>
+        <canvas id="myNavCubeCanvas"></canvas>
+        <canvas id="mySectionPlanesOverviewCanvas"></canvas>
+
+
+
+    </div>
+
+    <script src="../../Viewer/scripts/Viewer.js" type="module"></script>
+    <script src="../../Viewer/scripts/TreeView.js" type="module"></script>
+    <script src="../../Viewer/scripts/NavCube.js" type="module"></script>
+    <script src="../../Viewer/scripts/SectionPlanes.js" type="module"></script>
+    @*     <script src="../../Viewer/scripts/Explorer.js"></script>*@
+
+    <script type="module">
+        //this is loader for models
+        import { WebIFCLoaderPlugin } from "../../Viewer/dist/xeokit-sdk.es.js";
+        const webIFCLoader = new WebIFCLoaderPlugin(viewer, {
+
+            wasmPath: "../../Viewer/dist/",
+
+        });
+        //------------------------------------------------------------------------------------------------------------------
+        // Load IFC Models
+        //------------------------------------------------------------------------------------------------------------------
+        function loadifcfile(file) {
+            let filepath = "../../Files/" + file.Name
+
+            webIFCLoader.load({
+                // Returns an Entity that represents the model
+                id: file.Id,
+                src: filepath,
+
+                loadMetadata: true,
+                edges: false,
+            });
+        }
+
+
+        //const model1 = webIFCLoader.load({
+        //     // Returns an Entity that represents the model
+        //     id: "archmodel",
+        //     src: "../../Files/Arch-model_1.ifc",
+
+        //     loadMetadata: true,
+        //     edges: false,
+        //   });
+     
+        for (let i = 0; i < Files.length; i++) {
+            if (Files[i].loaded == true) {
+                loadifcfile(Files[i])
+            }
+
+        }
+        window.loaderifc = webIFCLoader;
+        window.loadfileifc = loadifcfile;
+
+
+
+    </script>
+
+    <script>
+        //sidebar open and close
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "350px";
+            document.getElementById("main").style.marginLeft = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
+
+    <script>
+        var Files = []
+        @{
+
+            foreach (var fl in ViewBag.Files)
+            {
+                var q = Html.Raw("{folderid:" + fl.FolderId + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+
+                @:Files.push(@q);
+            }
+        }
+                                                                                var Folders = []
+        @{
+            foreach (var fldr in ViewBag.Folders)
+            {
+                var q = Html.Raw("{id:" + fldr.Id + "," + "parentid:" + fldr.ParentId + "," + "Name:" + "\"" + fldr.Name + "\"" + ",}");
+
+                @:Folders.push(@q);
+            }
+        }
+                                                                                var LoadedFiles = []
+
+        @{
+            foreach (var fl in ViewBag.Loadedfiles)
+            {
+                var q = Html.Raw("{folderid:" + fl.FolderId + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+
+                @:LoadedFiles.push(@q);
+            }
+
+        }
+                                for (let i = 0; i < LoadedFiles.length; i++) {
+            for (let j = 0; j < Files.length; j++) {
+                if (LoadedFiles[i].Name == Files[j].Name) {
+                    Files[j].loaded = true
+                    break;
+                }
+            }
+        }
+
+
+        for (let i = 0; i < LoadedFiles.length; i++) {
+            addtoinput(LoadedFiles[i].id);
+        }
+
+        //window.Files = Files;
+        //window.Folders=Folders;
+        //window.LoadedFiles = LoadedFiles;
+
+
+
+        //load the explorer list
+
+        var mainelement = document.getElementById("treeViewContainer");
+
+        var listdiv = document.createElement("div");
+        listdiv.id = "sidelist";
+        var listul = document.createElement("ul");
+        var projectrootli = document.createElement("li");
+        projectrootli.id = 0;
+        var projectrootul = document.createElement("ul");
+
+
+
+        // the called function
+        function AddExplorerList() {
+            document.getElementById("explorerside").classList.add("activeside");
+            document.getElementById("projectsside").classList.remove("activeside");
+            mainelement.innerHTML = "";
+            mainelement.append(listdiv);
+            listdiv.append(listul);
+            projectrootli.innerHTML = ` <span class="folderfold" onclick="createFolderHTML(0)" id="spanfold0">+</span><span>Project</span>`;
+            listul.appendChild(projectrootli);
+            projectrootul.innerHTML = "";
+            projectrootli.appendChild(projectrootul);
+            //createFolderHTML(projectrootul);
+        }
+
+        function getfolder(id) {
+            for (let index = 0; index < Folders.length; index++) {
+                if (Folders[index].id == id) {
+                    return Folders[index];
+                }
+
+            }
+        }
+
+
+
+        //main function
+        function createFolderHTML(id) {
+
+            let span = document.getElementById("spanfold" + id)
+            if (span.innerHTML == "+") {
+                let folderul = null;
+                let folder = null;
+
+                if (id == 0) { folderul = projectrootul }
+                else {
+                    folderul = document.createElement("ul");
+                    document.getElementById(id).appendChild(folderul);
+                    folder = getfolder(id);
+                }
+
+                loadinnerfolders(folder, folderul);
+                span.innerHTML = "-"
+            }
+            else {
+                span.innerHTML = "+"
+                let lielem = document.getElementById(id);
+                if (id == 0) {
+                    lielem.lastChild.innerHTML = " ";
+                }
+                else {
+                    lielem.removeChild(lielem.lastChild);
+
+                }
+
+            }
+
+        }
+
+
+        function CreatePlusSpan(folderli) {
+            let spanplus = document.createElement("span");
+            spanplus.innerHTML = "+"
+            spanplus.classList.add("folderfold");
+            spanplus.setAttribute('onclick', `createFolderHTML(${folderli.id})`);
+            spanplus.id = "spanfold" + folderli.id;
+            folderli.appendChild(spanplus);
+        }
+
+
+        function CreateFolderSpan(folder, folderli) {
+            let folderspan = document.createElement("span");
+
+            folderspan.innerHTML = folder.Name;
+            folderli.appendChild(folderspan);
+
+        }
+
+
+        function loadinnerfolders(folder, folderul) {
+            for (let i = 0; i < Folders.length; i++) {
+
+
+                if (folder != null) {
+
+                    if (Folders[i].parentid == folder.id) {
+                        var folderli = document.createElement("li");
+                        folderli.id = Folders[i].id;
+                        folderul.appendChild(folderli);
+                        CreatePlusSpan(folderli);
+                        CreateFolderSpan(Folders[i], folderli);
+                    }
+                } else {
+                    var folderli = document.createElement("li");
+                    folderli.id = Folders[i].id;
+                    if (Folders[i].parentid == 0) {
+                        var folderli = document.createElement("li");
+                        folderli.id = Folders[i].id;
+                        folderul.appendChild(folderli);
+                        CreatePlusSpan(folderli);
+                        CreateFolderSpan(Folders[i], folderli);
+                    }
+                }
+
+            }
+
+            loadfiles(folder, folderul)
+
+        }
+
+        function loadfiles(folder, folderul) {
+            if (folder == null) {
+                folderul = projectrootul;
+            }
+            if (folder != null) {
+                let fid = folder.id;
+                Files.forEach(function(file) {
+                    if (file.folderid == fid) {
+                        fnameli = document.createElement("li")
+
+                        var chckbox = document.createElement("INPUT");
+                        chckbox.setAttribute("type", "checkbox");
+                        chckbox.setAttribute("onclick", `addtoinput('${file.id}')`);
+                        chckbox.classList.add("ExplChckbox")
+                        if (file.loaded == true) {
+                            chckbox.checked = true;
+                        }
+                        fnameli.appendChild(chckbox);
+                        fnameli.append(file.Name);
+                        folderul.appendChild(fnameli);
+                    }
+
+                })
+            } else {
+                Files.forEach(function(file) {
+                    if (file.folderid == null) {
+                        fnameli = document.createElement("li")
+
+                        var chckbox = document.createElement("INPUT");
+                        chckbox.setAttribute("type", "checkbox");
+                        chckbox.setAttribute("onclick", `addtoinput('${file.id}')`);
+                        chckbox.classList.add("ExplChckbox")
+                        fnameli.appendChild(chckbox);
+                        fnameli.append(file.Name);
+                        folderul.appendChild(fnameli);
+                    }
+
+                })
+            }
+        }
+
+
+        function addtoinput(id) {
+            let a = document.getElementById("viewfileids");
+            let oldtxt = a.value;
+            let b = new Set(a.value.split(",").map(Number));
+            let exsitflag = contains(Array.from(b), id);
+            a.value = oldtxt + id + ","
+            b = new Set(a.value.split(",").map(Number));
+            b = Array.from(b);
+            if (exsitflag) {
+                for (var i = 0; i < b.length; i++) {
+
+                    if (b[i] == id) {
+                        b.splice(i, 1);
+                        i--;
+                    }
+                }
+
+            }
+            a.value = b.toString();
+        }
+
+        function contains(a, obj) {
+            var i = a.length;
+            while (i--) {
+                if (a[i] == obj) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    </script>
+
+
+
+</body>
+</html>
+

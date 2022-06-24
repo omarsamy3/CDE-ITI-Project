@@ -50,20 +50,38 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatorUser)
         </dt>
-   @*     <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatorUser.ConfirmEmail)
-        </dd class>*@
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatorUser.Name)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AssignedtoUser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AssignedtoUser.Name)
+        </dd class>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Project)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Project.Description)
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Team)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Team.Name)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.View)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.View.Name)
         </dd class>
     </dl>
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a asp-action="Index" >Back to List</a>
     </form>
 </div>

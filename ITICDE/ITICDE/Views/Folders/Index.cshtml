@@ -5,13 +5,13 @@
     ViewData["Title"] = "Index";
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
     var ProjId = (int)ViewBag.ProjId;
-    var project = (ITICDE.Models.Project)ViewBag.project;
+    var project = (string)ViewBag.project;
 }
 <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 
-<h1>@project.Name</h1>
+<h1>@project</h1>
 <a style="margin-top:30px" asp-action="Index" asp-controller="Project" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
 
 <p style="display:flex;justify-content:flex-end;">

@@ -85,19 +85,17 @@ namespace ITICDE.Controllers
 
 
         // GET: Project/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            var project = await _context.Projects.FindAsync(id);
+            var project =  _context.Projects.Include(m=>m.CreatorUser).FirstOrDefault(p=>p.Id==id);
             if (project == null)
             {
                 return NotFound();
             }
-            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", project.CreatorUserId);
             return View(project);
         }
 
@@ -109,7 +107,6 @@ namespace ITICDE.Controllers
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 try
@@ -130,7 +127,6 @@ namespace ITICDE.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", project.CreatorUserId);
             return View(project);
         }
 
@@ -200,8 +196,8 @@ namespace ITICDE.Controllers
         }
         public IActionResult DeleteUser(string ProjectUser, int projectId)
         {
-            User user = _context.Users.FirstOrDefault(p => p.Id == ProjectUser);
-            Project project = _context.Projects.Find(projectId);
+            User user = _context.Users.Include(u=>u.WorkonProjects).FirstOrDefault(p => p.Id == ProjectUser);
+            Project project = _context.Projects.Include(o=>o.Users).FirstOrDefault(p => p.Id == projectId);
             user.WorkonProjects.Remove(project);
             project.Users.Remove(user);
             _context.SaveChanges();

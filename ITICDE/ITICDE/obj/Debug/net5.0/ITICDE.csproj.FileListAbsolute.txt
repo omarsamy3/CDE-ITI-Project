@@ -1134,11 +1134,6 @@ D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITI
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ProjectsLayout.cshtml.g.cs
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ViewerLayour.cshtml.g.cs
-D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Create.cshtml.g.cs
-D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Delete.cshtml.g.cs
-D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Details.cshtml.g.cs
-D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Edit.cshtml.g.cs
-D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Index.cshtml.g.cs
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Create.cshtml.g.cs
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Delete.cshtml.g.cs
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Details.cshtml.g.cs
@@ -1170,207 +1165,414 @@ D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITI
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\AddTeamUser.cshtml.g.cs
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\DeleteTeamUser.cshtml.g.cs
 D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Empty.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.AssemblyReference.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.GeneratedMSBuildEditorConfig.editorconfig
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.AssemblyInfoInputs.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.AssemblyInfo.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.CoreCompileInputs.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.MvcApplicationPartsAssemblyInfo.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorAssemblyInfo.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorAssemblyInfo.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\scopedcss\bundle\ITICDE.styles.css
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\staticwebassets\ITICDE.StaticWebAssets.Manifest.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.TagHelpers.input.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.TagHelpers.output.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorCoreGenerate.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Create.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\CreateInnerFolder.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Delete.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\DeleteFile.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Details.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Edit.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Index.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\InnerDet.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\ViewFiles.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Settings.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Create.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Delete.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Details.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Edit.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Empty.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartialCustom.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ProjectsLayout.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ViewerLayour.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Create.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Delete.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Details.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Edit.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Index.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Create.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Delete.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Details.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Edit.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Index.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\UsersDetails.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\AddTeamUser.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Create.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Delete.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\DeleteTeamUser.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Edit.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Create.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Delete.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Details.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Edit.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Index.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\ShowView.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorTargetAssemblyInfo.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorTargetAssemblyInfo.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\refint\ITICDE.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\appsettings.Development.json
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\appsettings.json
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.exe
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.deps.json
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.runtimeconfig.json
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.runtimeconfig.dev.json
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.Views.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.Views.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\AutoMapper.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Humanizer.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Identity.Client.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\Newtonsoft.Json.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.AttributedModel.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Convention.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Hosting.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Runtime.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.TypedParts.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Runtime.Caching.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.Views.pdb
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.CopyComplete
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.genruntimeconfig.cache
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\ref\ITICDE.dll
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\ProjectUsers.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\AddUser.cshtml.g.cs
-E:\A1Programming\1My.CEI Program\Project\CDEITIProject\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\ViewUser.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Create.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Delete.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Details.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Edit.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 6 17--6-2022\ITICDE\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\appsettings.Development.json
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\appsettings.json
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.exe
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.deps.json
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.runtimeconfig.json
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.runtimeconfig.dev.json
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.Views.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.Views.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\AutoMapper.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Humanizer.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Convention.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Hosting.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Runtime.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.TypedParts.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Runtime.Caching.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.AssemblyReference.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.GeneratedMSBuildEditorConfig.editorconfig
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.AssemblyInfoInputs.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.AssemblyInfo.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.CoreCompileInputs.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.MvcApplicationPartsAssemblyInfo.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorAssemblyInfo.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorAssemblyInfo.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\scopedcss\bundle\ITICDE.styles.css
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\staticwebassets\ITICDE.StaticWebAssets.Manifest.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.TagHelpers.input.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.TagHelpers.output.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorCoreGenerate.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Create.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\CreateInnerFolder.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Delete.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\DeleteFile.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Details.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Edit.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\InnerDet.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\ViewFiles.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Settings.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Create.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Delete.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Details.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Edit.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Empty.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartialCustom.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ProjectsLayout.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ViewerLayour.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Create.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Delete.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Details.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Edit.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Create.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Delete.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Details.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Edit.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\UsersDetails.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\AddTeamUser.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Create.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Delete.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\DeleteTeamUser.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Edit.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Create.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Delete.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Details.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Edit.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Index.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\ShowView.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorTargetAssemblyInfo.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorTargetAssemblyInfo.cs
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.Views.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.CopyComplete
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\refint\ITICDE.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.pdb
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.genruntimeconfig.cache
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\ref\ITICDE.dll
+D:\ITI\Project\ME Working On\23-6\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\CreateFromView.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\appsettings.Development.json
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\appsettings.json
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.exe
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.deps.json
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.runtimeconfig.json
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.runtimeconfig.dev.json
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.Views.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ITICDE.Views.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\AutoMapper.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Humanizer.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.AspNetCore.Razor.Language.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.Razor.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Data.SqlClient.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Identity.Core.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.Identity.Client.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\dotnet-aspnet-codegenerator-design.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\Newtonsoft.Json.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.AttributedModel.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Convention.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Hosting.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.Runtime.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Composition.TypedParts.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Runtime.Caching.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\System.Security.Cryptography.ProtectedData.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\bin\Debug\net5.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.AssemblyReference.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.GeneratedMSBuildEditorConfig.editorconfig
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.AssemblyInfoInputs.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.AssemblyInfo.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.CoreCompileInputs.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.MvcApplicationPartsAssemblyInfo.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorAssemblyInfo.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorAssemblyInfo.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\scopedcss\bundle\ITICDE.styles.css
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\staticwebassets\ITICDE.StaticWebAssets.Manifest.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.TagHelpers.input.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.TagHelpers.output.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorCoreGenerate.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Create.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\CreateInnerFolder.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Delete.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\DeleteFile.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Details.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Edit.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\Index.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\InnerDet.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Folders\ViewFiles.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Index.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Home\Settings.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Create.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Delete.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Details.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Edit.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\Index.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Empty.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartialCustom.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ProjectsLayout.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Shared\_ViewerLayour.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Create.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\CreateFromView.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Delete.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Details.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Edit.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Task\Index.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Create.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Delete.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Details.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Edit.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\Index.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Team\UsersDetails.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\AddTeamUser.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Create.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Delete.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\DeleteTeamUser.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Details.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Edit.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Create.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Delete.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Details.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Edit.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\Index.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\View\ShowView.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorTargetAssemblyInfo.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.RazorTargetAssemblyInfo.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.Views.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.csproj.CopyComplete
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\refint\ITICDE.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.pdb
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ITICDE.genruntimeconfig.cache
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\ref\ITICDE.dll
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\AddUser.cshtml.g.cs
+D:\iti data\Final Project Data\Code\After Adding Template\Trial 7 24-6-2022\ITICDE\ITICDE\obj\Debug\net5.0\Razor\Views\Project\ViewUser.cshtml.g.cs

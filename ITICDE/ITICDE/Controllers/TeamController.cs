@@ -24,9 +24,9 @@ namespace ITICDE.Controllers
         }
 
         // GET: Team
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int ProjectId)
         {
-            var ProjectId = HttpContext.Session.GetInt32("ProjectId");
+            
             ViewBag.TeamProjId = ProjectId;
             var cDEDBContext = _context.Teams.Include(t => t.CreatorUser).Include(t => t.Project).Include(u => u.Users);
             return View(await cDEDBContext.ToListAsync());
@@ -87,7 +87,7 @@ namespace ITICDE.Controllers
                 _context.Teams.Add(team);
                 ViewBag.TeamLeader = TeamAdmin;
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index),new{ProjectId});
             }
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", team.CreatorUserId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", team.ProjectId);
@@ -117,7 +117,7 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreatorUserId,ProjectId")] Team team)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreatorUserId,ProjectId,TeamLeaderId")] Team team)
         {
             if (id != team.Id)
             {

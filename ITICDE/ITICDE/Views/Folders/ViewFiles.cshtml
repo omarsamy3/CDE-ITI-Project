@@ -5,13 +5,13 @@
     var ModelName = (string)@Model.Name.Split('.').First();
     var FileExtention = (string)@Model.Name.Split('.').Last();
 }
-<h3>@Model.Name</h3>
+@*<h3>@Model.Name</h3>*@
 
 @{
 
     if (Model.Type == ".ifc")
     {
-
+        Layout="";
         <head>
             <meta charset="utf-8" />
             <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -74,6 +74,7 @@
                             data-tippy-content="Query objects"
                             id="Query">
                         </button>
+                         <a asp-action="Index" asp-route-ProjectId="@Model.ProjectId" class="xeokit-section xeokit-btn fa fa-arrow-left fa-2x" style="text-decoration:none"></a>
                     </div>
                 </div>
             </div>

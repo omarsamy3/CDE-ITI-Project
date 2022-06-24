@@ -31,12 +31,16 @@ namespace ITICDE.Controllers
             _userManager = userManager;
         }
 
+        public IActionResult Redirect(int ProjectId)
+        {
+            HttpContext.Session.SetInt32("projid", ProjectId);
+            return RedirectToAction(nameof(Index), new { ProjectId });
+        }
         // GET: Folders
         public async Task<IActionResult> Index(int ProjectId)
         {
-            HttpContext.Session.SetInt32("ProjectId", ProjectId);
             ViewBag.ProjId = ProjectId;
-            var project=_context.Projects.Include(f=>f.Folders).FirstOrDefault(p=>p.Id == ProjectId);
+            var project=_context.Projects.Include(f=>f.Folders).FirstOrDefault(p=>p.Id == ProjectId).Name;
             ViewBag.project = project;
             return View(await _context.Folders.ToListAsync());
         }
@@ -79,7 +83,7 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create ([Bind("Id,Name,CreationDate, ProjectId,UserId, CreatorUserId,Users")] Folder folder, int ProjectId,string UserId)
+        public async Task<IActionResult> Create ([Bind("Id,Name,CreationDate, ProjectId,UserId,Users")] Folder folder, int ProjectId,string UserId)
         {
             //Task<string> content = new StreamReader(Request.Body).ReadToEndAsync();
             if (ModelState.IsValid)
@@ -108,6 +112,8 @@ namespace ITICDE.Controllers
             {
                 return NotFound();
             }
+            ViewData["ProjectId"] = folder.ProjectId;
+            ViewBag.projid=folder.ProjectId;
             return View(folder);
         }
 
@@ -116,7 +122,7 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreationDate")] Folder folder)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreationDate,UserId,ProjectId")] Folder folder)
         {
             if (id != folder.Id)
             {
@@ -141,7 +147,7 @@ namespace ITICDE.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index),new { ProjectId=folder.ProjectId});
             }
             return View(folder);
         }

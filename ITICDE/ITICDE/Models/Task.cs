@@ -11,7 +11,6 @@ namespace ITICDE.Models
 
         public Task()
         {
-            Users = new List<User>();
         }
         #region Properties
         [Key]
@@ -37,7 +36,8 @@ namespace ITICDE.Models
 
         public User CreatorUser { get; set; }
 
-        public List<User> Users { get; set; }
+        public User AssignedtoUser { get; set; }
+        public string AssignedtoUserId { get; set; }
 
         [Required]
         public int ProjectId { get; set; }
@@ -45,7 +45,11 @@ namespace ITICDE.Models
 
         public Project Project { get; set; }
 
+        public Team Team { get; set; }
+        public int? TeamId{ get; set; }
 
+        public View View { get; set; }
+        public int? ViewId{ get; set; }
         #endregion
     }
 }

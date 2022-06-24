@@ -15,7 +15,6 @@
     <table class="table">
         <thead>
             <tr>
-                <th></th>
                 <th>
                     @Html.DisplayNameFor(model => model.Name)
                 </th>
@@ -26,7 +25,7 @@
                     @Html.DisplayNameFor(model => model.Position)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.OrganizationType)
+                    Organization type
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Discipline)
@@ -40,8 +39,7 @@
             {
                 if (!item.WorkonProjects.Contains(ThisProject))
                 {
-                    <tr>	
-                        <td><i class="fas fa-user"></i></td>
+                    <tr>				
                         <td>
                             @Html.DisplayFor(modelItem => item.Name)
                         </td>
@@ -70,7 +68,8 @@
         </tbody>
     </table>
 }
-<a asp-action="ViewUser" asp-route-projectId="@ThisProject.Id" class="btn btn-outline-dark"> 
-    <i class="fa-solid fa-users"></i> &nbsp; Show users </a>
+    <a asp-action="Index" class="btn btn-outline-secondary"> <i class="fa-solid fa-circle-left"></i> &nbsp;Back to All Projects</a> &nbsp; &nbsp;
+    <a asp-action="ViewUser" asp-route-projectId="@ThisProject.Id" class="btn btn-outline-dark"> 
+    <i class="fa-solid fa-users"></i> Show users </a>
 
 

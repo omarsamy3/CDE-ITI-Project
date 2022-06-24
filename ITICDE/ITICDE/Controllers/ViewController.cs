@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ITICDE.Data;
 using ITICDE.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace ITICDE.Controllers
 {
@@ -22,51 +23,55 @@ namespace ITICDE.Controllers
         // GET: View
         public async Task<IActionResult> Index(int ProjectId)
         {
-            var CDEDBContext = _context.Views.Include(v => v.CreatorUser).Include(v => v.Project);
-            return View(await CDEDBContext.ToListAsync());
+            var ViewsList = _context.Views.Where(v=>v.ProjectId==ProjectId).Include(v => v.CreatorUser).Include(v => v.Project);
+            ViewBag.Projiid = ProjectId;
+            return View(await ViewsList.ToListAsync());
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
-        
 
-        
-        
+
+
+
         //Preview 3D Model
-        public  IActionResult ShowView(int viewid)
+        public IActionResult ShowView(int viewid)
         {
+            var projid = HttpContext.Session.GetInt32("projid");
+            ViewBag.Projiid = projid;
             ViewBag.viewid = viewid;
-            ViewBag.Folders = _context.Folders;
-            ViewBag.Files = _context.Files;
-            ViewBag.Loadedfiles = _context.Views.Include(v=>v.Files).FirstOrDefault(v => v.Id == viewid).Files;
-            return View(_context.Views.FirstOrDefault(v=>v.Id==viewid));
+            ViewBag.Folders = _context.Folders.Where(f => f.ProjectId == projid);
+            ViewBag.Files = _context.Files.Where(f => f.Type == ".ifc" && f.ProjectId==projid);
+            ViewBag.Loadedfiles = _context.Views.Include(v => v.Files).FirstOrDefault(v => v.Id == viewid).Files;
+            return View(_context.Views.FirstOrDefault(v => v.Id == viewid));
         }
         [HttpPost]
         public IActionResult ShowView(int viewid, string loadedfilesids)
         {
 
-           //string a = HttpContext.Request.Form["loadedfilesids"];
+            //string a = HttpContext.Request.Form["loadedfilesids"];
             string[] idstrings = loadedfilesids.Split(',');
-          
-            int[] ids= Array.ConvertAll(idstrings, s => int.TryParse(s, out var x) ? x : -1);
+
+            int[] ids = Array.ConvertAll(idstrings, s => int.TryParse(s, out var x) ? x : -1);
 
 
             var viewfiles = _context.Views.Include(v => v.Files).FirstOrDefault(v => v.Id == viewid).Files;
             viewfiles.Clear();
             foreach (var item in ids)
             {
-                if(item!=0)
+                if (item != 0)
                 {
                     viewfiles.Add(_context.Files.First(f => f.Id == item));
                 }
             }
             _context.SaveChanges();
-            ViewBag.Folders = _context.Folders;
-            ViewBag.Files = _context.Files;
+            var projid = HttpContext.Session.GetInt32("projid");
+            ViewBag.viewid = viewid;
+            ViewBag.Folders = _context.Folders.Where(f => f.ProjectId == projid);
+            ViewBag.Files = _context.Files.Where(f => f.Type == ".ifc" && f.ProjectId == projid);
             ViewBag.Loadedfiles = _context.Views.Include(v => v.Files).FirstOrDefault(v => v.Id == viewid).Files;
 
             //tobecontiued
             return View(_context.Views.FirstOrDefault(v => v.Id == viewid));
         }
-
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -91,10 +96,11 @@ namespace ITICDE.Controllers
         }
 
         // GET: View/Create
-        public IActionResult Create()
+        public IActionResult Create(int ProjectId)
         {
             //ViewData["UserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail");
             //ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
+            ViewBag.Projiid = ProjectId;
             return View();
         }
 
@@ -109,7 +115,7 @@ namespace ITICDE.Controllers
             {
                 _context.Add(view);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new {ProjectId=view.ProjectId});
             }
            
             return View(view);
@@ -128,8 +134,9 @@ namespace ITICDE.Controllers
             {
                 return NotFound();
             }
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", view.UserId);
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", view.ProjectId);
+            //ViewData["UserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", view.UserId);
+            //ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", view.ProjectId);
+            ViewData["ProjectId"] = view.ProjectId;
             return View(view);
         }
 
@@ -163,7 +170,7 @@ namespace ITICDE.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index),new{view.ProjectId});
             }
             ViewData["UserId"] = new SelectList(_context.Users, "Id", "ConfirmEmail", view.UserId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", view.ProjectId);

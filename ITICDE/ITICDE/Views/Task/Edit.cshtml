@@ -1,22 +1,25 @@
-﻿@using ITICDE.Enums
-@model ITICDE.Models.Task
+﻿@model ITICDE.Models.Task
+@using ITICDE.Enums
 
 @{
     ViewData["Title"] = "Edit";
+    var usrid = Model.CreatorUserId;
+    var projectId =(int)ViewBag.ProjId;
 }
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
 
-<h1>Edit</h1>
-
-<h4>Task</h4>
+<h1><i class="fa-solid fa-pen-to-square fa-lg"></i> &nbsp;Edit @Model.Title</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group">
+            <div class="form-group" >
                 <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />
+                <input asp-for="Title" class="form-control"/>
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -26,7 +29,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="Priority" class="control-label"></label>
-                <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()"></select>
+                <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()">
+                    
+                </select>
                 <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -34,37 +39,49 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+          @*  <div class="form-group">
                 <label asp-for="CreationDate" class="control-label"></label>
                 <input asp-for="CreationDate" class="form-control" />
                 <span asp-validation-for="CreationDate" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="DeadLine" class="control-label"></label>
                 <input asp-for="DeadLine" class="form-control" />
                 <span asp-validation-for="DeadLine" class="text-danger"></span>
             </div>
-            <div class="form-group">
+    @*        <div class="form-group">
                 <label asp-for="CreatorUserId" class="control-label"></label>
                 <select asp-for="CreatorUserId" class="form-control" asp-items="ViewBag.CreatorUserId"></select>
                 <span asp-validation-for="CreatorUserId" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
+                <label asp-for="AssignedtoUserId" class="control-label">Assigned To User</label>
+                <select asp-for="AssignedtoUserId" class="form-control" asp-items="ViewBag.AssignedtoUserId"></select>
+                <span asp-validation-for="AssignedtoUserId" class="text-danger"></span>
+            </div>
+@*            <div class="form-group">
                 <label asp-for="ProjectId" class="control-label"></label>
                 <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId"></select>
                 <span asp-validation-for="ProjectId" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="TeamId" class="control-label">Assigned To Team</label>
+                <select asp-for="TeamId" class="form-control" asp-items="ViewBag.TeamId"></select>
+                <span asp-validation-for="TeamId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <label asp-for="ViewId" class="control-label">View</label>
+                <select asp-for="ViewId" class="form-control" asp-items="ViewBag.ViewId"></select>
+                <span asp-validation-for="ViewId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" asp-route-ProjectId="@projectId" class="btn btn-primary" asp-route-CreatorUserId="@usrid"/>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-route-ProjectId="@projectId">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

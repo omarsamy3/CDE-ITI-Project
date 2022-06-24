@@ -27,27 +27,25 @@
 
 @foreach (var item in Model)
 {
-    if(item.Users.Contains(userLog)||item.CreatorUserId==userId){
-    <a asp-controller="Folders" asp-action="Index" asp-route-ProjectId="@item.Id" >
-    <div class="card " style="width:300px; display:inline-block; margin:20px " >
-        <div style="height:300px;"> <img src="/dist/img/Project-placeholder.png" class="card-img-top rounded-top" alt="..."> </div>
+    if(item.Users!=null && item.Users.Any(u=>u.Id==userId)||item.CreatorUserId==userId){
+    <a asp-controller="Folders" asp-action="Redirect" asp-route-ProjectId="@item.Id" >
+    <div class="card " style="width:350px; height:auto; display:inline-block; margin:0px 25px 20px" >
+        <div style="height:auto;"> <img height="250"  src="/dist/img/Project-placeholder.png" class="card-img-top rounded-top" alt="..."> </div>
         <div class="card-body">
-            <b style="color:blueviolet; font-size:21px" > @Html.DisplayFor(c=>item.Name) </b> 
+            <b style="color:saddlebrown; font-size:21px" > @Html.DisplayFor(c=>item.Name) </b> 
             <br>
-            <p class="card-text" style="color:black">           
+            <p class="card-text" style="color:black; text-overflow: ellipsis; white-space:nowrap; overflow: hidden;">           
             @Html.DisplayFor(modelItem => item.Description)
             </p>
-                 
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                 <hr>
+                <a style="margin:5px; margin-left:25px"  asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
                 
                 @{
                     if (userId == item.CreatorUserId)
-                    {
-                        <hr />
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a> 
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+                    {                    
+                        <a style="margin:5px" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
                     
-                    <a asp-action="AddUser" asp-route-projectId="@item.Id" class="btn btn-secondary btn-sm"> <i class="fa-solid fa-user-plus"></i> Add User</a>
+                        <a style="margin:5px" asp-action="AddUser" asp-route-projectId="@item.Id" class="btn btn-secondary btn-sm"> <i class="fa-solid fa-user-plus"></i> Add User</a>
                     }
                 }
         </div>

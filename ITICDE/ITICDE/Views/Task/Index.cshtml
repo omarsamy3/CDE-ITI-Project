@@ -1,15 +1,24 @@
-﻿@model IEnumerable<ITICDE.Models.Task>
+﻿@using System.Security.Claims
+@model IEnumerable<ITICDE.Models.Task>
 
 @{
     ViewData["Title"] = "Index";
+    var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var projectId = (int)ViewBag.ProjectId;
 }
 
-<h1>Tasks</h1>
+    <head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
+<h1><i class="fa-solid fa-list-check fa-lg"></i>&nbsp;Tasks</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
+
+<p style="display:flex;justify-content:flex-end;">
+ <a id="mybtn" asp-action="Create" asp-route-ProjectId="@projectId" class="btn btn-primary" style="margin:0px 25px;"><i class="fa-solid fa-calendar-plus"></i> &nbsp; Add Task</a>
 </p>
-<table class="table">
+@if(Model.Any(p=>p.ProjectId == projectId))
+{
+<table class="table" style="text-align:center">
     <thead>
         <tr>
             <th>
@@ -22,10 +31,7 @@
                 @Html.DisplayNameFor(model => model.Priority)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreationDate) 
+                @Html.DisplayNameFor(model => model.CreationDate)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeadLine)
@@ -34,26 +40,53 @@
                 @Html.DisplayNameFor(model => model.CreatorUser)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Project)
+                Assigned To User
             </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.Project)
+            </th>*@
+            <th>
+                Assigned To Team
+            </th>
+@*            <th>
+                @Html.DisplayNameFor(model => model.View)
+            </th>*@
             <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
+if(user == item.CreatorUserId ||(item.AssignedtoUserId!=null &&  user == item.AssignedtoUserId) ||user == item.Project.CreatorUserId|| (item.Team != null && item.Team.Users.Any(i =>i.Id == user)))
+
+    {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                <a asp-action = "Details" asp-route-id = "@item.Id" > @item.Title </a>
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Progress)
             </td>
-            <td>
+            <td style="text-align:left">
+                @if( item.Priority == Priority.Low)
+                {
+                    <img src="/Images/Green check .png" style="width : 15px" />
+                }
+                else if( item.Priority == Priority.Normal)
+                {
+                    <img src="/Images/Blue check.png" style="width : 15px" />
+                }
+                else if( item.Priority == Priority.High)
+                {
+                    <img src="/Images/Yellow Check.png" style="width : 15px" />
+                }
+                else if( item.Priority == Priority.Critical)
+                {
+                    <img src="/Images/Red check.png" style="width : 15px" />
+                }
+
                 @Html.DisplayFor(modelItem => item.Priority)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.CreationDate)
             </td>
@@ -64,14 +97,27 @@
                 @Html.DisplayFor(modelItem => item.CreatorUser.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Project.Name)
+                @Html.DisplayFor(modelItem => item.AssignedtoUser.Name)
             </td>
+
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                @Html.DisplayFor(modelItem => item.Team.Name)
             </td>
+
+            <td>
+                            @if (user == item.CreatorUserId ||  (item.AssignedtoUserId!=null &&  user == item.AssignedtoUserId) ||( item.Team !=null && user == item.Team.TeamLeaderId))
+
+                            {
+                                <a asp-action="Edit" asp-route-ProjId="@projectId" asp-route-id="@item.Id" class="btn btn-info "> <i class="fa-solid fa-pen-to-square fa-lg"></i> &nbsp; Edit</a>  
+                                //<a asp-action="Edit"  asp-route-id="@item.Id">Edit</a>
+                                //<a asp-action= "Delete" asp-route-id = "@item.Id" > Delete </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"> <i class="fas fa-trash fa-lg"></i> &nbsp; Delete</a>
+                            }
+                        <a  src="/open-iconic/svg/icon-name.svg" asp-action = "Details" asp-route-id = "@item.Id" class="btn btn-primary" ><i class="fa-solid fa-circle-info fa-lg"></i> &nbsp; Details </a> 
+                        </td>
         </tr>
+    }
 }
     </tbody>
 </table>
+}

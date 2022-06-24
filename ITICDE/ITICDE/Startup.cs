@@ -54,12 +54,10 @@ namespace ITICDE
             {
                 options.AllowSynchronousIO = true;
             });
-            services.AddControllersWithViews();
-
-            services.AddMvc().AddSessionStateTempDataProvider();
             services.AddSession();
-            
+            services.AddControllersWithViews();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -82,14 +80,11 @@ namespace ITICDE
             {
                 ServeUnknownFileTypes = true
             });
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
-
-            app.UseSession();
-            //app.UseMvcWithDefaultRoute();
 
             app.UseEndpoints(endpoints =>
             {

@@ -35,7 +35,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreationDate)
+            Creation Date
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CreationDate)
@@ -49,18 +49,36 @@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CreatorUser)
         </dt>
-@*        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CreatorUser.ConfirmEmail)
-        </dd>*@
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatorUser.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Assigned To User
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AssignedtoUser.Name)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Project)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Project.Description)
+            @Html.DisplayFor(model => model.Project.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            Assigned To Team
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Team.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.View)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.View.Name)
         </dd>
     </dl>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-route-ProjectId = "@Model.ProjectId">Back to List</a>
 </div>

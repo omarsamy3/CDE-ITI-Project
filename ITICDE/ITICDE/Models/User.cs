@@ -12,11 +12,10 @@ namespace ITICDE.Models
     {
         public User()
         {
-            CreatedProjects=new List<Project>();
+            CreatedProjects = new List<Project>();
             WorkonProjects = new List<Project>();
             CreatedTeams = new List<Team>();
             JoinedTeams = new List<Team>();
-            LeadedTeams = new List<Team>();
             CreatedFolders = new List<Folder>();
             SharedFolders = new List<Folder>();
             UploadedFiles = new List<File>();
@@ -25,10 +24,11 @@ namespace ITICDE.Models
             SharedViews = new List<View>();
             CreatedTasks = new List<Task>();
             SharedTasks = new List<Task>();
-    }
-		#region Properties
+            LeadedTeams = new List<Team>();
+        }
+        #region Properties
 
-		[Required]
+        [Required]
         [Display(Name = "User name")]
         [Remote("doesUserNameExist", "Account", HttpMethod = "POST",
         ErrorMessage = "User name already exists. Please enter a different user name.")]
@@ -36,28 +36,22 @@ namespace ITICDE.Models
 
         public byte[] ProfilePicture { get; set; }
 
-
         [Display(Name = "Last Access")]
         [DataType(DataType.DateTime)]
-        public DateTime LastAccessTime { get; set; } = DateTime.UtcNow;
-
+        public DateTime LastAccessTime { get; set; } = DateTime.Now;
 
         [Required]
         [Column(TypeName = "nvarchar(32)")]
-        [Display(Name = "Organization Type")]
         public OrganizationType OrganizationType { get; set; }
-
 
         [Required]
         [Column(TypeName = "nvarchar(32)")]
         public Discipline Discipline { get; set; }
 
-
         [Required]
         [Column(TypeName = "nvarchar(32)")]
         public Position Position { get; set; }
-        
-        
+
 
         #endregion
 
@@ -71,8 +65,6 @@ namespace ITICDE.Models
 
         [InverseProperty("CreatorUser")]
         public List<Team> CreatedTeams { get; set; }
-        [InverseProperty("TeamLeader")]
-        public List<Team> LeadedTeams { get; set; }
         [InverseProperty("Users")]
         public List<Team> JoinedTeams { get; set; }
 
@@ -93,8 +85,12 @@ namespace ITICDE.Models
 
         [InverseProperty("CreatorUser")]
         public List<Task> CreatedTasks { get; set; }
-        [InverseProperty("Users")]
+        [InverseProperty("AssignedtoUser")]
         public List<Task> SharedTasks { get; set; }
+
+        [InverseProperty("TeamLeader")]
+        public List<Team> LeadedTeams { get; set; }
+
 
         #endregion
     }

@@ -191,6 +191,9 @@ namespace ITICDE.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("AssignedtoUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
 
@@ -215,15 +218,27 @@ namespace ITICDE.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
+                    b.Property<int?>("TeamId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ViewId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("AssignedtoUserId");
 
                     b.HasIndex("CreatorUserId");
 
                     b.HasIndex("ProjectId");
+
+                    b.HasIndex("TeamId");
+
+                    b.HasIndex("ViewId");
 
                     b.ToTable("Tasks");
                 });
@@ -246,13 +261,15 @@ namespace ITICDE.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("TeamLeaderId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorUserId");
 
                     b.HasIndex("ProjectId");
+
+                    b.HasIndex("TeamLeaderId");
 
                     b.ToTable("Teams");
                 });
@@ -512,21 +529,6 @@ namespace ITICDE.Migrations
                     b.ToTable("ProjectUser");
                 });
 
-            modelBuilder.Entity("TaskUser", b =>
-                {
-                    b.Property<int>("SharedTasksId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UsersId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("SharedTasksId", "UsersId");
-
-                    b.HasIndex("UsersId");
-
-                    b.ToTable("TaskUser");
-                });
-
             modelBuilder.Entity("TeamUser", b =>
                 {
                     b.Property<int>("JoinedTeamsId")
@@ -692,6 +694,10 @@ namespace ITICDE.Migrations
 
             modelBuilder.Entity("ITICDE.Models.Task", b =>
                 {
+                    b.HasOne("ITICDE.Models.User", "AssignedtoUser")
+                        .WithMany("SharedTasks")
+                        .HasForeignKey("AssignedtoUserId");
+
                     b.HasOne("ITICDE.Models.User", "CreatorUser")
                         .WithMany("CreatedTasks")
                         .HasForeignKey("CreatorUserId")
@@ -704,9 +710,23 @@ namespace ITICDE.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ITICDE.Models.Team", "Team")
+                        .WithMany()
+                        .HasForeignKey("TeamId");
+
+                    b.HasOne("ITICDE.Models.View", "View")
+                        .WithMany("Tasks")
+                        .HasForeignKey("ViewId");
+
+                    b.Navigation("AssignedtoUser");
+
                     b.Navigation("CreatorUser");
 
                     b.Navigation("Project");
+
+                    b.Navigation("Team");
+
+                    b.Navigation("View");
                 });
 
             modelBuilder.Entity("ITICDE.Models.Team", b =>
@@ -721,9 +741,15 @@ namespace ITICDE.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("ITICDE.Models.User", "TeamLeader")
+                        .WithMany("LeadedTeams")
+                        .HasForeignKey("TeamLeaderId");
+
                     b.Navigation("CreatorUser");
 
                     b.Navigation("Project");
+
+                    b.Navigation("TeamLeader");
                 });
 
             modelBuilder.Entity("ITICDE.Models.View", b =>
@@ -811,21 +837,6 @@ namespace ITICDE.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("TaskUser", b =>
-                {
-                    b.HasOne("ITICDE.Models.Task", null)
-                        .WithMany()
-                        .HasForeignKey("SharedTasksId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ITICDE.Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("TeamUser", b =>
                 {
                     b.HasOne("ITICDE.Models.Team", null)
@@ -876,6 +887,11 @@ namespace ITICDE.Migrations
                     b.Navigation("Views");
                 });
 
+            modelBuilder.Entity("ITICDE.Models.View", b =>
+                {
+                    b.Navigation("Tasks");
+                });
+
             modelBuilder.Entity("ITICDE.Models.User", b =>
                 {
                     b.Navigation("CreatedFolders");
@@ -887,6 +903,10 @@ namespace ITICDE.Migrations
                     b.Navigation("CreatedTeams");
 
                     b.Navigation("CreatedViews");
+
+                    b.Navigation("LeadedTeams");
+
+                    b.Navigation("SharedTasks");
 
                     b.Navigation("UploadedFiles");
                 });

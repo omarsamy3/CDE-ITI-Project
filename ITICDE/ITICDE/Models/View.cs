@@ -12,6 +12,7 @@ namespace ITICDE.Models
 		{
             Files = new List<File>();
             Users = new List<User>();
+            Tasks = new List<Task>();
 		}
         #region Properties
         [Key]
@@ -42,6 +43,7 @@ namespace ITICDE.Models
         public Project Project { get; set; }
 
         public List <File> Files { get; set; }
+        public List<Task> Tasks { get; set; }
 
         #endregion
     }

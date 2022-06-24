@@ -1,15 +1,17 @@
-﻿@using ITICDE.Enums
+﻿@model ITICDE.Models.Task
+@using ITICDE.Enums
 @using System.Security.Claims
-@model ITICDE.Models.Task
 
 @{
     ViewData["Title"] = "Create";
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
 }
+ <head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
+<h1>CreateTask</h1>
 
-<h1>Create</h1>
-
-<h4>Task</h4>
+<h4></h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -20,38 +22,62 @@
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Progress" class="control-label"></label>
-                <select asp-for="Progress" class="form-control" asp-items="Html.GetEnumSelectList<Progress>()"></select>
-                <span asp-validation-for="Progress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Priority" class="control-label"></label>
-                <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()"></select>
-                <span asp-validation-for="Priority" class="text-danger"></span>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-@*            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="CreationDate" class="control-label"></label>
                 <input asp-for="CreationDate" class="form-control" />
                 <span asp-validation-for="CreationDate" class="text-danger"></span>
             </div>*@
+             <div class="form-group">
+                <label asp-for="Progress" class="control-label"></label>
+                <select asp-for="Progress" class="form-control" asp-items="Html.GetEnumSelectList<Progress>()">
+                    <option disabled selected> --Choose Task Progress--</option>
+                    </select>
+                <span asp-validation-for="Progress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Priority" class="control-label"></label>
+                <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()">
+                <option disabled selected> --Choose Task Priority--</option>
+                </select>
+                <span asp-validation-for="Priority" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="DeadLine" class="control-label"></label>
                 <input asp-for="DeadLine" class="form-control" />
                 <span asp-validation-for="DeadLine" class="text-danger"></span>
             </div>
-            @*<div class="form-group">
+@*            <div class="form-group">
                 <label asp-for="CreatorUserId" class="control-label"></label>
                 <select asp-for="CreatorUserId" class ="form-control" asp-items="ViewBag.CreatorUserId"></select>
             </div>*@
+            
             <div class="form-group">
-                <label asp-for="ProjectId" class="control-label"></label>
-                <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
+                <label asp-for="ProjectId" class="control-label">Project</label>
+                <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId" ></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="AssignedtoUserId" class="control-label">Assign to User </label>
+                <select asp-for="AssignedtoUserId" class ="form-control" asp-items="ViewBag.AssignedtoUserId">
+                <option disabled selected> --Choose User--</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeamId" class="control-label">Assign To Team</label>
+                <select asp-for="TeamId" class ="form-control" asp-items="ViewBag.TeamId">
+                    <option disabled selected>--Choose Team--</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ViewId" class="control-label">Attach View</label>
+                <select asp-for="ViewId" class ="form-control" asp-items="ViewBag.ViewId">
+                    <option disabled selected>--Choose View--</option>
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" asp-route-CreatorUserId="@user" value="Create" class="btn btn-primary" />
@@ -64,6 +90,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

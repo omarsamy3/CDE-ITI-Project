@@ -1,17 +1,19 @@
 ﻿@using System.Security.Claims
 
 @model IEnumerable<ITICDE.Models.User>
+@{var ThisProject = (ITICDE.Models.Project)ViewBag.project;
+var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);}
 
 @{
     ViewData["Title"] = "ViewUser";
 }
 
-<h1>ViewUser</h1>
+<h1>@ThisProject.Name users</h1>
 <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 
-@{var ThisProject = (ITICDE.Models.Project)ViewBag.project;}
+
 @{if (ThisProject.Users.Count==0)
 {}
 else
@@ -30,7 +32,7 @@ else
                     @Html.DisplayNameFor(model => model.Position)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.OrganizationType)
+                    Organization Type
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Discipline)
@@ -62,13 +64,13 @@ else
                             @Html.DisplayFor(modelItem => item.Discipline)
                         </td>
                         @{
-                            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                            
                             if (userId == ThisProject.CreatorUserId)
                             {
                                 <td>
                                     <a asp-action="DeleteUser" asp-route-ProjectUser="@item.Id" 
                 asp-route-projectId="@ThisProject.Id" class="btn btn-info btn-sm"> 
-                                        <i class="fa-solid fa-user-plus"></i> &nbsp; Delete</a>  
+                                        <i class="fa-solid fa-user-slash"></i> &nbsp; Delete</a>  
                                 </td>
                             }
                         }
@@ -81,9 +83,18 @@ else
 
 <hr />
 <a  asp-controller="Folders" asp-action="Index" asp-route-projectId="@ThisProject.Id"class="btn btn-outline-dark"> 
-    <i class="fa-solid fa-circle-left"></i> Go To project </a>
+    <i class="fa-regular fa-building"></i> Go To project </a>
     &nbsp;&nbsp;
-    <a align="right" asp-action="AddUser" asp-route-projectId="@ThisProject.Id" class="btn btn-outline-secondary"> 
-    <i class="fa-solid fa-circle-right"></i> Add Users</a>
+@{if (ThisProject.CreatorUserId == userId)
+    {
+    <a asp-action="AddUser" asp-route-projectId="@ThisProject.Id" class="btn btn-outline-secondary"> 
+            <i class="fa-solid fa-user-plus"></i> Add Users</a>
+    }
+    else
+    {
+        <a asp-action="Details" asp-route-id="@ThisProject.Id" class="btn btn-outline-secondary"> 
+            <i class="icon fas fa-info"></i> &nbsp;Details </a>
+    }
+}
 
 

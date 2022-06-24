@@ -1,11 +1,14 @@
 ﻿using AutoMapper;
+using ITICDE.Data;
 using ITICDE.Models;
 using ITICDE.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Net.Mail;
 using System.Threading.Tasks;
 
@@ -17,14 +20,15 @@ namespace ITICDE.Controllers
 		private readonly UserManager<User> _userManager;
 		private readonly ILogger _logger;
 		private readonly IMapper _mapper;
+		private readonly CDEDBContext _context;
 
-
-		public AccountController(SignInManager<User> signInManager, UserManager<User> userManager, ILoggerFactory loggerFactory, IMapper mapper)
+		public AccountController(SignInManager<User> signInManager, UserManager<User> userManager, ILoggerFactory loggerFactory, IMapper mapper, CDEDBContext context)
 		{
 			_signInManager = signInManager;
 			_userManager = userManager;
 			_logger = loggerFactory.CreateLogger<AccountController>();
 			_mapper = mapper;
+			_context = context;
 		}
 
 
@@ -73,7 +77,10 @@ namespace ITICDE.Controllers
 			if (ModelState.IsValid)
 			{
 				var username = new EmailAddressAttribute().IsValid(model.Email) ? new MailAddress(model.Email).User : model.Email;
-				var result = await _signInManager.PasswordSignInAsync(username, model.Password, model.RememberMe, lockoutOnFailure: true);
+				var result = await _signInManager.PasswordSignInAsync(username, model.Password, true, lockoutOnFailure: true);
+
+				_context.Users.FirstOrDefault(u => u.Email == model.Email).LastAccessTime = DateTime.Now;
+				_context.SaveChanges();
 				if (result.Succeeded)
 				{
 					return LocalRedirect(returnurl);

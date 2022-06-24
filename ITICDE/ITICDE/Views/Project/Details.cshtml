@@ -5,7 +5,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Project Details</h1>
+<h1>@Model.Name Details</h1>
 <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
@@ -31,13 +31,13 @@
             @Html.DisplayFor(model => model.Progress)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StartDate)
+            Start Date
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.StartDate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreationDate)
+            Creation Date
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CreationDate)
@@ -49,7 +49,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CreatorUser)
+            User Creator
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CreatorUser.Name)
@@ -57,15 +57,15 @@
     </dl>
 </div>
 <div>
-    <a asp-action="ViewUser" asp-route-projectId="@Model.Id" class="btn btn-outline-dark"> 
-    <i class="fa-solid fa-users"></i> &nbsp; Show users </a>
+    <a asp-action="Index" class="btn btn-outline-secondary"> <i class="fa-solid fa-circle-left"></i>  &nbsp;Back to List</a>
     @{
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         @if(Model.CreatorUserId==userId)
         {
             <a style="margin-right:12px;margin-left:12px;" asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"> <i class="fas fa-pencil-alt"></i> Edit</a> 
         }
-    }
- 
-    <a asp-action="Index" class="btn btn-outline-secondary"> <i class="fa-solid fa-circle-right"></i> &nbsp;Back to List</a>
+    } 
+    <a asp-action="ViewUser" asp-route-projectId="@Model.Id" class="btn btn-outline-dark"> 
+    <i class="fa-solid fa-users"></i> &nbsp; Show users </a>
+    
 </div>

@@ -26,7 +26,7 @@
     <link href="../../Viewer/css/Xeo.css" rel="stylesheet" />
     <link href="../../Viewer/css/SideBar.css" rel="stylesheet" />
 
-
+    <title>ITICDE-Viewer</title>
 
 </head>
 
@@ -95,11 +95,21 @@
                         asp-route-viewid="@Model.Id">
                         </button>
                     </form>
-                    <button type="button"
+                  @*  <button type="button"
                             class="xeokit-query fa fa-tasks fa-2x xeokit-btn"
                             title="Create Task"
                             id="CreateTask">
-                    </button>
+                    </button>*@
+                    <a asp-controller="Task" asp-action="CreateFromView" asp-route-ProjectId="@Model.ProjectId" asp-route-viewid="@Model.Id"  class="xeokit-query fa fa-tasks fa-2x xeokit-btn" style="text-decoration:none"></a>
+                    
+                        @*       <button 
+                                asp-action="Index"
+                                class="xeokit-section xeokit-btn fa fa-arrow-left fa-2x"
+                                title="Back"
+                        asp-route-ProjectId="@Model.Id">
+                        </button>*@
+                        <a asp-action="Index" asp-route-ProjectId="@Model.ProjectId" class="xeokit-section xeokit-btn fa fa-arrow-left fa-2x" style="text-decoration:none"></a>
+                   
                 </div>
             </div>
         </div>
