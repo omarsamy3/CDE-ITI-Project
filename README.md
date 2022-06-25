@@ -116,8 +116,7 @@ this is the `login` view if you want to access the your projects in the CDE.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/PDF%20Viewer.png" alt="Build Status">
 </p>
-
->IFC Viewer <br>
+>IFC Viewer. <br>
 >You can view any IFC file as it represents the project model. <br>
 >You can navigate the model and show each element and hide what you want.
 <p align="center">
