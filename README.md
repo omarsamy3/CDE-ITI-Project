@@ -164,7 +164,7 @@ this is the `login` view if you want to access the your projects in the CDE.
 <table>
   <tr>
     <td>
-      <img src="https://github.com/account"> </img>
+      <img src="https://avatars.githubusercontent.com/u/76973221?v=4"> </img>
     </td>
     <td>
       <img src="https://avatars.githubusercontent.com/u/106613861?v=4g"></img>
@@ -172,7 +172,7 @@ this is the `login` view if you want to access the your projects in the CDE.
   </tr>
   <tr>
     <td>
-      <a href="https://avatars.githubusercontent.com/u/76973221?v=4"> Omar Samy </a>
+      <a href="https://github.com/omarsamy3"> Omar Samy </a>
     </td>
     <td>
       <a href="https://github.com/MohamedAyman21"> Mohammed Ayman </a>
