@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ITICDE.Data;
 using ITICDE.Models;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Http;
 
 namespace ITICDE.Controllers
 {
@@ -22,8 +24,12 @@ namespace ITICDE.Controllers
         // GET: Task
         public async Task<IActionResult> Index(int ProjectId)
         {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var UserAssignedTo = _context.Users.FirstOrDefault(u => u.Id == UserId);
+            UserAssignedTo.HasTasks = false;
+            _context.SaveChanges();
             ViewBag.ProjectId = ProjectId;
-            var cDEDBContext = _context.Tasks.Include(t => t.AssignedtoUser).Include(t => t.CreatorUser).Include(t => t.Project).Include(t => t.Team).Include(t => t.View).Include(t=>t.Team.Users);
+            var cDEDBContext = _context.Tasks.Include(t => t.AssignedtoUser).Include(t => t.CreatorUser).Include(t => t.Project).Include(t => t.Team).Include(t => t.View).Include(t=>t.Team.Users).Where(T=>T.ProjectId== ProjectId);
             return View(await cDEDBContext.ToListAsync());
         }
 
@@ -51,13 +57,17 @@ namespace ITICDE.Controllers
         }
 
         // GET: Task/Create
-        public IActionResult Create()
+        public IActionResult Create(int ProjectId)
         {
-            ViewData["AssignedtoUserId"] = new SelectList(_context.Users, "Id", "Email");
+            ViewBag.ProjId = ProjectId;
+            var project = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == ProjectId);
+
+            ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name");
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "Name");
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name");
-            ViewData["ViewId"] = new SelectList(_context.Views, "Id", "Name");
+            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p => p.ProjectId == ProjectId), "Id", "Name");
+            ViewData["ViewId"] = new SelectList(_context.Views.Where(v => v.ProjectId == ProjectId), "Id", "Name");
+            
             return View();
         }
 
@@ -67,26 +77,38 @@ namespace ITICDE.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(task.AssignedtoUserId !=null)
+                {
+                    var UserAssignedTo = _context.Users.FirstOrDefault(u => u.Id == task.AssignedtoUserId);
+                    UserAssignedTo.HasTasks = true;
+                }
+                
+            //UserAssignedTo.SharedTasks.Add(task);
+                
                 _context.Add(task);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index), new { ProjectId = task.ProjectId });
+                return RedirectToAction(nameof(Index), new { task.ProjectId });
             }
-            ViewData["AssignedtoUserId"] = new SelectList(_context.Users, "Id", "Name", task.AssignedtoUserId);
+            var project = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == task.ProjectId);
+
+            ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name", task.AssignedtoUserId);
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "Name", task.CreatorUserId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", task.ProjectId);
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", task.TeamId);
-            ViewData["ViewId"] = new SelectList(_context.Views, "Id", "Name", task.ViewId);
+            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p => p.ProjectId == task.ProjectId), "Id", "Name", task.TeamId);
+            ViewData["ViewId"] = new SelectList(_context.Views.Where(v => v.ProjectId == task.ProjectId), "Id", "Name", task.ViewId);
             return View(task);
         }
         public IActionResult CreateFromView(int ProjectId, int viewid)
         {
             ViewBag.Projid = ProjectId;
             ViewBag.Vieid = viewid;
-            ViewData["AssignedtoUserId"] = new SelectList(_context.Users, "Id", "Email");
+            var project = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == ProjectId);
+
+            ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name");
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "Name");
-            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name");
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name");
-            ViewData["ViewId"] = new SelectList(_context.Views, "Id", "Name");
+            ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", ProjectId);
+            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p => p.ProjectId == ProjectId), "Id");
+            ViewData["ViewId"] = new SelectList(_context.Views.Where(v => v.ProjectId == ProjectId), "Id");
             return View();
         }
 
@@ -101,13 +123,15 @@ namespace ITICDE.Controllers
             {
                 _context.Add(task);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index),new { ProjectId=task.ProjectId});
+                return RedirectToAction(nameof(Index),new {task.ProjectId});
             }
-            ViewData["AssignedtoUserId"] = new SelectList(_context.Users, "Id", "Name", task.AssignedtoUserId);
+            var project = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == task.ProjectId);
+
+            ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name", task.AssignedtoUserId);
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "Name", task.CreatorUserId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", task.ProjectId);
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", task.TeamId);
-            ViewData["ViewId"] = new SelectList(_context.Views, "Id", "Name", task.ViewId);
+            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p => p.ProjectId == task.ProjectId), "Id", "Name", task.TeamId);
+            ViewData["ViewId"] = new SelectList(_context.Views.Where(v => v.ProjectId == task.ProjectId), "Id", "Name", task.ViewId);
             return View(task);
         }
 
@@ -124,11 +148,13 @@ namespace ITICDE.Controllers
             {
                 return NotFound();
             }
-            ViewData["AssignedtoUserId"] = new SelectList(_context.Users, "Id", "Name", task.AssignedtoUserId);
+            var project = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == ProjId);
+
+            ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name", task.AssignedtoUserId);
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "Name", task.CreatorUserId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", task.ProjectId);
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", task.TeamId);
-            ViewData["ViewId"] = new SelectList(_context.Views, "Id", "Name", task.ViewId);
+            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p => p.ProjectId == task.ProjectId), "Id", "Name", task.TeamId);
+            ViewData["ViewId"] = new SelectList(_context.Views.Where(v => v.ProjectId == task.ProjectId), "Id", "Name", task.ViewId);
             return View(task);
         }
 
@@ -163,22 +189,24 @@ namespace ITICDE.Controllers
                 }
                 return RedirectToAction(nameof(Index),new{task.ProjectId});
             }
-            ViewData["AssignedtoUserId"] = new SelectList(_context.Users, "Id", "Name", task.AssignedtoUserId);
+var project = _context.Projects.Include(p=>p.Users).FirstOrDefault(p => p.Id == task.ProjectId);
+
+            ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name", task.AssignedtoUserId);
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "Name", task.CreatorUserId);
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", task.ProjectId);
-            ViewData["TeamId"] = new SelectList(_context.Teams, "Id", "Name", task.TeamId);
-            ViewData["ViewId"] = new SelectList(_context.Views, "Id", "Name", task.ViewId);
+            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p=>p.ProjectId==task.ProjectId), "Id", "Name", task.TeamId);
+            ViewData["ViewId"] = new SelectList(_context.Views.Where(v=>v.ProjectId==task.ProjectId), "Id", "Name", task.ViewId);
             return View(task);
         }
 
         // GET: Task/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id,int ProjId)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
+            ViewBag.ProjId = ProjId;
             var task = await _context.Tasks
                 .Include(t => t.AssignedtoUser)
                 .Include(t => t.CreatorUser)
@@ -197,12 +225,12 @@ namespace ITICDE.Controllers
         // POST: Task/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id,int ProjectId)
         {
             var task = await _context.Tasks.FindAsync(id);
             _context.Tasks.Remove(task);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index),new { ProjectId });
         }
 
         private bool TaskExists(int id)

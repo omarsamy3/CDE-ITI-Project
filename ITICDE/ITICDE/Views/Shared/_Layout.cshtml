@@ -3,12 +3,15 @@
 @inject UserManager<User> UserManager
 
 @{
-	var user = User.FindFirstValue(ClaimTypes.Name);
+    
+	var userId = User.FindFirstValue(ClaimTypes.Name);
 	//var ProId = (int)ViewBag.ProjId;
+    var Name = HttpContextAccessor.HttpContext.Session.GetString("userName");
     var projid = HttpContextAccessor.HttpContext.Session.GetInt32("projid");
-
+   
 }
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -21,6 +24,7 @@
   <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+  <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <!-- Site wrapper -->
@@ -68,72 +72,69 @@
       
 
       <!-- SidebarSearch Form -->
-      <
-
+          <div class="sidebar">
+      <!-- Sidebar user (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="/dist/img/person.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">@Name</a>
+        </div>
+      </div>
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">		            @*Data*@
+          @*<li class="nav-item">
+            <a href="#" class="nav-link">		            
               <i class="fas fa-folder"></i>
               <p>
                   Data
               <i class="right fas fa-angle-left"></i>
               </p>
-            </a>
-            <ul class="nav nav-treeview">
+            </a>*@
+            @*<ul class="nav nav-treeview">*@
 			                                                @*Explore*@
               <li class="nav-item">
-                <a asp-action="Index" asp-controller="Folders" class="nav-link" asp-route-ProjectId="@projid">
-                  <i class="fas fa-search"> &nbsp;</i>
+                <a asp-action="Index" asp-controller="Folders" class="nav-link" asp-route-ProjectId="@projid" >
+                 <i class="nav-icon fas fa-folder"></i>&nbsp;&nbsp;
                   <p>File Explorer</p>
                 </a>
               </li>
 			                                                @*Views*@
               <li class="nav-item">
                 <a asp-action="Index" asp-controller="View" class="nav-link" asp-route-ProjectId="@projid" class="nav-link">
-                  <i class="nav-icon far fa-image"></i>
-                  <p> Views</p>
+                  <i class="nav-icon fas fa-camera"></i>&nbsp;&nbsp;
+                  <p>Views</p>
                 </a>
               </li>
                                                             @*Release*@			
               <li class="nav-item">
                 <a asp-action="Index" asp-controller="Project" class="nav-link" asp-route-ProjectId="@projid" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+                  &nbsp;&nbsp;<i class="fa-solid fa-city"></i>&nbsp;&nbsp;&nbsp;
                   <p>Projects</p>
                 </a>
               </li>
-            </ul>
-          </li>
+           @* </ul>*@
+          
 		                                                    @*Tasks*@
           <li class="nav-item">
             <a asp-action="Index" asp-controller="Task" class="nav-link" asp-route-ProjectId="@projid" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Tasks
-              </p>
+              <i class="nav-icon fas fas fa-tasks"></i>&nbsp;&nbsp;
+              <p>Tasks</p>
             </a>
           </li>
 		                                                    @*Teams*@
           <li class="nav-item">
             <a asp-action="Index" asp-controller="Team" class="nav-link" asp-route-ProjectId="@projid"  class="nav-link">
-              <i class="fas fa-users"></i>
-              <p>
-                Teams
-              </p>
+              &nbsp;<i class="nav-icon fas fa-users"></i>&nbsp;
+              <p>Teams</p>
             </a>
           </li>
 		                                                    @*Settings*@
-          <li class="nav-item">
-            <a href="../../Home/Settings" class="nav-link">
-              <i class="fas fa-cog"></i>
-              <p>
-                Settings
-              </p>
-            </a>
-          </li>
+          
           
         </ul>
       </nav>

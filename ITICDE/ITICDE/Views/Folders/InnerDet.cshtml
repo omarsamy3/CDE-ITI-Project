@@ -107,11 +107,11 @@
                         @{
                             if (item.Type == ".pdf" || item.Type == ".jpg" || item.Type == ".gif" || item.Type == ".png" || item.Type == ".mp4" || item.Type == ".vlc" || item.Type == ".ifc" || item.Type == ".PNG" || item.Type == ".jpeg" || item.Type == ".JPEG" || item.Type == ".JPG")
                             {
-                                    <td style="text-align :center"><a asp-action="ViewFiles" asp-route-Id = "@item.Id" >@item.Name.Split('_').First()@item.Type</a></td>
+                                    <td style="text-align :center"><a asp-action="ViewFiles" asp-route-Id = "@item.Id" >@item.Name.Split(';').First()@item.Type</a></td>
                             }
                             else
                             {
-                                    <td style="text-align :center">@item.Name.Split('_').First()@item.Type</td>
+                                    <td style="text-align :center">@item.Name.Split(';').First()@item.Type</td>
                             }
                         }
 

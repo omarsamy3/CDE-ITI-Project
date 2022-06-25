@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Files\" />
+    <Folder Include="wwwroot\ProjectFiles\" />
   </ItemGroup>
 
 </Project>

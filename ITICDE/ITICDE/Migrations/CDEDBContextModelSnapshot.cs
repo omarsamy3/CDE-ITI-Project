@@ -71,7 +71,7 @@ namespace ITICDE.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("FolderId")
+                    b.Property<int?>("FolderId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -567,6 +567,9 @@ namespace ITICDE.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(32)");
 
+                    b.Property<bool>("HasTasks")
+                        .HasColumnType("bit");
+
                     b.Property<DateTime>("LastAccessTime")
                         .HasColumnType("datetime2");
 
@@ -639,9 +642,7 @@ namespace ITICDE.Migrations
                 {
                     b.HasOne("ITICDE.Models.Folder", "Folder")
                         .WithMany("Files")
-                        .HasForeignKey("FolderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("FolderId");
 
                     b.HasOne("ITICDE.Models.Project", "Project")
                         .WithMany("Files")

@@ -43,8 +43,8 @@ namespace ITICDE.Models
         [Required]
         public int ProjectId { get; set; }
         public Project Project { get; set; }
-[AllowNull]
-        public int FolderId { get; set; }
+
+        public int? FolderId { get; set; }
 [ForeignKey("FolderId")]
         public Folder Folder { get; set; }
 

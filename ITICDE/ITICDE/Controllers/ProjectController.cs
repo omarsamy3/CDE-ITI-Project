@@ -11,6 +11,9 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.CodeAnalysis;
 using Project = ITICDE.Models.Project;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace ITICDE.Controllers
 {
@@ -18,10 +21,12 @@ namespace ITICDE.Controllers
     public class ProjectController : Controller
     {
         private readonly CDEDBContext _context;
+        private readonly IWebHostEnvironment _env;
 
-        public ProjectController(CDEDBContext context)
+        public ProjectController(CDEDBContext context , IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
 
         // GET: Project
@@ -42,7 +47,7 @@ namespace ITICDE.Controllers
             }
 
             var project = await _context.Projects
-                .Include(p => p.CreatorUser)
+                .Include(p => p.CreatorUser).Include(u=>u.Users)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (project == null)
             {
@@ -209,5 +214,8 @@ namespace ITICDE.Controllers
         {
             return _context.Projects.Any(e => e.Id == id);
         }
+
+        // Files Upload *******************************************
+        
     }
 }

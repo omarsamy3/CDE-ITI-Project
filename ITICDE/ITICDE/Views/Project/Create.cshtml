@@ -4,6 +4,9 @@
 @{
     ViewData["Title"] = "Create";
 }
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
 
 <h1>Create</h1>
 
@@ -32,16 +35,23 @@
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
+            </div> 
+            <div class="form-group">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+                <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
+    <a asp-action="Index" class="btn btn-outline-secondary">  <i class="fa-solid fa-circle-left"></i>Back to List</a>
+
                 <input type="submit" value="Create" class="btn btn-primary" />
+
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

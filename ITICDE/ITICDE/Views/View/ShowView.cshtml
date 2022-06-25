@@ -1,4 +1,5 @@
-﻿@model View
+﻿@using Microsoft.AspNetCore.Html
+@model View
 
 @{
     Layout = "";
@@ -46,7 +47,7 @@
         </div>
         <div id="myToolbar">
             <div class="xeokit-toolbar">
-                <div class="xeokit-btn-group"
+                <div class="xeokit-btn-group">
                 <!--TreeViewer-->
                 <button for="explorer_toggle"
                         class="explorer_toggle_label xeokit-btn fas fa-2x fa-sitemap"
@@ -197,7 +198,15 @@
 
             foreach (var fl in ViewBag.Files)
             {
-                var q = Html.Raw("{folderid:" + fl.FolderId + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+                HtmlString q;
+                if(fl.FolderId !=null)
+                {
+                      q= Html.Raw("{folderid:" + fl.FolderId + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+                        }
+else
+                {
+                    q = Html.Raw("{folderid:" + "null" + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+                        }
 
                 @:Files.push(@q);
             }
@@ -206,6 +215,7 @@
         @{
             foreach (var fldr in ViewBag.Folders)
             {
+                
                 var q = Html.Raw("{id:" + fldr.Id + "," + "parentid:" + fldr.ParentId + "," + "Name:" + "\"" + fldr.Name + "\"" + ",}");
 
                 @:Folders.push(@q);
@@ -216,7 +226,15 @@
         @{
             foreach (var fl in ViewBag.Loadedfiles)
             {
-                var q = Html.Raw("{folderid:" + fl.FolderId + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+                HtmlString q;
+                if(fl.FolderId !=null)
+                {
+                 q = Html.Raw("{folderid:" +  fl.FolderId + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+                }
+                else{
+                        q = Html.Raw("{folderid:" +  "null" + "," + "Name:" + "\"" + fl.Name + "\"" + "," + "Path:" + "\"../../Files/" + fl.Name + "\"" + "," + "loaded:" + "false" + "," + "id:" + fl.Id + ",}");
+
+                }
 
                 @:LoadedFiles.push(@q);
             }
@@ -396,6 +414,9 @@
                         chckbox.setAttribute("type", "checkbox");
                         chckbox.setAttribute("onclick", `addtoinput('${file.id}')`);
                         chckbox.classList.add("ExplChckbox")
+                            if (file.loaded == true) {
+                            chckbox.checked = true;
+                        }
                         fnameli.appendChild(chckbox);
                         fnameli.append(file.Name);
                         folderul.appendChild(fnameli);

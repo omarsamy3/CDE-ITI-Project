@@ -1,7 +1,4 @@
-﻿@{
-    Layout = "_ProjectsLayout";
-}
-@using System.Security.Claims
+﻿@using System.Security.Claims
 @model ITICDE.Models.Project
 
 @{
@@ -57,6 +54,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.CreatorUser.Name)
         </dd>
+        <dt class = "col-sm-2">
+            Members No.
+        </dt>
+        <dt class = "col-sm-10">
+            @Html.DisplayFor(model=>model.Users.Count)
+        </dt>
     </dl>
 </div>
 <div>
@@ -65,10 +68,10 @@
         var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
         @if(Model.CreatorUserId==userId)
         {
-            <a style="margin-right:12px;margin-left:12px;" asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"> <i class="fas fa-pencil-alt"></i> Edit</a> 
+            <a style="margin-right:12px;margin-left:12px;" asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"> <i class="fa-solid fa-pen-to-square fa-lg"></i> Edit</a> 
         }
     } 
     <a asp-action="ViewUser" asp-route-projectId="@Model.Id" class="btn btn-outline-dark"> 
-    <i class="fa-solid fa-users"></i> &nbsp; Show users </a>
+    <i class="fa-solid fa-users"></i> &nbsp; Show Project Members </a>
     
 </div>

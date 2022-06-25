@@ -33,6 +33,9 @@ namespace ITICDE.Controllers
 
         public IActionResult Redirect(int ProjectId)
         {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user=_context.Users.Find(userId);
+            HttpContext.Session.SetString("userName", user.Name);
             HttpContext.Session.SetInt32("projid", ProjectId);
             return RedirectToAction(nameof(Index), new { ProjectId });
         }
@@ -40,8 +43,13 @@ namespace ITICDE.Controllers
         public async Task<IActionResult> Index(int ProjectId)
         {
             ViewBag.ProjId = ProjectId;
-            var project=_context.Projects.Include(f=>f.Folders).FirstOrDefault(p=>p.Id == ProjectId).Name;
+            var project=_context.Projects.Include(f=>f.Folders).Include(fi=>fi.Files).FirstOrDefault(p=>p.Id == ProjectId).Name;
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = _context.Users.Include(T=>T.SharedTasks).FirstOrDefault(u => u.Id == userId);
+            var projectFiles = _context.Projects.Include(f => f.Folders).FirstOrDefault(p => p.Id == ProjectId).Files.Where(f=>f.ProjectId==ProjectId && f.FolderId==null);
+            ViewBag.ProjectFiles = projectFiles;
             ViewBag.project = project;
+            ViewBag.User = user;
             return View(await _context.Folders.ToListAsync());
         }
 
@@ -91,6 +99,7 @@ namespace ITICDE.Controllers
                 var project = await _context.Projects.FindAsync(ProjectId); //This project is to have folders in it.
                 _context.Add(folder);
                 project.Folders.Add(folder); //Adding this folder to the this project exclusively
+
                 await _context.SaveChangesAsync();
                 folder.HasParent = false;
                 folder.ParentId = 0;
@@ -122,7 +131,7 @@ namespace ITICDE.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreationDate,UserId,ProjectId")] Folder folder)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,CreationDate,UserId,ProjectId,ParentId")] Folder folder)
         {
             if (id != folder.Id)
             {
@@ -147,7 +156,16 @@ namespace ITICDE.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index),new { ProjectId=folder.ProjectId});
+if(folder.ParentId == 0){
+                    return RedirectToAction(nameof(Index), new { ProjectId = folder.ProjectId });
+                }
+else if (folder.ParentId!=0)
+                {
+                    folder.HasParent = true;
+_context.Update(folder);
+                    return RedirectToAction(nameof(InnerDet), new {id= folder.ParentId,projectId=folder.ProjectId });
+                }
+                
             }
             return View(folder);
         }
@@ -162,7 +180,7 @@ namespace ITICDE.Controllers
 
             var folder = await _context.Folders
                 .FirstOrDefaultAsync(m => m.Id == id);
-            ViewBag.projectId = folder.ParentId;
+            ViewBag.projectId = folder.ProjectId;
             if (folder == null)
             {
                 return NotFound();
@@ -179,7 +197,9 @@ namespace ITICDE.Controllers
             var folder = await _context.Folders.FindAsync(id);
             _context.Folders.Remove(folder);
             await _context.SaveChangesAsync();
+if(folder.ParentId==0)
             return RedirectToAction(nameof(Index),new {ProjectId});
+else return RedirectToAction(nameof(InnerDet), new { id=folder.ParentId ,projectId= ProjectId });
         }
 
         public async Task<IActionResult> InnerDet(int? id,int projectId)
@@ -239,7 +259,7 @@ namespace ITICDE.Controllers
                                     .FirstOrDefaultAsync(m => m.Id == id);
             foreach (var file in files)
             {
-                var fileName = file.FileName.Split('.').First() + "_" + id + Path.GetExtension(file.FileName);
+                var fileName = file.FileName.Split('.').First() + ";" + id + Path.GetExtension(file.FileName);
                 using (var fileStream = new FileStream(Path.Combine(full, fileName), FileMode.Create, FileAccess.Write))
                 {
                     file.CopyTo(fileStream);
@@ -255,7 +275,17 @@ namespace ITICDE.Controllers
         {
             string path = Path.Combine(this._env.WebRootPath, "Files/") + fileName;
             byte[] bytes = System.IO.File.ReadAllBytes(path);
-
+            if (fileName.Contains('@'))
+            {
+                string Name = fileName.Split('@').First()+Path.GetExtension(fileName);
+                return File(bytes, "application/octet-stream", Name);
+            }
+            else if(fileName.Contains(';'))
+            {
+                string Name = fileName.Split(';').First() + Path.GetExtension(fileName);
+                return File(bytes, "application/octet-stream", Name);
+            }
+            else
             return File(bytes, "application/octet-stream", fileName);
         }
 
@@ -277,10 +307,10 @@ namespace ITICDE.Controllers
         }
         [HttpPost, ActionName("DeleteFile")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteFileConfirmed(int id)
+        public async Task<IActionResult> DeleteFileConfirmed(int? id)
         {
             var file = await _context.Files.FindAsync(id);
-            int Id = file.FolderId;
+            int? Id = file.FolderId;
             _context.Files.Remove(file);
 
             await _context.SaveChangesAsync();
@@ -288,34 +318,82 @@ namespace ITICDE.Controllers
         }
         public IActionResult ViewFiles(int Id)
         {
-            var file = _context.Files.FirstOrDefault(f => f.Id == Id);
+            var file = _context.Files.Include(f=>f.Folder).FirstOrDefault(f => f.Id == Id);
             return View(file);
         }
-        //public IActionResult PDFViewer(string Fname)
-        //{
-        //    string path = _env.WebRootPath + "\\Files\\" + Fname;
-        //    return File(System.IO.File.ReadAllBytes(path), "application/pdf");
-        //}
-        //public async Task<IActionResult> MultipleFilesInProject(IEnumerable<IFormFile> files, int projectId)
+		//public IActionResult PDFViewer(string Fname)
+		//{
+		//    string path = _env.WebRootPath + "\\Files\\" + Fname;
+		//    return File(System.IO.File.ReadAllBytes(path), "application/pdf");
+		//}
+		public async Task<IActionResult> MultipleFilesInProject(IEnumerable<IFormFile> files, int projectId)
+		{
+			var dir = _env.WebRootPath;
+			var full = dir + "/Files";
+			var project = await _context.Projects.Include(i => i.Files).Include(f => f.Folders)
+									.FirstOrDefaultAsync(m => m.Id == projectId);
+			foreach (var file in files)
+			{
+				var fileName = file.FileName.Split('.').First() + "@" + projectId + Path.GetExtension(file.FileName);
+				using (var fileStream = new FileStream(Path.Combine(full, fileName), FileMode.Create, FileAccess.Write))
+				{
+					file.CopyTo(fileStream);
+				}
+				Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = projectId, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) };
+				_context.Add(newF);
+				project.Files.Add(newF);
+				_context.SaveChanges();
+			}
+			return RedirectToAction("Index", new { projectId });
+		}
+        public async Task<IActionResult> DeleteFileFromProject(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var file = await _context.Files.Include(c=>c.CreatorUser)
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (file == null)
+            {
+                return NotFound();
+            }
+
+            return View(file);
+        }
+        [HttpPost,ActionName("DeleteFileFromProject")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteFileFromProjectConfirmed(int? id,int ProjectId)
+        {
+            var file = await _context.Files.FindAsync(id);
+           
+            _context.Files.Remove(file);
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index", new { ProjectId });
+        }
+
+
+        //public async Task<IActionResult> MultipleFilesInProject(IEnumerable<IFormFile> files, int ProjectId)
         //{
         //    var dir = _env.WebRootPath;
-        //    var full = dir + "/Files";
-        //    var project = await _context.Projects.Include(i => i.Files).Include(f=>f.Folders)
-        //                            .FirstOrDefaultAsync(m => m.Id == projectId);
+        //    var full = dir + "/ProjectFiles";
+        //    var project = await _context.Projects.Include(c => c.CreatorUser).Include(u => u.Users).Include(f=>f.Folders).Include(fi=>fi.Files)
+        //                            .FirstOrDefaultAsync(p => p.Id == ProjectId);
         //    foreach (var file in files)
         //    {
-        //        var fileName = file.FileName.Split('.').First() + "-" + projectId + Path.GetExtension(file.FileName);
+        //        var fileName = file.FileName.Split('.').First() + "_" + ProjectId + Path.GetExtension(file.FileName);
         //        using (var fileStream = new FileStream(Path.Combine(full, fileName), FileMode.Create, FileAccess.Write))
         //        {
         //            file.CopyTo(fileStream);
         //        }
-        //        Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = projectId, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier),FolderId=0 };
+        //        Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = ProjectId, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) };
         //        _context.Add(newF);
         //        project.Files.Add(newF);
-                
         //        _context.SaveChanges();
         //    }
-        //    return RedirectToAction("Index", new { projectId });
+        //    return RedirectToAction(nameof(Index), new { ProjectId });
         //}
     }
 }

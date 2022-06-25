@@ -5,6 +5,7 @@
 @{
     ViewData["Title"] = "Create";
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
+    var ProjectId = (int)ViewBag.ProjId;
 }
  <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
@@ -36,14 +37,12 @@
              <div class="form-group">
                 <label asp-for="Progress" class="control-label"></label>
                 <select asp-for="Progress" class="form-control" asp-items="Html.GetEnumSelectList<Progress>()">
-                    <option disabled selected> --Choose Task Progress--</option>
                     </select>
                 <span asp-validation-for="Progress" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Priority" class="control-label"></label>
                 <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()">
-                <option disabled selected> --Choose Task Priority--</option>
                 </select>
                 <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
@@ -59,7 +58,9 @@
             
             <div class="form-group">
                 <label asp-for="ProjectId" class="control-label">Project</label>
-                <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId" ></select>
+                <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId" disabled>
+                <option disabled selected>@ProjectId</option>
+            </select>
             </div>
             <div class="form-group">
                 <label asp-for="AssignedtoUserId" class="control-label">Assign to User </label>
@@ -80,13 +81,15 @@
                 </select>
             </div>
             <div class="form-group">
-                <input type="submit" asp-route-CreatorUserId="@user" value="Create" class="btn btn-primary" />
-            </div>
+                <input type="submit" asp-route-ProjectId="@ProjectId" asp-route-CreatorUserId="@user" value="Create" class="btn btn-primary"/> &nbsp;&nbsp;&nbsp;
+                <a asp-action="Index" class="btn btn-outline-secondary" asp-route-ProjectId = "@ProjectId" > <i class="fa-solid fa-circle-left"></i> Back to List</a>
+
+            </div> 
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+    
+            
+
 

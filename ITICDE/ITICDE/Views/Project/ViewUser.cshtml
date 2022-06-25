@@ -1,7 +1,4 @@
-﻿@{
-    Layout = "_ProjectsLayout";
-}
-@using System.Security.Claims
+﻿@using System.Security.Claims
 
 @model IEnumerable<ITICDE.Models.User>
 @{var ThisProject = (ITICDE.Models.Project)ViewBag.project;
@@ -72,7 +69,7 @@ else
                             {
                                 <td>
                                     <a asp-action="DeleteUser" asp-route-ProjectUser="@item.Id" 
-                                    asp-route-projectId="@ThisProject.Id" class="btn btn-info btn-sm"> 
+                asp-route-projectId="@ThisProject.Id" class="btn btn-info btn-sm"> 
                                         <i class="fa-solid fa-user-slash"></i> &nbsp; Delete</a>  
                                 </td>
                             }
@@ -85,18 +82,18 @@ else
 }}
 
 <hr />
-<a  asp-controller="Folders" asp-action="Index" asp-route-projectId="@ThisProject.Id"class="btn btn-outline-dark"> 
+<a  asp-controller="Folders" asp-action="Redirect" asp-route-ProjectId="@ThisProject.Id" class="btn btn-outline-dark"> 
     <i class="fa-regular fa-building"></i> Go To project </a>
     &nbsp;&nbsp;
 @{if (ThisProject.CreatorUserId == userId)
     {
     <a asp-action="AddUser" asp-route-projectId="@ThisProject.Id" class="btn btn-outline-secondary"> 
-            <i class="fa-solid fa-user-plus"></i> Add Users</a>
+            <i class="fa-solid fa-user-plus"></i> Add Members</a>
     }
     else
     {
         <a asp-action="Details" asp-route-id="@ThisProject.Id" class="btn btn-outline-secondary"> 
-            <i class="icon fas fa-info"></i> &nbsp;Details </a>
+            <i class="fa-solid fa-circle-info fa-lg"></i> &nbsp;Details </a>
     }
 }
 

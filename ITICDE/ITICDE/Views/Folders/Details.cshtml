@@ -32,7 +32,14 @@
     </dl>
 </div>
 <div>
+     @if (Model.ParentId == 0)
+                {
+                    <a asp-action="Index" asp-route-ProjectId="@Model.ProjectId" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> Back to List</a>
+                }
+                else
+                { <a asp-action="InnerDet" asp-route-id="@Model.ParentId" asp-route-projectId="@Model.ProjectId" class="btn btn-outline-secondary">Back to List</a>}
+
     <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-info"> <i class="fa-solid fa-pen-to-square fa-lg"></i>&nbsp;Edit</a>
 
-    <a asp-action="Index" asp-route-ProjectId="" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> Back to List</a>
+    
 </div>

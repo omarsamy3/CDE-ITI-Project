@@ -1,10 +1,14 @@
-﻿@model ITICDE.Models.Task
+﻿@using System.Security.Claims
+@model ITICDE.Models.Task
 
 @{
     ViewData["Title"] = "Details";
 }
 
 <h1>Details</h1>
+<head>
+    <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
+</head>
 
 <div>
     <h4>Task</h4>
@@ -78,7 +82,13 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index" asp-route-ProjectId = "@Model.ProjectId">Back to List</a>
-</div>
+        
+            <a style="margin-right:12px;" asp-route-ProjId="@Model.ProjectId" asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"><i class="fa-solid fa-pen-to-square fa-lg"></i> Edit</a> 
+        
+    
+    <a asp-action="Index" class="btn btn-outline-secondary" asp-route-ProjectId = "@Model.ProjectId"> <i class="fa-solid fa-circle-left"></i> &nbsp;Back to List</a>
+    @if(Model.ViewId != null){
+        <a asp-action="ShowView" asp-controller="View" asp-route-viewid="@Model.ViewId" class="btn btn-info" style="margin-left:10px"> <i class="nav-icon far fa-image"></i> &nbsp; &nbsp;Show Attached View </a>
+        
+    }
+

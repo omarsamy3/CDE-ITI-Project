@@ -1,7 +1,4 @@
-﻿@{
-    Layout = "_ProjectsLayout";
-}
-@model IEnumerable<ITICDE.Models.User>
+﻿@model IEnumerable<ITICDE.Models.User>
 @{
     var num = Model.Count();
 }
@@ -73,6 +70,6 @@
 }
     <a asp-action="Index" class="btn btn-outline-secondary"> <i class="fa-solid fa-circle-left"></i> &nbsp;Back to All Projects</a> &nbsp; &nbsp;
     <a asp-action="ViewUser" asp-route-projectId="@ThisProject.Id" class="btn btn-outline-dark"> 
-    <i class="fa-solid fa-users"></i> Show users </a>
+    <i class="fa-solid fa-users"></i> Show Project Members </a>
 
 

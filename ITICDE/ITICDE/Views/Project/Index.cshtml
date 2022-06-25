@@ -38,14 +38,14 @@
             @Html.DisplayFor(modelItem => item.Description)
             </p>
                  <hr>
-                <a style="margin:5px; margin-left:25px"  asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                <a style="margin:5px; "  asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="fa-solid fa-circle-info fa-lg"></i>  Details</a> 
                 
                 @{
                     if (userId == item.CreatorUserId)
                     {                    
                         <a style="margin:5px" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
                     
-                        <a style="margin:5px" asp-action="AddUser" asp-route-projectId="@item.Id" class="btn btn-secondary btn-sm"> <i class="fa-solid fa-user-plus"></i> Add User</a>
+                        <a style="margin:5px" asp-action="AddUser" asp-route-projectId="@item.Id" class="btn btn-secondary btn-sm"> <i class="fa-solid fa-user-plus"></i> Add Members</a>
                     }
                 }
         </div>
@@ -53,60 +53,6 @@
     </a>
 }}
 
-@*<table class="table" style="text-align:center">
-    <thead>
-        <tr>
-			<th></th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Units)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Progress)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.CreatorUser)
-            </th>
-            <th>
-               
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-       @foreach (var item in Model) {
-        <tr >
-			<td><i class="fas fa-folder"></i></td>
-            <td>
-				<a asp-controller="Folders" asp-action="Index" asp-route-ProjectId="@item.Id">
-					
-                    @item.Name</a>
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Units)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Progress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatorUser.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
-                <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
-            </td>
-        </tr> } 
-    </tbody>   
-</table>*@
 
     <!-- jQuery -->
     <script src="/plugins/jquery/jquery.min.js"></script>

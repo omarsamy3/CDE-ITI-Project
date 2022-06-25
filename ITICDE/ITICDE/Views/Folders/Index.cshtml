@@ -6,19 +6,44 @@
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
     var ProjId = (int)ViewBag.ProjId;
     var project = (string)ViewBag.project;
+    var FilesList = (IEnumerable<ITICDE.Models.File>)ViewBag.ProjectFiles;
+    var UserT = (ITICDE.Models.User)ViewBag.User;
 }
 <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 
 <h1>@project</h1>
-<a style="margin-top:30px" asp-action="Index" asp-controller="Project" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
+<a style="margin-top:23px" asp-action="Index" asp-controller="Project" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
+ <a asp-action="Create" asp-route-ProjectId="@ProjId" class="btn btn-primary" style="margin-left:20px;margin-top:23px"><i class="fa-solid fa-folder-plus fa-lg"></i> &nbsp; Add Folder</a>
+    <form asp-controller="Folders" 
+    asp-action="MultipleFilesInProject" enctype="multipart/form-data" asp-route-projectId="@ProjId">
+    <label for="file-upload" class="custom-file-upload">
+    <i class="fa fa-cloud-upload"></i> Custom File Upload
+</label>
+<input id="file-upload" type="file" name="files" multiple hidden/>
+    @*<input type="file"   style="display: none;"/>*@
+    <button id="mybtn" class="btn btn-primary" type="submit" >Submit</button>
+    <hr />
+</form>
 
-<p style="display:flex;justify-content:flex-end;">
- <a id="mybtn" asp-action="Create" asp-route-ProjectId="@ProjId" class="btn btn-primary" style="margin:25px;"><i class="fa-solid fa-folder-plus fa-lg"></i> &nbsp; Add Folder</a>
-</p>
+@if(UserT.SharedTasks!=null&&UserT.SharedTasks.Any(t=>t.ProjectId==ProjId)&&(UserT.HasTasks == true))
+{
+    <a asp-action="Index" asp-controller="Task"  asp-route-ProjectId="@ProjId" class="btn btn-danger" style="outline-style:initial;
+        border-radius: 50px; border-radius: 50px;
+    position: absolute;
+    top: 35px;
+    right: 65px;
+    width: 120px;
+    height: 40px;
+    box-shadow: 0px 8px 15px rgb(0 0 0 / 50%);"
+        cursor: pointer;"><i class="fa-solid fa-bell fa-lg"></i>&nbsp; &nbsp;New Task </a>
+}
 
 
+
+@if(Model.Any(f=>f.ProjectId == ProjId)||FilesList !=null)
+{
 <table class="table" style="text-align:center">
     <thead>
 		
@@ -38,10 +63,10 @@
 @foreach (var item in Model) 
     {
 
-            if (item.HasParent == false && ProjId == item.ProjectId)
+            if (item.HasParent == false && ProjId == item.ProjectId&&item.ParentId==0)
             {
-                <tr>
-					<td><i class="fas fa-folder"></i></td>
+                 <tr style="background-color: #f2f2f2;">
+                    <td><i class="fa-solid fa-folder fa-xl"></i></td>
                     <td>
                         
                         <a asp-action="InnerDet" asp-route-Id = "@item.Id" >@item.Name</a>
@@ -49,7 +74,7 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.CreationDate)
                     </td>
-                    <td>
+                   
                     <td>
                         @if(item.UserId == user)
                             {
@@ -62,9 +87,79 @@
             }
     }
     
+            
+                @foreach (var item in FilesList)
+                {
+                    <tr>
+                        @{
+                            if (item.Type == ".pdf")
+                            {
+                                            <td><i class="fa-solid fa-file-pdf fa-lg"></i></td>
+                            }
+                            else if (item.Type == ".jpg" || item.Type == ".png" || item.Type == ".PNG" || item.Type == ".jpeg" || item.Type == ".JPEG" || item.Type == ".JPG")
+                            {
+                                            <td><i class="fa-solid fa-image fa-lg"></i></td>
+                            }
+                            else if (item.Type == ".mp4" || item.Type == ".MP4" || item.Type == ".vlc" || item.Type == ".VLC")
+                            {
+                                            <td><i class="fa-solid fa-video fa-lg"></i></td>
+                            }
+                            else if (item.Type == ".ifc")
+                            {
+                                            <td><img src="/Images/ifc.png" style="width : 25px" /></td>
+                            }
+                            else if(item.Type == ".dwg" || item.Type == ".DWG")
+                            {
+                                            <td><img src="/Images/Autocad.png" style="width : 30px" /></td>
+                            }
+                            else if(item.Type == ".xlsx" || item.Type == ".XSLX")
+                            {
+                                            <td><i class="fa-solid fa-file-excel fa-lg"></i></td>
+                            }
+                            else if(item.Type == ".docx" || item.Type == ".DOCX")
+                            {
+                                            <td><i class="fa-solid fa-file-word fa-lg"></i></td>
+                            }
+                            else if(item.Type == ".csv" || item.Type == ".CSV")
+                            {
+                                            <td><i class="fa-solid fa-file-csv"></i></td>
+                            }
+                            else if (item.Type == ".rvt" || item.Type == ".RVT")
+                            {
+                                        <td><img src="/Images/Revit.png" style="width : 25px" /></td>
+                            }
+                            else
+                            {
+                                            <td><i class="fa-solid fa-file fa-lg"></i></td>
+                            }
+                        }
+                        @{
+                            if (item.Type == ".pdf" || item.Type == ".jpg" || item.Type == ".gif" || item.Type == ".png" || item.Type == ".mp4" || item.Type == ".vlc" || item.Type == ".ifc" || item.Type == ".PNG" || item.Type == ".jpeg" || item.Type == ".JPEG" || item.Type == ".JPG")
+                            {
+                                            <td style="text-align :center"><a asp-action="ViewFiles" asp-route-Id = "@item.Id" >@item.Name.Split('@').First()@item.Type</a></td>
+                            }
+                            else
+                            {
+                                            <td style="text-align :center">@item.Name.Split('@').First()@item.Type</td>
+                            }
+                        }
+
+
+                        <td style="text-align :center">@item.UploadDate</td>
+                        <td>
+                            @if(item.UserId == user)
+                            {
+                                <a asp-action="DeleteFileFromProject"asp-route-Id="@item.Id"class="btn btn-outline-danger"><i class="fa-solid fa-trash-can fa-lg"></i> &nbsp; Delete</a>
+                            }
+                            <a href="/Folders/DownloadFile?fileName=@item.Name" class="btn btn-outline-success"> <i class="fa-solid fa-download fa-lg"></i> &nbsp; Download</a>
+                            
+                        </td>
+                    </tr>
+                }
+            
     </tbody>
 </table>
-
+}
 <style>
 
 #mybtn{
@@ -74,50 +169,24 @@
 }
 
 </style>
-@*<div>
-    <h2>Upload Multiple Files</h2>
-    <form method="post" asp-controller="Folders" 
-    asp-action="MultipleFilesInProject" enctype="multipart/form-data" asp-route-projectId="@ProjId">
-    <input type="file" name="files" multiple/>
-    <button class="btn btn-primary" type="submit" >Submit</button>
-    <hr />
-</form>
-</div>*@
-@*@{var files =project.Files.FindAll(f=>f.FolderId==0);}
-@if(project.Files.Count()!=0)
 
-{
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <table class = "table-responsive table-bordered">
-        <tr>
-            <th width="400px" style="text-align :center">File Name </th>
-            <th width="400px" style="text-align :center">File Type </th>
-            
+<style>
+input[type="file"] {
+    
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    position: absolute;
+    right: 122px;
+    top: 100px;
+}
+#mybtn{
+        position: absolute;
+    right: 20px;
+    top: 100px;
+}
 
-        </tr>
-        @foreach (var item in project.Files)
-        if(files.Contains(item))
-        {
-            {<tr>
-                @{if (item.Type == ".pdf"||item.Type ==".jpg"||item.Type ==".gif"||item.Type ==".png"||item.Type ==".mp4"||item.Type ==".vlc"||item.Type==".ifc")
-                    {
-                                                        <td style="text-align :center"><a asp-action="ViewFiles" asp-route-Id = "@item.Id" >@item.Name.Split('_').First()</a></td>
-                        }
-                        else
-                        {
-                                                        <td style="text-align :center">@item.Name.Split('_').First()</td>
-                        }
-                    }
-                
-                    
-                    <td style="text-align :center">@item.Type</td>
-                    <td ><a href="/Folders/DownloadFile?fileName=@item.Name" class="btn btn-primary">Download</a></td>
-                    <td ><a href="/Folders/DeleteFile?Id=@item.Id" class="btn btn-outline-danger">Delete</a></td>
-                </tr>
-            }
-        }
-    </table>
-</div>
-}*@
-
-
+</style>

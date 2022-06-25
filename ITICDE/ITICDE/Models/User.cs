@@ -39,8 +39,9 @@ namespace ITICDE.Models
         [Display(Name = "Last Access")]
         [DataType(DataType.DateTime)]
         public DateTime LastAccessTime { get; set; } = DateTime.Now;
+		public bool HasTasks { get; set; }
 
-        [Required]
+		[Required]
         [Column(TypeName = "nvarchar(32)")]
         public OrganizationType OrganizationType { get; set; }
 
