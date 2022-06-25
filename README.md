@@ -172,7 +172,7 @@ this is the `login` view if you want to access the your projects in the CDE.
   </tr>
   <tr>
     <td>
-      <a href="https://github.com/omarsamy3"> Omar Samy </a>
+      <a href="https://avatars.githubusercontent.com/u/76973221?v=4"> Omar Samy </a>
     </td>
     <td>
       <a href="https://github.com/MohamedAyman21"> Mohammed Ayman </a>
