@@ -186,18 +186,17 @@ this is the `login` view if you want to access the your projects in the CDE.
     <td>
       <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"></img>
     </td>
-    
     <td>
       <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"></img>
     </td>
   </tr>
  <tr>
     <td>
-      <a href="https://github.com/omarsamy3"> Reem Adel </a>
+      <a href="https://github.com/omarsamy3"> Aboubakr Naser </a>
     </td>
       
      <td>
-      <a href="https://github.com/omarsamy3"> Mai Emad </a>
+      <a href="https://github.com/omarsamy3"> Mariam Rohaiem/a>
     </td>
   </tr>
 </table>
