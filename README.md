@@ -95,7 +95,7 @@ this is the `login` view if you want to access the your projects in the CDE.
 
 ## The Project user interface.
 <br>
->After you login, you can access all your projects.
+>After you login, you can access all your projects. <br>
 >But you can edit or delete only the projects you have created.
 
 <p align="center">
@@ -106,25 +106,25 @@ this is the `login` view if you want to access the your projects in the CDE.
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/CreateProject.png" alt="Build Status">
 </p>
 
->When you Enter any of your projects, your will be redirected to the project file explorer.
+>When you Enter any of your projects, your will be redirected to the project file explorer. <br>
 >You can make new folders or upload different kinds of files like PDF, IFC, Xlsx, rfa, jpg, png, mp4...
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/File%20Explorer.png" alt="Build Status">
 </p>
->PDF Viewer
+>PDF Viewer <br>
 >If you Entered any PDF, Image or Video file it will open and you can edit the PDF file and save it as a new one.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/PDF%20Viewer.png" alt="Build Status">
 </p>
 
->IFC Viewer
->You can view any IFC file as it represents the project model.
+>IFC Viewer <br>
+>You can view any IFC file as it represents the project model. <br>
 >You can navigate the model and show each element and hide what you want.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/IFC%20Viewer.png" alt="Build Status">
 </p>
 
->Teams
+>Teams <br>
 >You can make teams with its leader and add users in it to have task to do.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/Teams.png" alt="Build Status">
@@ -133,7 +133,7 @@ this is the `login` view if you want to access the your projects in the CDE.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/Team%20Users.png" alt="Build Status">
 </p>
->Tasks
+>Tasks <br>
 >Having the ability to assign tasks to users or teams with some instructures or a specific view.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/Tasks.png" alt="Build Status">
@@ -153,7 +153,7 @@ this is the `login` view if you want to access the your projects in the CDE.
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/Save%20View.png" alt="Build Status">
 </p>
 
->New Task Alert
+>New Task Alert <br>
 >If you have a task, you will find this alert when you login the project.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/New%20Task%20Alert.png" alt="Build Status">
