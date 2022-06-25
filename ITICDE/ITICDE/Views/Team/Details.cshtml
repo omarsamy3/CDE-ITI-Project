@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
+    var ProjectId = ViewBag.ProjectId;
 }
 
 <h1>Details</h1>
@@ -43,6 +44,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
-    @*<a asp-action="Edit" class="btn btn-info" asp-route-id="@Model.Id"><i class="fas fa-pencil-alt"></i> Edit</a> *@
+    <a asp-action="Index" asp-route-ProjectId="@ProjectId" class="btn btn-outline-secondary">Back to List</a>
 </div>

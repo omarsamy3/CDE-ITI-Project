@@ -1,4 +1,7 @@
-﻿@using System.Security.Claims
+﻿@{
+    Layout = "_ProjectsLayout";
+}
+@using System.Security.Claims
 
 @model IEnumerable<ITICDE.Models.User>
 @{var ThisProject = (ITICDE.Models.Project)ViewBag.project;
@@ -69,7 +72,7 @@ else
                             {
                                 <td>
                                     <a asp-action="DeleteUser" asp-route-ProjectUser="@item.Id" 
-                asp-route-projectId="@ThisProject.Id" class="btn btn-info btn-sm"> 
+                                    asp-route-projectId="@ThisProject.Id" class="btn btn-info btn-sm"> 
                                         <i class="fa-solid fa-user-slash"></i> &nbsp; Delete</a>  
                                 </td>
                             }

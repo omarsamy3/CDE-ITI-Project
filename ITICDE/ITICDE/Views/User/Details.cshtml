@@ -22,24 +22,6 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Email)
         </dd>
-        @*<dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ConfirmEmail)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ConfirmEmail)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Password)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Password)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Role)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Role)
-        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.OrganizationType)
         </dt>
@@ -52,9 +34,14 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Discipline)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Position)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Position)
+        </dd>
     </dl>
 </div>
 <div>
-	<a asp-action="Edit" asp-route-id="@Model.Id"  class="btn btn-primary">Edit</a>
 	<a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
 </div>

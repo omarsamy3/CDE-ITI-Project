@@ -9,8 +9,7 @@
 
 <h1>Project Teams</h1>
 <p style="display:flex; justify-content:flex-end">
-    <a class="btn btn-primary" asp-action="Create"  asp-route-ProjectId="@ProjectId" style="margin:5px;">New Team</a>
-    <a class="btn btn-primary" asp-controller="User" asp-action="ProjectUsers" asp-route-ProjectId="@ProjectId" style="margin:5px;">All Project Members</a>
+    <a class="btn btn-primary" asp-action="Create" asp-route-ProjectId="@ProjectId" style="margin:5px;">New Team</a>
 </p>
 <table class="table" style="text-align:center;">
     <thead>
@@ -40,7 +39,7 @@
                 <tr>
 			<td><i class="fas fa-users"></i></td>
             <td>
-               <a  asp-action="UsersDetails" asp-route-id="@item.Id">
+               <a  asp-action="UsersDetails" asp-route-id="@item.Id" asp-route-ProjectId="@ProjectId">
 					
                     @item.Name</a>
             </td>
@@ -55,11 +54,11 @@
             </td>
             
             <td>
-                      <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
+                      <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" asp-route-ProjectId="@ProjectId" class="btn btn-primary btn-sm"><i class="icon fas fa-info"></i>  Details</a> 
                @if(item.TeamLeaderId == AdminId)
 			{
-				<a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
-                      <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+				<a asp-action="Edit" asp-route-id="@item.Id" asp-route-ProjectId="@ProjectId" class="btn btn-info btn-sm"> <i class="fas fa-pencil-alt"></i> Edit</a>  
+                      <a asp-action="Delete" asp-route-id="@item.Id" asp-route-ProjectId="@ProjectId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
             }
                       
             </td>

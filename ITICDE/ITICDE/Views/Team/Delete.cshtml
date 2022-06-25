@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Delete";
+    var ProjectId = ViewBag.ProjectId;
 }
 
 <h1>Delete</h1>
@@ -45,7 +46,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="Id" />
-        <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
-        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-action="Index"  asp-route-ProjectId="@ProjectId" class="btn btn-outline-secondary">Back to List</a>
+        <input type="submit" asp-route-ProjectId="@ProjectId" value="Delete" class="btn btn-danger" />
     </form>
 </div>

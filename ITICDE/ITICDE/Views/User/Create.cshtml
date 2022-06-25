@@ -22,21 +22,7 @@
                 <input asp-for="Email" class="form-control" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-@*            <div class="form-group">
-                <label asp-for="ConfirmEmail" class="control-label"></label>
-                <input asp-for="ConfirmEmail" class="form-control" />
-                <span asp-validation-for="ConfirmEmail" class="text-danger"></span>
-            </div>*@
-@*            <div class="form-group">
-                <label asp-for="Password" class="control-label"></label>
-                <input asp-for="Password" class="form-control" />
-                <span asp-validation-for="Password" class="text-danger"></span>
-            </div>*@
-@*            <div class="form-group">
-                <label asp-for="Role" class="control-label"></label>
-                <select asp-for="Role" class="form-control" asp-items="Html.GetEnumSelectList<Role>()"></select>
-                <span asp-validation-for="Role" class="text-danger"></span>
-            </div>*@
+
             <div class="form-group">
                 <label asp-for="OrganizationType" class="control-label"></label>
                 <select asp-for="OrganizationType" class="form-control" asp-items="Html.GetEnumSelectList<OrganizationType>()"></select>

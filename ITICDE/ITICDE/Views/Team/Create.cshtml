@@ -8,6 +8,7 @@
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
     var TeamAdmin = ViewBag.TeamLeader;
     var ProjectId = ViewBag.ProjectId;
+    var thisProjectUsers = ViewBag.thisProjectUsers;
 }
 
 <h1>Create</h1>
@@ -23,22 +24,13 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-         @*   <div class="form-group">
-                <label asp-for="ProjectId" class="control-label"></label>
-                <input asp-for="ProjectId" class="form-control" />
-                <span asp-validation-for="ProjectId" class="text-danger"></span>
-            </div>*@
 
-           @* <div class="form-group">
-                <label asp-for="ProjectId" class="control-label"></label>
-                <select asp-for="ProjectId" class ="form-control" asp-items="ViewBag.ProjectId"></select>
-            </div>*@
             <div class="form-group">
                 <label asp-for="TeamLeaderId" class="control-label"></label>
                 <select asp-for="TeamLeaderId" class ="form-control" asp-items="ViewBag.TeamLeaderId"></select>
             </div>
             <div class="form-group">
-				<a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+				<a asp-action="Index" asp-route-ProjectId="@ProjectId" class="btn btn-outline-secondary">Back to List</a>
                 <input type="submit" asp-route-ProjectId="@ProjectId" asp-route-TeamLeader="@TeamAdmin" asp-route-CreatorUserId="@user" value="Create" class="btn btn-primary" />
             </div>
             

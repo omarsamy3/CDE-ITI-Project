@@ -7,15 +7,17 @@
     var TeamLeaderId=(string)ViewBag.TeamLeader;
     var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
     var TeamName = ViewBag.TeamName;
+    var ProjectId = ViewBag.ProjectId;
+
 }
 
 <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 <h1>@TeamName</h1>
-<a style="margin-top:30px" asp-action="Index" asp-controller="Team" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
+<a style="margin-top:30px" asp-action="Index" asp-controller="Team" asp-route-ProjectId="@ProjectId" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
 <p style="display:flex; justify-content:flex-end">
-    <a class="btn btn-primary" asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@TeamId" style="margin-right:5px;">Add User</a>
+    <a class="btn btn-primary" asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@TeamId" asp-route-ProjectId="@ProjectId" style="margin-right:5px;">Add User</a>
 </p>
 
 <div class="table-responsive">
@@ -73,14 +75,7 @@
                         <td>
 								@Html.DisplayFor(modelItem => item.LastAccessTime)
                         </td>
-                        <td>
-							
-                            @if(userId == TeamLeaderId)
-                            {
-                                <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-UserId="@item.Id"
-                                asp-route-TeamId="@TeamId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
-                            }
-                        </td>
+                        <td></td>
                     </tr>
 
                 }
@@ -118,10 +113,10 @@
                             </td>
 
                             <td>
-                                @if(userId == TeamLeaderId)
-                                {
+                            @if (userId == TeamLeaderId )
+                                        {
                                     <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-UserId="@item.Id"
-                                    asp-route-TeamId="@TeamId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
+                                    asp-route-TeamId="@TeamId" asp-route-ProjectId="@ProjectId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>
                                 }
                             </td>
                         </tr>
@@ -130,5 +125,6 @@
         </tbody>
         
     </table>
+    
 </div>
 
