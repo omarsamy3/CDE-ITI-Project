@@ -167,8 +167,6 @@ this is the `login` view if you want to access the your projects in the CDE.
       <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"> </img>
     </td>
     <td>
-    </td>
-    <td>
       <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"></img>
     </td>
   </tr>
@@ -176,8 +174,6 @@ this is the `login` view if you want to access the your projects in the CDE.
     <td>
       <a href="https://github.com/omarsamy3"> Omar Samy </a>
     </td>
-   <td>
-   </td>
     <td>
       <a href="https://github.com/omarsamy3"> Mohammed Ayman </a>
     </td>
@@ -194,7 +190,6 @@ this is the `login` view if you want to access the your projects in the CDE.
     <td>
       <a href="https://github.com/omarsamy3"> Aboubakr Naser </a>
     </td>
-      
      <td>
       <a href="https://github.com/omarsamy3"> Mariam Rohaiem/a>
     </td>
