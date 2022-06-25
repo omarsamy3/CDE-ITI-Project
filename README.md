@@ -167,7 +167,7 @@ this is the `login` view if you want to access the your projects in the CDE.
       <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"> </img>
     </td>
     <td>
-      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"></img>
+      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//MohamedAyman.jpg"></img>
     </td>
   </tr>
   <tr>
@@ -175,23 +175,23 @@ this is the `login` view if you want to access the your projects in the CDE.
       <a href="https://github.com/omarsamy3"> Omar Samy </a>
     </td>
     <td>
-      <a href="https://github.com/omarsamy3"> Mohammed Ayman </a>
+      <a href="https://github.com/MohamedAyman21"> Mohammed Ayman </a>
     </td>
   </tr>
    <tr>
     <td>
-      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"></img>
+      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//AbobakrNasef.png"></img>
     </td>
     <td>
-      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"></img>
+      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//MariamRashad.JPG"></img>
     </td>
   </tr>
  <tr>
     <td>
-      <a href="https://github.com/omarsamy3"> Aboubakr Naser </a>
+      <a href="https://github.com/AboubakrNasef"> Aboubakr Naser </a>
     </td>
      <td>
-      <a href="https://github.com/omarsamy3"> Mariam Rohaiem/a>
+      <a href="https://github.com/MariamRohayiem"> Mariam Rashad </a>
     </td>
   </tr>
 </table>
