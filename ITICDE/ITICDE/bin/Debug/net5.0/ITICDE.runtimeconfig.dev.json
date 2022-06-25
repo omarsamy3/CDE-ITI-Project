@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\LENOVO\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\LENOVO\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\Win 10 ltsc\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Win 10 ltsc\\.nuget\\packages"
     ]
   }
 }
