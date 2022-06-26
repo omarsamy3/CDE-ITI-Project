@@ -1,9 +1,9 @@
 
 
-<h1 align="center"> CDEITIProject</h1>
+<h1 align="center"> Bay Bridge</h1>
 
 <p align="center">
-   <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/Logo.png" alt="Build Status" width="300">
+   <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/Logo.jpeg" alt="Build Status" width="300">
 </p>
 
 ## Description:
