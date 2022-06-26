@@ -102,6 +102,8 @@ namespace ITICDE.Controllers
         {
             ViewBag.Projid = ProjectId;
             ViewBag.Vieid = viewid;
+            var viewName = _context.Views.FirstOrDefault(v => v.Id == viewid).Name;
+            ViewBag.ViewName = viewName;
             var project = _context.Projects.Include(p => p.Users).FirstOrDefault(p => p.Id == ProjectId);
 
             ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name");

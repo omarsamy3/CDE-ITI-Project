@@ -7,6 +7,7 @@
     var user = User.FindFirstValue(ClaimTypes.NameIdentifier);
     var projid = (int)ViewBag.Projid;
     var viewid = (int)ViewBag.Vieid;
+    var ViewName=(string)ViewBag.ViewName;
 }
  <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
@@ -80,7 +81,7 @@
             <div class="form-group">
                 <label asp-for="ViewId" class="control-label">Attach View</label>
                 <select asp-for="ViewId" class ="form-control" asp-items="ViewBag.ViewId" disabled>
-                    <option disabled selected>@viewid</option>
+                    <option disabled selected>@ViewName</option>
                 </select>
             </div>
             <div class="form-group">
