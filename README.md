@@ -87,7 +87,7 @@ this is the `login` view if you want to access the your projects in the CDE.
 </p>
 
 
->after the player login successfuly he will get the welcome screen and informed <br>
+>after the User login successfuly he will get the welcome screen and informed <br>
 >with the information with the page of his work-on projects.
 <p align="center">
        <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img/GitHubProjectPhotos/Projects.png" alt="Build Status">
