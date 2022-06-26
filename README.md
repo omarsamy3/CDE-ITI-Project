@@ -164,10 +164,10 @@ this is the `login` view if you want to access the your projects in the CDE.
 <table>
   <tr>
     <td>
-      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//Omar.jpg"> </img>
+      <img src="https://avatars.githubusercontent.com/u/76973221?v=4"> </img>
     </td>
     <td>
-      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//MohamedAyman.jpg"></img>
+      <img src="https://avatars.githubusercontent.com/u/106613861?v=4g"></img>
     </td>
   </tr>
   <tr>
@@ -180,10 +180,10 @@ this is the `login` view if you want to access the your projects in the CDE.
   </tr>
    <tr>
     <td>
-      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//AbobakrNasef.png"></img>
+      <img src="https://avatars.githubusercontent.com/u/105270767?v=4"></img>
     </td>
     <td>
-      <img src="https://github.com/omarsamy3/CDEITIProject/blob/main/ITICDE/ITICDE/wwwroot/dist/img//MariamRashad.JPG"></img>
+      <img src="https://avatars.githubusercontent.com/u/106573824?v=4"></img>
     </td>
   </tr>
  <tr>
