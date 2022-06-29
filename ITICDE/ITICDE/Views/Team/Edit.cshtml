@@ -27,7 +27,7 @@
                 <select asp-for="TeamLeaderId" class ="form-control" asp-items="ViewBag.TeamLeaderId"></select>
             </div>
             <div class="form-group">
-				<a asp-action="Index" asp-route-ProjectId="@ProjectId" class="btn btn-outline-secondary">Back to List</a>
+				<a asp-action="Index" asp-route-ProjectId="@ProjectId" class="btn btn-outline-secondary"><i class="fa-solid fa-circle-left"></i>&nbsp;Back to List</a>
                 <input type="submit" value="Save" asp-route-ProjectId="@ProjectId" asp-route-TeamLeaderId="@TeamLeaderId" asp-route-CreatorUserId="@CreatorUserId" class="btn btn-primary" />
             </div>
         </form>

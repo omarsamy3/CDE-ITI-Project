@@ -32,15 +32,14 @@
             </div>*@
         
             <div class="form-group">
+                <a asp-action="Index" asp-route-ProjectId="@ProjId" class="btn btn-outline-secondary"> <i class="fa-solid fa-circle-left"></i> &nbsp;Back to List</a>
                 <input type="submit" value="Create"  asp-route-UserId="@usrid" asp-route-ProjectId="@ProjId" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

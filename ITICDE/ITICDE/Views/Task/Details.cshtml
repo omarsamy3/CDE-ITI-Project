@@ -5,13 +5,13 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
+<h1>@Model.Title</h1>
 <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 
 <div>
-    <h4>Task</h4>
+    
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -88,7 +88,7 @@
     
     <a asp-action="Index" class="btn btn-outline-secondary" asp-route-ProjectId = "@Model.ProjectId"> <i class="fa-solid fa-circle-left"></i> &nbsp;Back to List</a>
     @if(Model.ViewId != null){
-        <a asp-action="ShowView" asp-controller="View" asp-route-viewid="@Model.ViewId" class="btn btn-info" style="margin-left:10px"> <i class="nav-icon far fa-image"></i> &nbsp; &nbsp;Show Attached View </a>
+        <a asp-action="ShowView" asp-controller="View" asp-route-viewid="@Model.ViewId" class="btn btn-warning" style="margin-left:10px"> <i class="nav-icon far fa-image"></i> &nbsp; &nbsp;Show Attached View </a>
         
     }
 

@@ -31,7 +31,11 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-
+            @*<div class="form-group">
+                <label asp-for="CreationDate" class="control-label"></label>
+                <input asp-for="CreationDate" class="form-control" />
+                <span asp-validation-for="CreationDate" class="text-danger"></span>
+            </div>*@
              <div class="form-group">
                 <label asp-for="Progress" class="control-label"></label>
                 <select asp-for="Progress" class="form-control" asp-items="Html.GetEnumSelectList<Progress>()">
@@ -51,6 +55,10 @@
                 <input asp-for="DeadLine" class="form-control" />
                 <span asp-validation-for="DeadLine" class="text-danger"></span>
             </div>
+@*            <div class="form-group">
+                <label asp-for="CreatorUserId" class="control-label"></label>
+                <select asp-for="CreatorUserId" class ="form-control" asp-items="ViewBag.CreatorUserId"></select>
+            </div>*@
             
             <div class="form-group">
                 <label asp-for="ProjectId" class="control-label">Project</label>

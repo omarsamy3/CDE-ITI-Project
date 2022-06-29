@@ -156,13 +156,13 @@ namespace ITICDE.Controllers
                         throw;
                     }
                 }
-if(folder.ParentId == 0){
+                if(folder.ParentId == 0){
                     return RedirectToAction(nameof(Index), new { ProjectId = folder.ProjectId });
                 }
-else if (folder.ParentId!=0)
+                else if (folder.ParentId!=0)
                 {
                     folder.HasParent = true;
-_context.Update(folder);
+                    _context.Update(folder);
                     return RedirectToAction(nameof(InnerDet), new {id= folder.ParentId,projectId=folder.ProjectId });
                 }
                 
@@ -170,6 +170,37 @@ _context.Update(folder);
             return View(folder);
         }
 
+        // GET: Folders/Delete/5
+        //public async Task<IActionResult> Delete(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    var folder = await _context.Folders
+        //        .FirstOrDefaultAsync(m => m.Id == id);
+        //    ViewBag.projectId = folder.ProjectId;
+        //    if (folder == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(folder);
+        //}
+
+        //// POST: Folders/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id,int ProjectId)
+        //{
+        //    var folder = await _context.Folders.FindAsync(id);
+        //    _context.Folders.Remove(folder);
+        //    await _context.SaveChangesAsync();
+        //    if(folder.ParentId==0)
+        //    return RedirectToAction(nameof(Index),new {ProjectId});
+        //    else return RedirectToAction(nameof(InnerDet), new { id=folder.ParentId ,projectId= ProjectId });
+        //}
         // GET: Folders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -179,6 +210,10 @@ _context.Update(folder);
             }
 
             var folder = await _context.Folders
+                .Include(f => f.Files)
+                .Include(f => f.InnerFolders)
+                .Include(f => f.CreatorUser)
+                .Include(f => f.Project)
                 .FirstOrDefaultAsync(m => m.Id == id);
             ViewBag.projectId = folder.ProjectId;
             if (folder == null)
@@ -189,19 +224,39 @@ _context.Update(folder);
             return View(folder);
         }
 
+        public void again(Folder folder)
+        {
+            if (folder.InnerFolders.Count > 0)
+            {
+                foreach (var inner in folder.InnerFolders.ToList())
+                {
+                    if (inner.InnerFolders.Count == 0) { folder.InnerFolders.Remove(inner); }
+                    else { again(inner); }
+                }
+
+                foreach (var file in folder.Files.ToList())
+                {
+                    folder.Files.Remove(file);
+                }
+            }
+        }
+
         // POST: Folders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id,int ProjectId)
+        public async Task<IActionResult> DeleteConfirmed(int id, int ProjectId)
         {
-            var folder = await _context.Folders.FindAsync(id);
+            var folder = _context.Folders.Include(f => f.InnerFolders)
+                .Include(f => f.Files).FirstOrDefault(f => f.Id == id);
+
+            again(folder);
+
             _context.Folders.Remove(folder);
             await _context.SaveChangesAsync();
-if(folder.ParentId==0)
-            return RedirectToAction(nameof(Index),new {ProjectId});
-else return RedirectToAction(nameof(InnerDet), new { id=folder.ParentId ,projectId= ProjectId });
+            if (folder.ParentId == 0)
+                return RedirectToAction(nameof(Index), new { ProjectId });
+            else return RedirectToAction(nameof(InnerDet), new { id = folder.ParentId, projectId = ProjectId });
         }
-
         public async Task<IActionResult> InnerDet(int? id,int projectId)
         {
             
@@ -225,7 +280,7 @@ else return RedirectToAction(nameof(InnerDet), new { id=folder.ParentId ,project
 
         public IActionResult CreateInnerFolder(int? id)
         {
-            
+            ViewBag.parent = id;
             return View();
         }
         [HttpPost]

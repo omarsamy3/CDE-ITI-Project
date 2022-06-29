@@ -20,22 +20,7 @@
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 
-@*<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-  /* Style the input field */
-  #myInput {
-    padding: 20px;
-    margin-top: -6px;
-    border: 0;
-    border-radius: 0;
-    background: #f1f1f1;
-  }
-  </style>
-</head>*@
+
 
 <h1>@projectName</h1>
 
@@ -50,37 +35,7 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-           @* <div class="form-group">
-                <label asp-for="Users" class="control-label"></label>
-                <input asp-for="Users" class="form-control" />
-                <span asp-validation-for="Users" class="text-danger"></span>
-            </div>*@
-@*<div class="container">
-  <h2>Filterable Dropdown</h2>
-  <p>Open the dropdown menu and type something in the input field to search for dropdown items:</p>
-  <p>Note that we have styled the input field to fit the dropdown items.</p>
-  <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <input asp-for="Users" class="form-control" id="myInput" type="text" placeholder="Search..">
-      
-      @foreach (var us in users)
-                        {
-                            <li><a href="#" onclick="myFunc(this)">@us.Email</a></li>
-                        }
-    </ul>
-  </div>
-</div>*@
-  @*          <div class="form-group">
-                <label asp-for="Users" class="control-label"></label>
-                <select asp-for="Users" class ="form-control" asp-items="users"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="CreationDate" class="control-label"></label>
-                <input asp-for="CreationDate" class="form-control" />
-                <span asp-validation-for="CreationDate" class="text-danger"></span>
-            </div>*@
+           
             <div class="form-group">
                 
                 <input type="submit"  asp-route-ProjectId="@ProjId" asp-route-UserId="@user" value="Create" class="btn btn-primary"/>
@@ -101,48 +56,3 @@
 
 
 
-
-@*  <script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $(".dropdown-menu li").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-
-let usersList;
-let selectedUsers =Array();
-let obj;
-function myFunc(el){
-    //console.log(el.text);
-    selectedUsers.push(el.text);
-    console.log(selectedUsers[0]);
-    var myJsonString = JSON.stringify(selectedUsers);
-    console.log(myJsonString);
-    obj = { "selectedUsers": selectedUsers };
-    //=el.text
-    
-    
-    
-    
-}
-//haredWithUsers = selectedUsers;
-$('input').on('click',function func() {
-        $.ajax({
-            url: "./Folders/Create",
-            type: "POST",
-            data: JSON.stringify(obj),
-            contentType: "application/json; charset=utf-8",
-            dataType: "json",
-            //error: function(response) {
-            //    alert(response.responseText);
-            //},
-            //success: function(response) {
-            //    alert(response);
-            //}
-        });
-    });
-
-</script>*@

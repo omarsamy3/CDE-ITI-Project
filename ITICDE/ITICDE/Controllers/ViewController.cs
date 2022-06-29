@@ -200,12 +200,12 @@ namespace ITICDE.Controllers
         // POST: View/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int id,int ProjectId)
         {
             var view = await _context.Views.FindAsync(id);
             _context.Views.Remove(view);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index),new{ProjectId});
         }
 
         private bool ViewExists(int id)
