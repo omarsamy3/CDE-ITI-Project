@@ -16,9 +16,19 @@
 </head>
 <h1>@TeamName</h1>
 <a style="margin-top:30px" asp-action="Index" asp-controller="Team" asp-route-ProjectId="@ProjectId" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> &nbsp; Back</a>
-<p style="display:flex; justify-content:flex-end">
-    <a class="btn btn-primary" asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@TeamId" asp-route-ProjectId="@ProjectId" style="margin-right:5px;"><i class="fa-solid fa-user-plus"></i> &nbsp;Add User</a>
-</p>
+
+    
+        @if(userId == TeamLeaderId)
+        {
+            <p style="display:flex; justify-content:flex-end">
+        <a class="btn btn-primary" asp-controller="User" asp-action="AddTeamUser" asp-route-TeamId="@TeamId"
+        asp-route-ProjectId="@ProjectId" style="margin-right:5px;">
+        <i class="fa-solid fa-user-plus"> </i> &nbsp;Add User
+        </a>  
+        </p>
+        }
+    
+
 
 <div class="table-responsive">
     <table class="table" style="text-align:center">
@@ -113,7 +123,7 @@
                             </td>
 
                             <td>
-                            @if (userId == TeamLeaderId )
+                            @if (userId == TeamLeaderId  || item.Id == userId)
                                         {
                                     <a  asp-controller="User" asp-action="DeleteTeamUser" asp-route-UserId="@item.Id"
                                     asp-route-TeamId="@TeamId" asp-route-ProjectId="@ProjectId" class="btn btn-danger btn-sm"> <i class="fas fa-trash"></i> Delete</a>

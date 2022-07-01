@@ -1,5 +1,5 @@
 ﻿@{
-    Layout = "_Empty";
+    Layout = "";
 }
 <!DOCTYPE html>
 <!--
@@ -11,8 +11,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome Page</title>
-
+    <title>Bay Bridge</title>
+    <link rel="shortcut icon" href="/dist/img/logo 128x128.ico" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -29,8 +29,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
             <div class="container">
                 <a href="#" class="navbar-brand">
+                    <img style="width:50px;display:inline;" src="/dist/img/logo 128x128.png"/> &nbsp;
                     @*<span class="brand-text font-weight-light">*@
-                        <h3>ITICDE</h3>
+                        <h3 style="display:inline">Bay Bridge</h3>
                     @*</span>*@
                 </a>
 
@@ -66,17 +67,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <div class="content" style="height: 500px;">
+            <div class="content" style="height: 400px;">
                 <div class="container">
 
-                    <div class="row  " style="height: 500px;" >
+                    <div class="row  " style="height: 400px;" >
                         <!-- <div class="col-sm text-center"> -->
                             <div
                             class="bg-image p-5 text-center shadow-1-strong rounded mb-5 text-white col-12  vcenter-item "
-                            style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');"
+                            style="background-image: url('/dist/img/Welcome.jpg'); background-size: cover;
+    background-position: 0 -100;"
                           >
-                            <h1 class="m-2  vcenter-item"> Welcome <br> <small>To ITICDE</small></h1>
+                          <div style=" background-color:rgba(0,0,0,0.5); display: inline-block; position: absolute; top: 133px; left: 400px;">
+                            <h1  class="m-2  vcenter-item"> Welcome <small>To Bay Bridge</small></h1>
+                            <h3  class="m-2  vcenter-item"> Thank You For Your Trust</h3>
                             <!-- <img src="../../dist/img/photo4.jpg" class="img-fluid" alt="..."> -->
+                        </div>
                         </div>
 
                     </div><!-- /.row -->
@@ -90,7 +95,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="card ">
-                                <img src="..\..\dist\img\photo1.png" class="card-img-top rounded-top" alt="...">
+                                <img src="/dist/img/FileManager.jpg" class="card-img-top rounded-top" style="height:244px;"alt="...">
                                 <div class="card-body">
                                     <h5 class=" text-center">File Explorer</h5>
                                   
@@ -106,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </div>
                         <div class="col-lg-4">
                             <div class="card">
-                                <img src="..\..\dist\img\photo2.png" class="card-img-top rounded-top" alt="...">
+                                <img src="/dist/img/Viewer.png" class="card-img-top rounded-top" style="height:244px;" alt="...">
 
                                 <div class="card-body ">
                                     <h5 class=" text-center ">Files Viewer</h5>
@@ -122,7 +127,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <!-- /.card -->
                         <div class="col-lg-4">
                             <div class="card">
-                                <img src="..\..\dist\img\photo1.png" class="card-img-top rounded-top" alt="...">
+                                
+                                <img src="/dist/img/Task.jpg" class="card-img-top rounded-top " style="height:244px;" alt="...">
+                               
                                 <div class="card-body">
                                     <h5  class=" text-center">Assign Tasks</h5>
 
