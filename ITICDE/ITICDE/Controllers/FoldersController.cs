@@ -43,14 +43,14 @@ namespace ITICDE.Controllers
         public async Task<IActionResult> Index(int ProjectId)
         {
             ViewBag.ProjId = ProjectId;
-            var project=_context.Projects.Include(f=>f.Folders).Include(fi=>fi.Files).FirstOrDefault(p=>p.Id == ProjectId).Name;
+            var project=_context.Projects.Include(f=>f.Folders).ThenInclude(f=>f.CreatorUser).Include(fi=>fi.Files).ThenInclude(fi=>fi.CreatorUser).FirstOrDefault(p=>p.Id == ProjectId).Name;
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = _context.Users.Include(T=>T.SharedTasks).FirstOrDefault(u => u.Id == userId);
-            var projectFiles = _context.Projects.Include(f => f.Folders).FirstOrDefault(p => p.Id == ProjectId).Files.Where(f=>f.ProjectId==ProjectId && f.FolderId==null);
+            var projectFiles = _context.Projects.Include(f => f.Folders).Include(u=>u.Users).FirstOrDefault(p => p.Id == ProjectId).Files.Where(f=>f.ProjectId==ProjectId && f.FolderId==null);
             ViewBag.ProjectFiles = projectFiles;
             ViewBag.project = project;
             ViewBag.User = user;
-            return View(await _context.Folders.ToListAsync());
+            return View(await _context.Folders.Include(u=>u.CreatorUser).ToListAsync());
         }
 
         // GET: Folders/Details/5
@@ -268,7 +268,7 @@ namespace ITICDE.Controllers
             {
                 return NotFound();
             }
-            var folder = await _context.Folders.Include(i => i.InnerFolders).Include(f => f.Files).Include(p=>p.Project)
+            var folder = await _context.Folders.Include(i => i.InnerFolders).Include(f => f.Files).ThenInclude(u=>u.CreatorUser).Include(p=>p.Project).Include(u=>u.CreatorUser)
                                     .FirstOrDefaultAsync(m => m.Id == id);
             // Files Display Code 
             if (folder == null)
@@ -310,7 +310,7 @@ namespace ITICDE.Controllers
         {
             var dir = _env.WebRootPath;
             var full = dir + "/Files";
-            var folder = await _context.Folders.Include(i => i.InnerFolders)
+            var folder = await _context.Folders.Include(i => i.InnerFolders).Include(f=>f.Files).ThenInclude(u=>u.CreatorUser)
                                     .FirstOrDefaultAsync(m => m.Id == id);
             foreach (var file in files)
             {
@@ -319,7 +319,7 @@ namespace ITICDE.Controllers
                 {
                     file.CopyTo(fileStream);
                 }
-                Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = folder.ProjectId, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) };
+                Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = folder.ProjectId, CreatorUserId = User.FindFirstValue(ClaimTypes.NameIdentifier)};
                 _context.Add(newF);
                 folder.Files.Add(newF);
                 _context.SaveChanges();
@@ -385,7 +385,7 @@ namespace ITICDE.Controllers
 		{
 			var dir = _env.WebRootPath;
 			var full = dir + "/Files";
-			var project = await _context.Projects.Include(i => i.Files).Include(f => f.Folders)
+			var project = await _context.Projects.Include(i => i.Files).ThenInclude(i=>i.CreatorUser).Include(f => f.Folders).ThenInclude(f=>f.CreatorUser)
 									.FirstOrDefaultAsync(m => m.Id == projectId);
 			foreach (var file in files)
 			{
@@ -394,7 +394,7 @@ namespace ITICDE.Controllers
 				{
 					file.CopyTo(fileStream);
 				}
-				Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = projectId, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) };
+				Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = projectId, CreatorUserId = User.FindFirstValue(ClaimTypes.NameIdentifier) };
 				_context.Add(newF);
 				project.Files.Add(newF);
 				_context.SaveChanges();

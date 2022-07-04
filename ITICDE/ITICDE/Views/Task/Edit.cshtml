@@ -4,7 +4,7 @@
 @{
     ViewData["Title"] = "Edit";
     var usrid = Model.CreatorUserId;
-    var projectId =(int)ViewBag.ProjId;
+    var projectId =(int)ViewBag.projid;
 }
 <head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
@@ -17,11 +17,16 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
-            <div class="form-group" >
-                <label asp-for="Title" class="control-label"></label>
+            
+                <div class="form-group" >
+                    <label asp-for="Title" class="control-label"></label>
+                    
                 <input asp-for="Title" class="form-control"/>
+                    
+                    
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <label asp-for="Progress" class="control-label"></label>
                 <select asp-for="Progress" class="form-control" asp-items="Html.GetEnumSelectList<Progress>()">
@@ -39,58 +44,61 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-          @*  <div class="form-group">
-                <label asp-for="CreationDate" class="control-label"></label>
-                <input asp-for="CreationDate" class="form-control" />
-                <span asp-validation-for="CreationDate" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <label asp-for="DeadLine" class="control-label"></label>
+            
+                <div class="form-group">
+                    <label asp-for="DeadLine" class="control-label"></label>
                 <input asp-for="DeadLine" class="form-control" />
                 <span asp-validation-for="DeadLine" class="text-danger"></span>
-            </div>
-    @*        <div class="form-group">
-                <label asp-for="CreatorUserId" class="control-label"></label>
-                <select asp-for="CreatorUserId" class="form-control" asp-items="ViewBag.CreatorUserId"></select>
-                <span asp-validation-for="CreatorUserId" class="text-danger"></span>
-            </div>*@
-            <div class="form-group">
-                <label asp-for="AssignedtoUserId" class="control-label">Assigned To User</label>
-                <select asp-for="AssignedtoUserId" class="form-control" asp-items="ViewBag.AssignedtoUserId">
-                    @if (Model.AssignedtoUserId == null)
-                    {
-                        <option disabled selected>--Choose User--</option>
-                    }
-                </select>
-                <span asp-validation-for="AssignedtoUserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProjectId" class="control-label"> Project </label>
-                <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId" disabled>
-                    <option disabled selected>@projectId</option>
-                </select>
-                <span asp-validation-for="ProjectId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TeamId" class="control-label">Assigned To Team</label>
-                <select asp-for="TeamId" class="form-control" asp-items="ViewBag.TeamId">
-                    @if (Model.TeamId == null)
-                    {
-                        <option disabled selected>--Choose Team--</option>
-                    }
-                </select>
+                </div>
+            
+            
+                <div class="form-group">
+                    <label asp-for="AssignedtoUserId" class="control-label">Assigned To User</label>
+                    
+                    <select asp-for="AssignedtoUserId" class="form-control" asp-items="ViewBag.AssignedtoUserId">
+                    
+                        @if (Model.AssignedtoUserId == null)
+                        {
+                            <option disabled selected>--Choose User--</option>
+                        }
+                    </select>
+                    
+                    <span asp-validation-for="AssignedtoUserId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ProjectId" class="control-label"> Project </label>
+                    <select asp-for="ProjectId" class="form-control" asp-items="ViewBag.ProjectId" disabled>
+                        <option disabled selected>@projectId</option>
+                    </select>
+                    <span asp-validation-for="ProjectId" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="TeamId" class="control-label">Assigned To Team</label>
+                
+                    <select asp-for="TeamId" class="form-control" asp-items="ViewBag.TeamId">
+                        @if (Model.TeamId == null)
+                        {
+                            <option disabled selected>--Choose Team--</option>
+                        }
+                    </select>
+                
                 <span asp-validation-for="TeamId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ViewId" class="control-label">Attach View</label>
-                <select asp-for="ViewId" class="form-control" asp-items="ViewBag.ViewId">
-                    @if (Model.ViewId == null)
-                    {
-                        <option disabled selected>--Choose View--</option>
-                    }
-                </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="ViewId" class="control-label">Attach View</label>
+                    <select asp-for="ViewId" class="form-control" asp-items="ViewBag.ViewId">
+                        @if (Model.ViewId == null)
+                        {
+                            <option disabled selected>--Choose View--</option>
+                        }
+                    </select>
                 <span asp-validation-for="ViewId" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <input type="submit" value="Save" asp-route-ProjectId="@projectId" class="btn btn-primary" asp-route-CreatorUserId="@usrid"/> &nbsp;&nbsp;&nbsp;
                 <a asp-action="Index" class="btn btn-outline-secondary" asp-route-ProjectId="@projectId"> <i class="fa-solid fa-circle-left"></i> &nbsp;Back to List</a>

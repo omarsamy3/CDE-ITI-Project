@@ -56,7 +56,7 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-if(item.ProjectId == projectId && (user == item.CreatorUserId ||(item.AssignedtoUserId!=null && user == item.AssignedtoUserId) || user == item.Project.CreatorUserId|| (item.Team != null && item.Team.Users.Any(i =>i.Id == user))))
+if(item.ProjectId == projectId && (user == item.CreatorUserId ||(item.AssignedtoUserId!=null && user == item.AssignedtoUserId) || user == item.Project.CreatorUserId || (item.Team != null && item.Team.Users.Any(i =>i.Id == user))))
 
     {
         <tr>

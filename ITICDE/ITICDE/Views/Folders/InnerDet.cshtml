@@ -18,7 +18,7 @@
 </label>
 <input id="file-upload" type="file" name="files" multiple hidden/>
     @*<input type="file"   style="display: none;"/>*@
-    <button id="mybtn" class="btn btn-primary" type="submit" >Submit</button>
+    <button id="mybtn" \ class="btn btn-primary" type="submit" >Submit</button>
     <hr />
 </form>
 @if (Model.InnerFolders.Count != 0 || Model.Files.Count != 0)
@@ -33,6 +33,9 @@
                 <th>
                     Creation Date
                 </th>
+                <th>
+                    Creator User
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +49,9 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem=>item.CreationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem=>item.CreatorUser.Name)
                     </td>
                     <td>
                         @if(item.UserId==user)
@@ -117,8 +123,9 @@
 
 
                         <td style="text-align :center">@item.UploadDate</td>
+                        <td style="text-align :center">@item.CreatorUser.Name</td>
                         <td>
-                            @if(item.UserId == user)
+                            @if(item.CreatorUserId == user)
                             {
                                 <a href="/Folders/DeleteFile?Id=@item.Id" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can fa-lg"></i> &nbsp; Delete</a>
                             }

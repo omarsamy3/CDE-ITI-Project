@@ -14,6 +14,8 @@
     var ThisProject = (ITICDE.Models.Project)ViewBag.project;
     var team = ViewBag.RequiredTeam;
 }
+<a  asp-controller="Team" asp-action="UsersDetails" asp-route-ProjectId="@ThisProject.Id" asp-route-id="@team.Id" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> Back </a>
+
 @if (ThisProject.Users.Count == num)
 {
     <table class="table">
@@ -73,7 +75,6 @@
     </table>
 }
    
-<a  asp-controller="Team" asp-action="UsersDetails" asp-route-ProjectId="@ThisProject.Id" asp-route-id="@team.Id" class="btn btn-outline-dark"><i class="fa-solid fa-circle-left"></i> Back </a>
 
 
 

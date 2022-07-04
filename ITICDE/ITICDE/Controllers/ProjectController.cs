@@ -39,9 +39,13 @@ namespace ITICDE.Controllers
         }
 
         // GET: Project/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = _context.Users.Find(userId);
+            HttpContext.Session.SetString("userName", user.Name);
+            HttpContext.Session.SetInt32("projid", id);
+            if (id == 0)
             {
                 return NotFound();
             }

@@ -53,7 +53,10 @@
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CreationDate)
+                Creation Date
+            </th>
+             <th>
+                Creator User
             </th>
         </tr>
     </thead>
@@ -65,23 +68,25 @@
 
             if (item.HasParent == false && ProjId == item.ProjectId&&item.ParentId==0)
             {
-                 <tr style="background-color: #f2f2f2;">
+                    <tr style="background-color: #f2f2f2;">
                     <td><i class="fa-solid fa-folder fa-xl"></i></td>
                     <td>
                         
-                        <a asp-action="InnerDet" asp-route-Id = "@item.Id" >@item.Name</a>
+                        <a asp-action="InnerDet" asp-route-projectId="@ProjId" asp-route-Id = "@item.Id" >@item.Name</a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.CreationDate)
                     </td>
-                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatorUser.Name)
+                    </td>
                     <td>
                         @if(item.UserId == user)
                             {
                                 <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info "> <i class="fa-solid fa-pen-to-square fa-lg"></i> &nbsp; Edit</a>  
                                 <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger "> <i class="fas fa-trash fa-lg"></i> &nbsp; Delete</a>
                             }
-                      <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary "><i class="fa-solid fa-circle-info fa-lg"></i> &nbsp; Details</a> 
+                        <a  src="/open-iconic/svg/icon-name.svg" asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary "><i class="fa-solid fa-circle-info fa-lg"></i> &nbsp; Details</a> 
                     </td>
                 </tr>
             }
@@ -146,8 +151,9 @@
 
 
                         <td style="text-align :center">@item.UploadDate</td>
+                        <td style="text-align :center">@item.CreatorUser.Name</td>
                         <td>
-                            @if(item.UserId == user)
+                            @if(item.CreatorUserId == user)
                             {
                                 <a asp-action="DeleteFileFromProject"asp-route-Id="@item.Id"class="btn btn-outline-danger"><i class="fa-solid fa-trash-can fa-lg"></i> &nbsp; Delete</a>
                             }

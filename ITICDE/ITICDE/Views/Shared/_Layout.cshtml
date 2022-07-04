@@ -97,6 +97,12 @@
               </p>
             </a>*@
             @*<ul class="nav nav-treeview">*@
+                     <li class="nav-item">
+                <a asp-action="Index" asp-controller="Project" class="nav-link" asp-route-ProjectId="@projid" class="nav-link">
+                  &nbsp;&nbsp;<i class="fa-solid fa-city"></i>&nbsp;&nbsp;&nbsp;
+                  <p>Projects</p>
+                </a>
+              </li>
 			                                                @*Explore*@
               <li class="nav-item">
                 <a asp-action="Index" asp-controller="Folders" class="nav-link" asp-route-ProjectId="@projid" >
@@ -112,12 +118,7 @@
                 </a>
               </li>
                                                             @*Release*@			
-              <li class="nav-item">
-                <a asp-action="Index" asp-controller="Project" class="nav-link" asp-route-ProjectId="@projid" class="nav-link">
-                  &nbsp;&nbsp;<i class="fa-solid fa-city"></i>&nbsp;&nbsp;&nbsp;
-                  <p>Projects</p>
-                </a>
-              </li>
+         
            @* </ul>*@
           
 		                                                    @*Tasks*@

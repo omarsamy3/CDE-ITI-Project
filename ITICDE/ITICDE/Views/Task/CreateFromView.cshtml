@@ -9,7 +9,7 @@
     var viewid = (int)ViewBag.Vieid;
     var ViewName=(string)ViewBag.ViewName;
 }
- <head>
+<head>
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 <h1>CreateTask</h1>
@@ -39,14 +39,13 @@
              <div class="form-group">
                 <label asp-for="Progress" class="control-label"></label>
                 <select asp-for="Progress" class="form-control" asp-items="Html.GetEnumSelectList<Progress>()">
-                    <option disabled selected> --Choose Task Progress--</option>
                     </select>
                 <span asp-validation-for="Progress" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Priority" class="control-label"></label>
                 <select asp-for="Priority" class="form-control" asp-items="Html.GetEnumSelectList<Priority>()">
-                <option disabled selected> --Choose Task Priority--</option>
+                
                 </select>
                 <span asp-validation-for="Priority" class="text-danger"></span>
             </div>
@@ -85,13 +84,12 @@
                 </select>
             </div>
             <div class="form-group">
+                <a asp-action="Index" class="btn btn-outline-secondary" asp-route-ProjectId="@projid"><i class="fa-solid fa-circle-left"></i> &nbsp;Back to List</a>
                 <input type="submit" asp-route-CreatorUserId="@user" asp-route-ProjectId="@projid" asp-route-ViewId="@viewid" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index" class="btn btn-outline-secondary" asp-route-ProjectId="@projid"><i class="fa-solid fa-circle-left"></i> &nbsp;Back to List</a>
-</div>
+
 

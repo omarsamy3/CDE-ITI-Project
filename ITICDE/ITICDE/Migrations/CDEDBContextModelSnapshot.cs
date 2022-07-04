@@ -71,6 +71,9 @@ namespace ITICDE.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CreatorUserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<int?>("FolderId")
                         .HasColumnType("int");
 
@@ -91,16 +94,13 @@ namespace ITICDE.Migrations
                     b.Property<DateTime>("UploadDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("CreatorUserId");
 
                     b.HasIndex("FolderId");
 
                     b.HasIndex("ProjectId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Files");
                 });
@@ -640,6 +640,10 @@ namespace ITICDE.Migrations
 
             modelBuilder.Entity("ITICDE.Models.File", b =>
                 {
+                    b.HasOne("ITICDE.Models.User", "CreatorUser")
+                        .WithMany("UploadedFiles")
+                        .HasForeignKey("CreatorUserId");
+
                     b.HasOne("ITICDE.Models.Folder", "Folder")
                         .WithMany("Files")
                         .HasForeignKey("FolderId");
@@ -649,10 +653,6 @@ namespace ITICDE.Migrations
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("ITICDE.Models.User", "CreatorUser")
-                        .WithMany("UploadedFiles")
-                        .HasForeignKey("UserId");
 
                     b.Navigation("CreatorUser");
 

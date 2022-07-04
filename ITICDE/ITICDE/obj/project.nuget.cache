@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4n9xQG8JF6ZJeyZolWUbBuZSGip2kX5wQ5RFcV0YWZXH22F+wwMwNMHNlt4Dke0uTeojE5cKHyWj0jhNv2bVAw==",
+  "dgSpecHash": "hPXOahO+RYAvA+KOBO/oIRamxFa1Tfjvfot/5idjm1DqUdFMfWpMGufZZPMgjO8wJP0O/oomtAKVArgLvjpDwA==",
   "success": true,
-  "projectFilePath": "D:\\iti data\\Final Project Data\\Code\\After Adding Template\\Trial 7 24-6-2022\\ITICDE\\ITICDE\\ITICDE.csproj",
+  "projectFilePath": "D:\\iti data\\Final Project Data\\Bay Bridge\\ITICDE\\ITICDE\\ITICDE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper\\11.0.0\\automapper.11.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",

@@ -1,5 +1,6 @@
 ﻿@using ITICDE.Enums
 @model ITICDE.Models.Project
+@{ Layout = "_ProjectsLayout";}
 
 @{
     ViewData["Title"] = "Create";
@@ -8,12 +9,12 @@
     <script src="https://kit.fontawesome.com/056ba6c557.js" crossorigin="anonymous"></script>
 </head>
 
-<h1>Create</h1>
+<h1>Create a Project</h1>
 
-<h4>Project</h4>
+
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-8" style="padding-left:500px">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -42,9 +43,12 @@
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-    <a asp-action="Index" class="btn btn-outline-secondary">  <i class="fa-solid fa-circle-left"></i>Back to List</a>
+    <a asp-action="Index" class="btn btn-outline-secondary">  <i class="fa-solid fa-circle-left"></i> &nbsp;Back to List</a>
 
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" style="
+    float: right;
+    width: 100px;
+"/>
 
             </div>
         </form>
