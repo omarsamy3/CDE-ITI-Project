@@ -109,8 +109,8 @@ namespace ITICDE.Controllers
             ViewData["AssignedtoUserId"] = new SelectList(project.Users, "Id", "Name");
             ViewData["CreatorUserId"] = new SelectList(_context.Users, "Id", "Name");
             ViewData["ProjectId"] = new SelectList(_context.Projects, "Id", "Name", ProjectId);
-            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p => p.ProjectId == ProjectId), "Id");
-            ViewData["ViewId"] = new SelectList(_context.Views.Where(v => v.ProjectId == ProjectId), "Id");
+            ViewData["TeamId"] = new SelectList(_context.Teams.Where(p => p.ProjectId == ProjectId), "Id", "Name");
+            ViewData["ViewId"] = new SelectList(_context.Views.Where(v => v.ProjectId == ProjectId), "Id", "Name");
             return View();
         }
 

@@ -79,9 +79,7 @@ namespace ITICDE.Controllers
             var myUsers = _context.Users;
             ViewBag.users = myUsers;
             List<string> shared = null;
-            //List<string> users = new List<string>();
             ViewBag.sharedId = shared;
-            //ViewData["User"]  = new SelectList(_context.Users, "Id", "ConfirmEmail");
             return View();
             
         }
@@ -93,7 +91,6 @@ namespace ITICDE.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create ([Bind("Id,Name,CreationDate, ProjectId,UserId,Users")] Folder folder, int ProjectId,string UserId)
         {
-            //Task<string> content = new StreamReader(Request.Body).ReadToEndAsync();
             if (ModelState.IsValid)
             {
                 var project = await _context.Projects.FindAsync(ProjectId); //This project is to have folders in it.
@@ -170,38 +167,7 @@ namespace ITICDE.Controllers
             return View(folder);
         }
 
-        // GET: Folders/Delete/5
-        //public async Task<IActionResult> Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var folder = await _context.Folders
-        //        .FirstOrDefaultAsync(m => m.Id == id);
-        //    ViewBag.projectId = folder.ProjectId;
-        //    if (folder == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(folder);
-        //}
-
-        //// POST: Folders/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(int id,int ProjectId)
-        //{
-        //    var folder = await _context.Folders.FindAsync(id);
-        //    _context.Folders.Remove(folder);
-        //    await _context.SaveChangesAsync();
-        //    if(folder.ParentId==0)
-        //    return RedirectToAction(nameof(Index),new {ProjectId});
-        //    else return RedirectToAction(nameof(InnerDet), new { id=folder.ParentId ,projectId= ProjectId });
-        //}
-        // GET: Folders/Delete/5
+        
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -376,11 +342,7 @@ namespace ITICDE.Controllers
             var file = _context.Files.Include(f=>f.Folder).FirstOrDefault(f => f.Id == Id);
             return View(file);
         }
-		//public IActionResult PDFViewer(string Fname)
-		//{
-		//    string path = _env.WebRootPath + "\\Files\\" + Fname;
-		//    return File(System.IO.File.ReadAllBytes(path), "application/pdf");
-		//}
+		
 		public async Task<IActionResult> MultipleFilesInProject(IEnumerable<IFormFile> files, int projectId)
 		{
 			var dir = _env.WebRootPath;
@@ -430,25 +392,6 @@ namespace ITICDE.Controllers
         }
 
 
-        //public async Task<IActionResult> MultipleFilesInProject(IEnumerable<IFormFile> files, int ProjectId)
-        //{
-        //    var dir = _env.WebRootPath;
-        //    var full = dir + "/ProjectFiles";
-        //    var project = await _context.Projects.Include(c => c.CreatorUser).Include(u => u.Users).Include(f=>f.Folders).Include(fi=>fi.Files)
-        //                            .FirstOrDefaultAsync(p => p.Id == ProjectId);
-        //    foreach (var file in files)
-        //    {
-        //        var fileName = file.FileName.Split('.').First() + "_" + ProjectId + Path.GetExtension(file.FileName);
-        //        using (var fileStream = new FileStream(Path.Combine(full, fileName), FileMode.Create, FileAccess.Write))
-        //        {
-        //            file.CopyTo(fileStream);
-        //        }
-        //        Models.File newF = new Models.File { Name = fileName, Type = Path.GetExtension(Path.Combine(full, fileName)), Path = Path.GetFullPath(Path.Combine(full, fileName)), ProjectId = ProjectId, UserId = User.FindFirstValue(ClaimTypes.NameIdentifier) };
-        //        _context.Add(newF);
-        //        project.Files.Add(newF);
-        //        _context.SaveChanges();
-        //    }
-        //    return RedirectToAction(nameof(Index), new { ProjectId });
-        //}
+       
     }
 }
