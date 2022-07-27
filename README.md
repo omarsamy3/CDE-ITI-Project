@@ -28,6 +28,14 @@ A web-based application to prove the concept of The Common Data Environment (CDE
 
 - The ability to make `Teams with a leader to lead them`
 
+## How to try the application?
+- Download the `source code`.
+- Open the `appsettings.json` and change the DB server to your one.
+- You can find the `appsetting.json` in (CDEITIProject/ITICDE/ITICDE/appsetting.json), or by opening the solution.
+- The server change in `appsetting.json` is in the `line 12`, change `ITICDE-working` into `your server name` in MS SQL Server.
+- Then you can Run the application and try it.
+- There are not any other third parties.
+
 ## Designs
 
 ### Database ERD
